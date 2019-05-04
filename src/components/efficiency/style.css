@@ -1,0 +1,25 @@
+.efficiencyPanel {
+    width: 43rem;
+    height: 90%;
+}
+
+.efficiencyBody {
+    background-color: #CED2DD;
+}
+
+.efficiencyTitle {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.efficiencySubtitle {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: smaller;
+    padding-bottom: 10px;
+}
+
+.efficiencyText {
+    font-size: smaller;
+    margin-bottom: 45px;
+}

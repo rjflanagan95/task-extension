@@ -1,0 +1,25 @@
+.goalsPanel {
+    width: 43rem;
+    height: 100%;
+}
+
+.goalsBody {
+    background-color: #CED2DD;
+}
+
+.goalsTitle {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.goalsSubtitle {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: smaller;
+    padding-bottom: 10px;
+}
+
+.goalsText {
+    font-size: smaller;
+    margin-bottom: 45px;
+}

@@ -1,0 +1,25 @@
+.timerPanel {
+    width: 19rem;
+    height: 40%;
+}
+
+.timerBody {
+    background-color: #CED2DD;
+}
+
+.timerTitle {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.timerSubtitle {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: smaller;
+    padding-bottom: 10px;
+}
+
+.timerText {
+    font-size: smaller;
+    margin-bottom: 45px;
+}
