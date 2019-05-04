@@ -1,15 +1,9 @@
 .contentArea {
     margin: 0;
-    display: grid;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 /* general panel styling that applies to all components */
 .panel {
-    margin: 15px 15px 15px 15px;
-    background-color: #CED2DD;
-}
-
-.contentRow {
-    margin: 10px 0px 10px 0px;
+    margin: 15px 0px 15px 0px;
 }

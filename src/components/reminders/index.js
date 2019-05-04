@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import "./style.css";
 
 class Reminders extends Component {
@@ -22,6 +22,11 @@ class Reminders extends Component {
         <CardBody className="panelBody remindersBody">
           <CardTitle className="panelTitle remindersTitle">reminders</CardTitle>
           <CardSubtitle className="panelSubtitle remindersSubtitle">subtitle</CardSubtitle>
+          <CardText className="panelText remindersText">text</CardText>
+          <CardText className="panelText remindersText">text</CardText>
+          <CardText className="panelText remindersText">text</CardText>
+          <CardText className="panelText remindersText">text</CardText>
+          <CardText className="panelText remindersText">text</CardText>
           <CardText className="panelText remindersText">text</CardText>
         </CardBody>
       </Card>

@@ -1,6 +1,7 @@
 .tasksPanel {
     width: 19rem;
-    height: 100%;
+    height: 30%;
+    overflow: scroll;
 }
 
 .tasksBody {

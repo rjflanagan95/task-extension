@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 import Goals from "../goals/index.js";
 import Tasks from "../tasks/index.js";
@@ -18,19 +18,13 @@ class Main extends Component {
 
     return (
       <Container className="contentArea">
-        <Row className="contentRow">
+        <Row>
           <Col>
             <Goals className="panel"></Goals>
-          </Col>
-          <Col>
-            <Tasks className="panel"></Tasks>
-          </Col>
-        </Row>
-        <Row className="contentRow">
-          <Col>
             <Efficiency className="panel"></Efficiency>
           </Col>
           <Col>
+            <Tasks className="panel"></Tasks>
             <Reminders className="panel"></Reminders>
             <Timer className="panel"></Timer>
           </Col>

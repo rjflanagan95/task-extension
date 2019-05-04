@@ -1,6 +1,7 @@
 .remindersPanel {
     width: 19rem;
-    height: 45%;
+    height: 30%;
+    overflow: scroll;
 }
 
 .remindersBody {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import "./style.css";
-
+import tomatoImg from "./tomato.png";
 class Timer extends Component {
   constructor(props) {
     super(props);
@@ -20,9 +20,10 @@ class Timer extends Component {
     return (
       <Card className="panel timerPanel">
         <CardBody className="panelBody timerBody">
-          <CardTitle className="panelTitle timerTitle">timer</CardTitle>
+          <CardImg className="timerImg" src={tomatoImg}></CardImg>
+          {/* <CardTitle className="panelTitle timerTitle">timer</CardTitle>
           <CardSubtitle className="panelSubtitle timerSubtitle">subtitle</CardSubtitle>
-          <CardText className="panelText timerText">text</CardText>
+          <CardText className="panelText timerText">text</CardText> */}
         </CardBody>
       </Card>
     );

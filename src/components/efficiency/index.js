@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import "./style.css";
 
 class Efficiency extends Component {

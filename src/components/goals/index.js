@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import "./style.css";
 
 class Goals extends Component {
@@ -21,8 +21,43 @@ class Goals extends Component {
       <Card className="panel goalsPanel">
         <CardBody className="panelBody goalsBody">
           <CardTitle className="panelTitle goalsTitle">Goals</CardTitle>
-          <CardSubtitle className="panelSubtitle goalsSubtitle">subtitle</CardSubtitle>
-          <CardText className="panelText goalsText">text</CardText>
+            <Card className="goalsCard">
+              <CardBody>
+                <CardTitle>Daily Goals</CardTitle>
+                <CardText>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                </CardText>
+              </CardBody>
+            </Card>
+            <Card className="goalsCard">
+              <CardBody>
+                <CardTitle>Weekly Goals</CardTitle>
+              </CardBody>
+            </Card>
+            <Card className="goalsCard">
+              <CardBody>
+                <CardTitle>Monthly Goals</CardTitle>
+                <CardText>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
+                </CardText>
+              </CardBody>
+            </Card>
+
+          {/* <CardSubtitle className="panelSubtitle goalsSubtitle">subtitle</CardSubtitle>
+          <CardText className="panelText goalsText">text</CardText> */}
         </CardBody>
       </Card>
     );

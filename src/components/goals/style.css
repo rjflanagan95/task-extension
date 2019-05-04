@@ -1,6 +1,13 @@
 .goalsPanel {
     width: 43rem;
-    height: 100%;
+    height: 40%;
+}
+
+.goalsCard {
+    max-height: 350px;
+    width: 33%;
+    float: left;
+    overflow: scroll;
 }
 
 .goalsBody {
@@ -16,10 +23,8 @@
     font-style: italic;
     font-weight: lighter;
     font-size: smaller;
-    padding-bottom: 10px;
 }
 
 .goalsText {
     font-size: smaller;
-    margin-bottom: 45px;
 }

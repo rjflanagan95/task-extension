@@ -1,10 +1,13 @@
 .timerPanel {
     width: 19rem;
-    height: 40%;
+    height: 30%;
 }
 
 .timerBody {
     background-color: #CED2DD;
+}
+
+.timerImg {
 }
 
 .timerTitle {

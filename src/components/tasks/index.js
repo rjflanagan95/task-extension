@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import "./style.css";
 
 class Tasks extends Component {
@@ -15,14 +15,25 @@ class Tasks extends Component {
     }
   }
 
-  render() {
+  addTask(event) {
+    event.preventDefault();
+    console.log("hiya buddy");
+    // chrome.storage.sync.set({"test": "test response"}, function() {
+    //   chrome.storage.sync.get("test", function(items) {
+    //     console.log(items);
+    //   });
+    // });
+  }
 
+  render() {
     return (
       <Card className="panel tasksPanel">
         <CardBody className="panelBody tasksBody">
           <CardTitle className="panelTitle tasksTitle">tasks</CardTitle>
           <CardSubtitle className="panelSubtitle tasksSubtitle">subtitle</CardSubtitle>
-          <CardText className="panelText tasksText">text</CardText>
+          <li className="panelText tasksText" onClick={this.addTask}>text</li>
+          <li className="panelText tasksText" onClick={this.addTask}>text</li>
+          <li className="panelText tasksText" onClick={this.addTask}>text</li>
         </CardBody>
       </Card>
     );
