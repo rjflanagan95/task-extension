@@ -1,0 +1,9 @@
+.taskItem {
+    height: 30px;
+}
+
+.taskTitle {
+    font-size: smaller;
+    position: absolute;
+    top: 5px;
+}
