@@ -1,7 +1,6 @@
 .tasksPanel {
     width: 19rem;
-    height: 30%;
-    overflow: scroll;
+    height: 35%;
 }
 
 .tasksBody {
@@ -20,7 +19,18 @@
     padding-bottom: 10px;
 }
 
+.taskList {
+    height: 50%;
+    overflow: scroll;
+}
+
 .tasksText {
     font-size: smaller;
     margin-bottom: 45px;
+}
+
+.inputBox {
+    position: absolute;
+    bottom: 10px;
+    padding-top: 10px;
 }

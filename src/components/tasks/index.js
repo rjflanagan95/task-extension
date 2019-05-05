@@ -6,18 +6,33 @@ class Tasks extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    //   title: this.props.title,
-    //   subtitle: this.props.subtitle,
-    //   text: this.props.text,
-    //   githubLink: this.props.githubLink,
-    //   hostLink: this.props.hostLink,
-    //   image: this.props.image
+      userInput: '',
+      tasks: ["task 1", "task 2", "task 3"]
     }
+
+    this.addTask = this.addTask.bind(this);
+  }
+
+  changeUserInput(input) {
+    this.setState({
+      userInput: input
+    });
   }
 
   addTask(event) {
     event.preventDefault();
     console.log("hiya buddy");
+
+    let currentTasks = this.state.tasks;
+    let newTask = this.state.userInput;
+
+    currentTasks.push(newTask);
+
+    this.setState({
+      userInput: '',
+      tasks: currentTasks
+    });
+
     // chrome.storage.sync.set({"test": "test response"}, function() {
     //   chrome.storage.sync.get("test", function(items) {
     //     console.log(items);
@@ -31,9 +46,13 @@ class Tasks extends Component {
         <CardBody className="panelBody tasksBody">
           <CardTitle className="panelTitle tasksTitle">tasks</CardTitle>
           <CardSubtitle className="panelSubtitle tasksSubtitle">subtitle</CardSubtitle>
-          <li className="panelText tasksText" onClick={this.addTask}>text</li>
-          <li className="panelText tasksText" onClick={this.addTask}>text</li>
-          <li className="panelText tasksText" onClick={this.addTask}>text</li>
+          <div className="taskList">
+            {this.state.tasks.map((val, index) => <li className="taskItem" key={index}>{val}</li>)}
+          </div>
+          <div className="inputBox">
+            <input className="taskInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} type="text"/>
+            <button className="addTask" onClick={this.addTask}>+</button>
+          </div>
         </CardBody>
       </Card>
     );

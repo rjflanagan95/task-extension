@@ -1,6 +1,6 @@
 .remindersPanel {
     width: 19rem;
-    height: 30%;
+    height: 35%;
     overflow: scroll;
 }
 
@@ -23,4 +23,10 @@
 .remindersText {
     font-size: smaller;
     margin-bottom: 45px;
+}
+
+.inputBox {
+    position: absolute;
+    bottom: 10px;
+    
 }
