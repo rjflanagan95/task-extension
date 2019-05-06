@@ -1,9 +1,15 @@
 .taskItem {
-    height: 30px;
+    height: 40px;
 }
 
 .taskTitle {
     font-size: smaller;
     position: absolute;
+    top: 10px;
+}
+
+.removeTaskBtn {
+    position: absolute;
     top: 5px;
+    right: 5px;
 }
