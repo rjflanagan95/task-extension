@@ -1,6 +1,9 @@
 .efficiencyPanel {
     width: 43rem;
-    height: 30%;
+    /* height: 30%; */
+    height: auto;
+    min-height: 30%;
+    margin-bottom: 10px; 
 }
 
 .efficiencyBody {

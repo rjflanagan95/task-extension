@@ -1,14 +1,15 @@
 .timerPanel {
     width: 19rem;
     height: 30%;
+    margin-bottom: 20px; 
 }
 
 .timerBody {
     background-color: #CED2DD;
 }
 
-.timerImg {
-}
+/* .timerImg {
+} */
 
 .timerTitle {
     font-weight: bold;

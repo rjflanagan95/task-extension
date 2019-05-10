@@ -1,10 +1,12 @@
 .goalsPanel {
     width: 43rem;
-    height: 40%;
+    height: auto;
+    margin-bottom: 10px; 
+    background-color: #CED2DD;
 }
 
 .goalsCard {
-    max-height: 350px;
+    /* max-height: 350px; */
     width: 33%;
     float: left;
     overflow: scroll;
