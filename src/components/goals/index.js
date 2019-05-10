@@ -20,7 +20,7 @@ class Goals extends Component {
     return (
       <Card className="panel goalsPanel">
         <CardBody className="panelBody goalsBody">
-          <CardTitle className="panelTitle goalsTitle">Goals</CardTitle>
+          <CardTitle className="panelTitle goalsTitle">goals</CardTitle>
             <Card className="goalsCard">
               <CardBody>
                 <CardTitle>Daily Goals</CardTitle>
@@ -34,6 +34,9 @@ class Goals extends Component {
             <Card className="goalsCard">
               <CardBody>
                 <CardTitle>Weekly Goals</CardTitle>
+                  <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
               </CardBody>
             </Card>
             <Card className="goalsCard">
@@ -45,13 +48,13 @@ class Goals extends Component {
                   <li>goals</li>
                   <li>goals</li>
                   <li>goals</li>
+                  {/* <li>goals</li>
                   <li>goals</li>
                   <li>goals</li>
                   <li>goals</li>
                   <li>goals</li>
                   <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
+                  <li>goals</li> */}
                 </CardText>
               </CardBody>
             </Card>

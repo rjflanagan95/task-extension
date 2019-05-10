@@ -1,6 +1,7 @@
 .contentArea {
     margin: 0;
     /* height: 100vh; */
+    height: 100%;
 }
 
 /* general panel styling that applies to all components */
