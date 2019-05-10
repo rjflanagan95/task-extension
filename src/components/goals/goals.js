@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-import "./style.css";
+import "./goals.css";
 
 class Goals extends Component {
   constructor(props) {

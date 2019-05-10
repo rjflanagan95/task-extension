@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-import "./style.css";
+import "./timer.css";
 import tomatoImg from "./tomato.png";
+
 class Timer extends Component {
   constructor(props) {
     super(props);

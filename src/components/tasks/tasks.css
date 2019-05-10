@@ -20,7 +20,7 @@
 }
 
 .taskList {
-    height: 50%;
+    height: 58%;
     overflow: scroll;
 }
 
@@ -31,6 +31,29 @@
 
 .inputBox {
     position: absolute;
+    width: 17rem;
     bottom: 10px;
     padding-top: 10px;
+}
+
+.taskInput {
+    width: 50%;
+    position: absolute;
+    bottom: 3px;
+}
+
+.addTask {
+    position: absolute;
+    right: 5px;
+    bottom: 1px;
+}
+
+.reminderItem {
+    height: 30px;
+}
+
+.reminderTitle {
+    font-size: smaller;
+    position: absolute;
+    top: 5px;
 }

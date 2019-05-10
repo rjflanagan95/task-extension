@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-import "./style.css";
+import { Card, CardText, CardBody, CardTitle, CardSubtitle, Button, FormGroup, Form, Input } from "reactstrap";
+import "./tasks.css";
+import TaskItem from "../taskItem/taskItem.js";
 
 class Tasks extends Component {
   constructor(props) {
@@ -40,18 +41,27 @@ class Tasks extends Component {
     // });
   }
 
+  expandTask(event) {
+    event.preventDefault();
+
+
+  }
+
   render() {
     return (
       <Card className="panel tasksPanel">
         <CardBody className="panelBody tasksBody">
           <CardTitle className="panelTitle tasksTitle">tasks</CardTitle>
-          <CardSubtitle className="panelSubtitle tasksSubtitle">subtitle</CardSubtitle>
           <div className="taskList">
-            {this.state.tasks.map((val, index) => <li className="taskItem" key={index}>{val}</li>)}
+            {this.state.tasks.map((val, index) => <TaskItem task={val} className="taskItem" key={index} onClick={this.expandTask}/>)}
           </div>
           <div className="inputBox">
-            <input className="taskInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} type="text"/>
-            <button className="addTask" onClick={this.addTask}>+</button>
+            <Form>
+              <FormGroup>
+                <Input className="taskInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} type="text"/>
+                <Button size="sm" className="addTask" onClick={this.addTask}>+</Button>
+              </FormGroup>
+            </Form>
           </div>
         </CardBody>
       </Card>

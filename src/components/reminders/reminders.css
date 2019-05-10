@@ -11,6 +11,7 @@
 .remindersTitle {
     font-weight: bold;
     font-size: larger;
+    
 }
 
 .remindersSubtitle {
@@ -27,6 +28,33 @@
 
 .inputBox {
     position: absolute;
+    width: 17rem;
     bottom: 10px;
-    
+    padding-top: 10px;
+}
+
+.reminderInput {
+    width: 14rem;
+    position: absolute;
+    bottom: 3px;
+}
+
+.addReminder {
+    position: absolute;
+    right: 5px;
+    bottom: 1px;
+}
+
+.reminderItem {
+    height: 40px;
+}
+
+.reminderTitle {
+    top: 10px;
+}
+
+.removeReminderBtn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }

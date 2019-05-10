@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardText, CardBody, CardTitle, CardSubtitle, Button} from "reactstrap";
-import "./style.css";
+import "./taskItem.css";
 
 class TaskItem extends Component {
   constructor(props) {

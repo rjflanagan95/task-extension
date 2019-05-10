@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-import "./style.css";
+import "./efficiency.css";
 
 class Efficiency extends Component {
   constructor(props) {

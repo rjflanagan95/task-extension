@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
 
-import Goals from "../goals/index.js";
-import Tasks from "../tasks/index.js";
-import Efficiency from "../efficiency/index.js";
-import Reminders from "../reminders/index.js";
-import Timer from "../timer/index.js"
+import Goals from "../goals/goals.js";
+import Tasks from "../tasks/tasks.js";
+import Efficiency from "../efficiency/efficiency";
+import Reminders from "../reminders/reminders";
+import Timer from "../timer/timer"
 import "./style.css";
 
 class Main extends Component {
