@@ -8,3 +8,22 @@
 .panel {
     margin: 15px 0px 15px 0px;
 }
+
+.panelBody {
+    background-color: #CED2DD;
+}
+
+.panelTitle {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.panelSubtitle {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: smaller;
+}
+
+.panelText {
+    font-size: smaller;
+}

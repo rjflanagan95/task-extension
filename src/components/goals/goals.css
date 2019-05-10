@@ -11,22 +11,3 @@
     float: left;
     overflow: scroll;
 }
-
-.goalsBody {
-    background-color: #CED2DD;
-}
-
-.goalsTitle {
-    font-weight: bold;
-    font-size: larger;
-}
-
-.goalsSubtitle {
-    font-style: italic;
-    font-weight: lighter;
-    font-size: smaller;
-}
-
-.goalsText {
-    font-size: smaller;
-}

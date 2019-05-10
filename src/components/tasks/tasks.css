@@ -3,19 +3,7 @@
     height: 35%;
 }
 
-.tasksBody {
-    background-color: #CED2DD;
-}
-
-.tasksTitle {
-    font-weight: bold;
-    font-size: larger;
-}
-
 .tasksSubtitle {
-    font-style: italic;
-    font-weight: lighter;
-    font-size: smaller;
     padding-bottom: 10px;
 }
 

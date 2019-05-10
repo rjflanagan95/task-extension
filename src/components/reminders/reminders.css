@@ -4,25 +4,11 @@
     overflow: scroll;
 }
 
-.remindersBody {
-    background-color: #CED2DD;
-}
-
-.remindersTitle {
-    font-weight: bold;
-    font-size: larger;
-    
-}
-
 .remindersSubtitle {
-    font-style: italic;
-    font-weight: lighter;
-    font-size: smaller;
     padding-bottom: 10px;
 }
 
 .remindersText {
-    font-size: smaller;
     margin-bottom: 45px;
 }
 
