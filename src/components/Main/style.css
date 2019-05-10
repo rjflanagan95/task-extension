@@ -1,7 +1,31 @@
 .contentArea {
-    margin: 0;
+    /* width: 100%; */
     /* height: 100vh; */
-    height: 100%;
+    height: auto;
+    min-height: 790px;
+    /* background-color: rgb(50, 71, 132); */
+    background-color: #BA5C12;
+    /* text-align: center; */
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* .row {
+    height: 880px;
+    background-color: #BA5C12;
+} */
+
+.column-1 {
+    /* width: 70%;
+    height: auto;
+    float: left; */
+    background-color: rgb(72, 110, 223);
+}
+
+.column-2 {
+    /* width: 30%;
+    float: right; */
+    background-color: rgb(38, 123, 95);
 }
 
 /* general panel styling that applies to all components */
@@ -10,7 +34,9 @@
 }
 
 .panelBody {
-    background-color: #CED2DD;
+    /* background-color: #CED2DD; */
+    background-color: rgb(210, 216, 233);
+    /* background-color: #DFFDFF; */
 }
 
 .panelTitle {

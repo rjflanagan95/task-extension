@@ -13,21 +13,23 @@ class Main extends Component {
     
   }
 
-
   render() {
 
     return (
       <Container className="contentArea">
         <Row>
-          <Col>
+    
+          <Col className="column-1">
             <Goals className="panel"></Goals>
             <Efficiency className="panel"></Efficiency>
           </Col>
-          <Col>
+
+          <Col className="column-2">
             <Tasks className="panel"></Tasks>
             <Reminders className="panel"></Reminders>
             <Timer className="panel"></Timer>
           </Col>
+
         </Row>
       </Container>
     );
