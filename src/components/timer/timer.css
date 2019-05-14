@@ -2,7 +2,8 @@
     width: 19rem;
     height: auto;
     margin-bottom: 20px; 
-    background-color: rgb(97, 113, 159);
+    /* background-color: rgb(97, 113, 159); */
+    background-color: #e59500;
 }
 
 /* .timerSubtitle {
@@ -10,5 +11,6 @@
 } */
 
 .timerImg {
-    background-color: rgb(97, 113, 159);
+    /* background-color: rgb(97, 113, 159); */
+    background-color: #e59500;
 }

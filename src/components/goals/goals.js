@@ -46,9 +46,9 @@ class Goals extends Component {
                   <li>goals</li>
                   <li>goals</li>
                   <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
                   {/* <li>goals</li>
+                  <li>goals</li>
+                  <li>goals</li>
                   <li>goals</li>
                   <li>goals</li>
                   <li>goals</li>
