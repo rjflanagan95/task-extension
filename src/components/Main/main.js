@@ -6,7 +6,7 @@ import Tasks from "../tasks/tasks.js";
 import Efficiency from "../efficiency/efficiency";
 import Reminders from "../reminders/reminders";
 import Timer from "../timer/timer"
-import "./style.css";
+import "./main.css";
 
 class Main extends Component {
   state = {
