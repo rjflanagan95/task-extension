@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Panel from "../panel/panel.js";
 import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import "./goals.css";
 
