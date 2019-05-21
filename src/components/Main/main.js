@@ -8,6 +8,8 @@ import Reminders from "../reminders/reminders";
 import Timer from "../timer/timer"
 import "./main.css";
 
+import Panel from "../panel/panel";
+
 class Main extends Component {
   state = {
     
@@ -27,7 +29,8 @@ class Main extends Component {
           <Col className="column-2">
             <Tasks className="panel"></Tasks>
             <Reminders className="panel"></Reminders>
-            <Timer className="panel"></Timer>
+            {/* <Timer className="panel"></Timer> */}
+            <Panel className="panel"></Panel>
           </Col>
 
         </Row>
