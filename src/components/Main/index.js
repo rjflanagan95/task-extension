@@ -28,8 +28,8 @@ class Main extends Component {
           <Col>
             <Tasks className="panel"></Tasks>
             <Reminders className="panel"></Reminders>
-            {/* <Timer className="panel"></Timer> */}
-            <Panel className="panel"></Panel>
+            <Timer className="panel"></Timer>
+            {/* <Panel className="panel"></Panel> */}
           </Col>
         </Row>
       </Container>
