@@ -31,6 +31,7 @@
 /* general panel styling that applies to all components */
 .panel {
     margin: 15px 0px 15px 0px;
+    border-radius: 10px;
 }
 
 .panelBody {

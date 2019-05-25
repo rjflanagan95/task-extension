@@ -18,8 +18,6 @@ class Goals extends Component {
 
     return (
       <div className="panel goalsPanel">
-        <div className="panelBody goalsBody">
-          {/* <h4 className="panelTitle goalsTitle">goals</h4> */}
           <div className="goalsCard">
             <h4 className="goalsTitle">Daily Goals</h4>
             <div className="goalsList">
@@ -57,7 +55,6 @@ class Goals extends Component {
               <li>goals</li>
             </div>
             </div>
-        </div>
       </div>
     );
   }

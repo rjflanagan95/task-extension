@@ -1,4 +1,4 @@
-.goalsBody {
+.goalsPanel {
     background-color: #e59500;
     display: flex;
     justify-content: space-between;
@@ -6,10 +6,11 @@
 }
 
 .goalsCard {
-    width: 30%;
+    width: 31%;
     background-color: #CED2DD;
     margin-bottom: 10px;
     padding: 5px 10px 5px 10px;
+    border-radius: 5px;
 }
 
 .goalsList {
