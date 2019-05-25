@@ -14,6 +14,10 @@
     overflow: scroll;
 }
 
+.taskItem {
+    
+}
+
 .tasksText {
     font-size: smaller;
     margin-bottom: 45px;

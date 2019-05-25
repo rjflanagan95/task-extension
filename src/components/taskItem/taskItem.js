@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody, CardTitle, CardSubtitle, Button} from "reactstrap";
 import "./taskItem.css";
 
 class TaskItem extends Component {
@@ -12,12 +11,10 @@ class TaskItem extends Component {
 
   render() {
     return (
-        <Card className="taskItem">
-            <CardBody>
-                <CardTitle className="taskTitle">{this.state.task}</CardTitle>
-                <Button size="sm" className="removeTaskBtn">-</Button>
-            </CardBody>
-        </Card>
+      <div className="taskItem">
+        <h4 className="taskTitle">{this.state.task}</h4>
+        <button size="sm" className="removeTaskBtn">-</button>
+      </div>
     );
   }
 }
