@@ -6,19 +6,6 @@
     margin-bottom: 10px; 
 }
 
-/* .efficiencyTitle {
-    background-color: #93929b; 
-} */
-
-/* .efficiencySubtitle {
-    background-color: #616172; 
-    margin-bottom: 50px;
-} */
-
-.efficiencyText{
-    margin: 5px;
-    /* background-color: #3d3c44;  */
-    background-color: #ffffff; 
-    min-height: 125px;
-    padding: 5px;
+.efficiencyBody {
+    padding: 10px 10px 10px 10px;
 }

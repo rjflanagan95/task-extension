@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import "./efficiency.css";
 
 class Efficiency extends Component {
@@ -18,13 +17,13 @@ class Efficiency extends Component {
   render() {
 
     return (
-      <Card className="panel efficiencyPanel">
-        <CardBody className="panelBody efficiencyBody">
-          <CardTitle className="panelTitle efficiencyTitle">efficiency</CardTitle>
-          <CardSubtitle className="panelSubtitle efficiencySubtitle">subtitle</CardSubtitle>
-          <CardText className="panelText efficiencyText">text</CardText>
-        </CardBody>
-      </Card>
+      <div className="panel efficiencyPanel">
+        <div className="panelBody efficiencyBody">
+          <h4 className="panelTitle efficiencyTitle">efficiency</h4>
+          <h6 className="panelSubtitle efficiencySubtitle">subtitle</h6>
+          <p className="panelText efficiencyText">text</p>
+        </div>
+      </div>
     );
   }
 }
