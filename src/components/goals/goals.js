@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import "./goals.css";
 
 class Goals extends Component {
@@ -18,51 +17,48 @@ class Goals extends Component {
   render() {
 
     return (
-      <Card className="panel goalsPanel">
-        <CardBody className="panelBody goalsBody">
-          <CardTitle className="panelTitle goalsTitle">goals</CardTitle>
-            <Card className="goalsCard">
-              <CardBody>
-                <CardTitle>Daily Goals</CardTitle>
-                <CardText>
-                  <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
-                </CardText>
-              </CardBody>
-            </Card>
-            <Card className="goalsCard">
-              <CardBody>
-                <CardTitle>Weekly Goals</CardTitle>
-                  <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
-              </CardBody>
-            </Card>
-            <Card className="goalsCard">
-              <CardBody>
-                <CardTitle>Monthly Goals</CardTitle>
-                <CardText>
-                  <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
-                  {/* <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li>
-                  <li>goals</li> */}
-                </CardText>
-              </CardBody>
-            </Card>
-
-          {/* <CardSubtitle className="panelSubtitle goalsSubtitle">subtitle</CardSubtitle>
-          <CardText className="panelText goalsText">text</CardText> */}
-        </CardBody>
-      </Card>
+      <div className="panel goalsPanel">
+        <div className="panelBody goalsBody">
+          {/* <h4 className="panelTitle goalsTitle">goals</h4> */}
+          <div className="goalsCard">
+            <h4 className="goalsTitle">Daily Goals</h4>
+            <div className="goalsList">
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+            </div>
+          </div>
+          <div className="goalsCard">
+            <h4 className="goalsTitle">Weekly Goals</h4>
+            <div className="goalsList">
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+            </div>
+          </div>
+          <div className="goalsCard">
+            <h4 className="goalsTitle">Monthly Goals</h4>
+            <div className="goalsList">
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+              <li>goals</li>
+            </div>
+            </div>
+        </div>
+      </div>
     );
   }
 }
