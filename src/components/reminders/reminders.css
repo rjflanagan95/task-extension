@@ -1,58 +1,44 @@
 .remindersPanel {
-    /* width: 19rem;
-    height: 35%; */
-    width: 100%;
-    height: 35%; 
+    
+}
+
+.remindersBody {
+    padding: 10px 10px 10px 10px;
+}
+
+.remindersList {
+    height: 200px;
     overflow: scroll;
 }
 
-.remindersSubtitle {
-    padding-bottom: 10px;
-}
-
-.remindersText {
-    margin-bottom: 45px;
-}
-
-.inputBox {
-    position: absolute;
-    width: 17rem;
-    bottom: 10px;
-    padding-top: 10px;
-}
-
-.reminderInput {
-    width: 14rem;
-    position: absolute;
-    bottom: 3px;
-}
-
-.addReminder {
-    position: absolute;
-    right: 5px;
-    bottom: 1px;
-}
-
 .reminderItem {
-    height: 40px;
-}
-
-.reminderTitle {
-    top: 10px;
-}
-
-.removeReminderBtn {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-}
-
-/* .reminderItem {
-    height: 30px;
+    margin: 5px 0 5px 0;
+    height: 35px;
+    background-color: #CED2DD;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
 }
 
 .reminderTitle {
     font-size: smaller;
-    position: absolute;
-    top: 5px;
-} */
+}
+
+.removeReminderBtn {
+    float: right;
+    margin-right: 5px;
+}
+
+.reminderForm {
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    bottom: 15px;
+}
+
+.reminderInput {
+    float: left;
+    width: 75%;
+}
+
+.addReminder {
+    float: right;
+}

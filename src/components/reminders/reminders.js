@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody, CardTitle, CardSubtitle, Button, Form, FormGroup, Input } from "reactstrap";
 import "./reminders.css";
 
 class Reminders extends Component {
@@ -37,7 +36,6 @@ class Reminders extends Component {
   }
 
   removeReminder(index) {
-    console.log(index)
 
     let currentReminders = this.state.reminders;
     currentReminders.splice(index, 1);
@@ -50,29 +48,27 @@ class Reminders extends Component {
   render() {
 
     return (
-      <Card className="panel remindersPanel">
-        <CardBody className="panelBody remindersBody">
-          <CardTitle className="panelTitle remindersTitle">reminders</CardTitle>
-          <div className="reminderList">
+      <div className="panel remindersPanel">
+        <div className="panelBody remindersBody">
+          <h4 className="panelTitle remindersTitle">reminders</h4>
+          <div className="remindersList">
             {this.state.reminders.map((val, index) => 
-              <Card key={index} className="reminderItem">
-                <CardBody>
-                    <CardTitle className="reminderTitle">{val}</CardTitle>
-                    <Button size="sm" className="removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</Button>
-                </CardBody>
-              </Card>
+              <div key={index} className="reminderItem">
+                <div>
+                    <h4 className="reminderTitle">{val}</h4>
+                    <button size="sm" className="removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
+                </div>
+              </div>
             )}
           </div>
-          <div className="inputBox">
-            <Form>
-              <FormGroup>
-                <Input className="reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} type="text"/>
-              <Button size="sm" className="addReminder" onClick={this.addReminder}>+</Button>
-              </FormGroup>
-            </Form>
-          </div>
-        </CardBody>
-      </Card>
+        </div>
+        <div className="reminderForm">
+          <form>
+            <input className="reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} type="text"/>
+            <button size="sm" className="addReminder" onClick={this.addReminder}>+</button>
+          </form>
+        </div>
+      </div>
     );
   }
 }
