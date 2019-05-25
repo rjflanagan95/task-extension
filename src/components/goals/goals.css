@@ -1,14 +1,21 @@
 .goalsPanel {
-    /* width: 43rem; */
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px; 
-    background-color: #CED2DD;
+    background-color: #e59500;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
 }
 
 .goalsCard {
-    /* max-height: 350px; */
-    width: 33%;
-    float: left;
+    width: 31%;
+    background-color: #CED2DD;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+.goalsList {
+    height: 200px;
     overflow: scroll;
+}
+
+.goalsTitle {
 }
