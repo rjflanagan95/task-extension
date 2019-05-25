@@ -19,7 +19,7 @@ class Goals extends Component {
     return (
       <div className="panel goalsPanel">
           <div className="goalsCard">
-            <h4 className="goalsTitle">Daily Goals</h4>
+            <h4 className="goalsTitle panelTitle">Daily Goals</h4>
             <div className="goalsList">
               <li>goals</li>
               <li>goals</li>
@@ -27,7 +27,7 @@ class Goals extends Component {
             </div>
           </div>
           <div className="goalsCard">
-            <h4 className="goalsTitle">Weekly Goals</h4>
+            <h4 className="goalsTitle panelTitle">Weekly Goals</h4>
             <div className="goalsList">
               <li>goals</li>
               <li>goals</li>
@@ -39,7 +39,7 @@ class Goals extends Component {
             </div>
           </div>
           <div className="goalsCard">
-            <h4 className="goalsTitle">Monthly Goals</h4>
+            <h4 className="goalsTitle panelTitle">Monthly Goals</h4>
             <div className="goalsList">
               <li>goals</li>
               <li>goals</li>
