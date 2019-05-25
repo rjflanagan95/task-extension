@@ -60,13 +60,13 @@ class Tasks extends Component {
   render() {
     return (
       <div className="panel tasksPanel">
-        <h4 className="panelTitle tasksTitle">tasks</h4>
         <div className="panelBody tasksBody">
+          <h4 className="panelTitle tasksTitle">tasks</h4>
           <div className="taskList">
             {this.state.tasks.map((val, index) =>
               <div className="taskItem" key={index} onClick={this.expandTask}>
                 <h4 className="taskTitle">{val}</h4>
-                <button size="sm" className="removeTaskBtn" onClick={(e) => this.removeTask(index, e)}>-</button>
+                <button size="sm" className="removeTaskBtn" onClick={this.removeTask.bind(this, index)}>-</button>
               </div>
             )}
           </div>
