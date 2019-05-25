@@ -1,15 +1,8 @@
 .timerPanel {
     width: 19rem;
     height: auto;
-    margin-bottom: 20px; 
-    /* background-color: rgb(97, 113, 159); */
-    background-color: #e59500;
-    padding: 10px 10px 10px 10px;
+    margin-bottom: 20px;
 }
-
-/* .timerSubtitle {
-    padding-bottom: 10px;
-} */
 
 .timerImg {
     /* background-color: rgb(97, 113, 159); */
