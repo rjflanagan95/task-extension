@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody, CardTitle, CardSubtitle, Button, FormGroup, Form, Input } from "reactstrap";
 import "./tasks.css";
-import TaskItem from "../taskItem/taskItem.js";
 
 class Tasks extends Component {
   constructor(props) {
@@ -12,6 +10,7 @@ class Tasks extends Component {
     }
 
     this.addTask = this.addTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
   }
 
   changeUserInput(input) {
@@ -41,6 +40,17 @@ class Tasks extends Component {
     // });
   }
 
+  removeTask(index, event) {
+    event.preventDefault();
+
+    let currentTasks = this.state.tasks;
+    currentTasks.splice(index, 1);
+
+    this.setState({
+      tasks: currentTasks
+    });
+  }
+
   expandTask(event) {
     event.preventDefault();
 
@@ -49,22 +59,25 @@ class Tasks extends Component {
 
   render() {
     return (
-      <Card className="panel tasksPanel">
-        <CardBody className="panelBody tasksBody">
-          <CardTitle className="panelTitle tasksTitle">tasks</CardTitle>
+      <div className="panel tasksPanel">
+        <h4 className="panelTitle tasksTitle">tasks</h4>
+        <div className="panelBody tasksBody">
           <div className="taskList">
-            {this.state.tasks.map((val, index) => <TaskItem task={val} className="taskItem" key={index} onClick={this.expandTask}/>)}
+            {this.state.tasks.map((val, index) =>
+              <div className="taskItem" key={index} onClick={this.expandTask}>
+                <h4 className="taskTitle">{val}</h4>
+                <button size="sm" className="removeTaskBtn" onClick={(e) => this.removeTask(index, e)}>-</button>
+              </div>
+            )}
           </div>
-          <div className="inputBox">
-            <Form>
-              <FormGroup>
-                <Input className="taskInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} type="text"/>
-                <Button size="sm" className="addTask" onClick={this.addTask}>+</Button>
-              </FormGroup>
-            </Form>
-          </div>
-        </CardBody>
-      </Card>
+        </div>
+        <div className="taskForm">
+          <form>
+            <input className="taskInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} type="text"/>
+            <button size="sm" className="addTaskBtn" onClick={this.addTask}>+</button>
+          </form>
+        </div>
+      </div>
     );
   }
 }

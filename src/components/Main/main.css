@@ -32,6 +32,8 @@
 .panel {
     margin: 15px 0px 15px 0px;
     border-radius: 10px;
+    background-color: #e59500;
+    padding: 10px 10px 10px 10px;
 }
 
 .panelBody {
