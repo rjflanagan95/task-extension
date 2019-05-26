@@ -9,12 +9,13 @@
     background-color: #CED2DD;
     padding: 5px 5px 5px 5px;
     border-radius: 5px;
-    overflow: auto;
 }
 
 .taskTitle {
     font-size: smaller;
     float: left;
+    position: relative;
+    top: 20%;
 }
 
 .removeTaskBtn {

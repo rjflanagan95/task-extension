@@ -14,6 +14,10 @@
 .reminderTitle {
     font-size: smaller;
     float: left;
+
+    /* these properties fix the text position on tasks, but doesn't work here for some reason */
+    position: relative;
+    bottom: 20%;
 }
 
 .removeReminderBtn {

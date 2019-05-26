@@ -55,8 +55,8 @@ class Reminders extends Component {
             {this.state.reminders.map((val, index) => 
               <div key={index} className="reminderItem">
                 <div>
-                    <h4 className="reminderTitle">{val}</h4>
-                    <button size="sm" className="removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
+                  <h4 className="reminderTitle">{val}</h4>
+                  <button size="sm" className="removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
                 </div>
               </div>
             )}
