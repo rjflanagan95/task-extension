@@ -13,24 +13,31 @@
 
 .reminderTitle {
     font-size: smaller;
+    float: left;
 }
 
 .removeReminderBtn {
     float: right;
-    margin-right: 5px;
+    height: 25px;
+    width: 25px;
+    border-radius: 7px;
 }
 
 .reminderForm {
-    padding: 10px 10px 10px 10px;
+    height: 30px;
     position: relative;
     bottom: 15px;
 }
 
 .reminderInput {
     float: left;
-    width: 75%;
+    height: 25px;
+    width: 80%;
 }
 
 .addReminder {
     float: right;
+    height: 25px;
+    width: 25px;
+    border-radius: 7px;
 }
