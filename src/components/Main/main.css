@@ -16,15 +16,15 @@
 } */
 
 .column-1 {
-    /* width: 70%;
-    height: auto;
+    width: 70%;
+    /* height: auto;
     float: left; */
     background-color: #419d78;
 }
 
 .column-2 {
-    /* width: 30%;
-    float: right; */
+    width: 30%;
+    /* float: right; */
     background-color: #067bc2;
 }
 
