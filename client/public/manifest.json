@@ -1,16 +1,14 @@
 {
-  "name": "Productivity Extension",
-  "version": "1.0.1",
-  "author": "Robert Flanagan",
-  "description": "Replace new tab screen with productivity manager.",
+  "short_name": "Tasp App",
+  "name": "Task App",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
