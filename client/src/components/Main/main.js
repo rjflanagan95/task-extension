@@ -11,12 +11,16 @@ import "./main.css";
 import axios from "axios";
 
 class Main extends Component {
-  state = {
-    tasks: ["Default Task 1", "Default Task 2"],
-    reminders: ["Default Reminder 1", "Default Reminder 2"],
-    dailyGoals: ["Goal 1", "Goal 2", "Goal 3"],
-    weeklyGoals: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5"],
-    monthlyGoals: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5", "Goal 6", "Goal 7"]
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      tasks: ["Default Task 1", "Default Task 2"],
+      reminders: ["Default Reminder 1", "Default Reminder 2"],
+      dailyGoals: ["Goal 1", "Goal 2", "Goal 3"],
+      weeklyGoals: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5"],
+      monthlyGoals: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5", "Goal 6", "Goal 7"]
+      }
   }
 
   componentDidMount() {
@@ -24,13 +28,15 @@ class Main extends Component {
     API.getUserData()
       .then(res => {
         console.log(res);
-        // this.setState({
-        //   tasks: res.tasks,
-        //   reminders: res.reminders,
-        //   dailyGoals: res.dailyGoals,
-        //   weeklyGoals: res.weeklyGoals,
-        //   monthlyGoals: res.monthlyGoals
-        // });
+        this.setState({
+          tasks: res.tasks,
+          reminders: res.reminders,
+          dailyGoals: res.dailyGoals,
+          weeklyGoals: res.weeklyGoals,
+          monthlyGoals: res.monthlyGoals
+        });
+
+        console.log(this.state);
     }).catch(err => console.log(err));
   }
 

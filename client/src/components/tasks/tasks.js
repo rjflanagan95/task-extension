@@ -6,7 +6,7 @@ class Tasks extends Component {
     super(props);
     this.state = {
       userInput: '',
-      tasks: ["task 1", "task 2", "task 3"]
+      tasks: this.props.tasks
     }
 
     this.addTask = this.addTask.bind(this);
