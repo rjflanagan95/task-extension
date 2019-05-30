@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./tasks.css";
+import API from "../../utils/API";
 
 class Tasks extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: '',
-      tasks: ["task 1", "task 2", "task 3"]
+      userInput: ''
     }
 
     this.addTask = this.addTask.bind(this);
@@ -21,33 +21,31 @@ class Tasks extends Component {
 
   addTask(event) {
     event.preventDefault();
-    console.log("hiya buddy");
-
-    let currentTasks = this.state.tasks;
+    
     let newTask = this.state.userInput;
+    let currentTasks = this.props.tasks;
 
     currentTasks.push(newTask);
 
-    this.setState({
-      userInput: '',
-      tasks: currentTasks
+    API.updateTasks(currentTasks)
+    .then(res => {
+      this.setState({
+        userInput: ''
+      });
     });
-
-    // chrome.storage.sync.set({"test": "test response"}, function() {
-    //   chrome.storage.sync.get("test", function(items) {
-    //     console.log(items);
-    //   });
-    // });
   }
 
   removeTask(index, event) {
     event.preventDefault();
 
-    let currentTasks = this.state.tasks;
+    let currentTasks = this.props.tasks;
     currentTasks.splice(index, 1);
 
-    this.setState({
-      tasks: currentTasks
+    API.updateTasks(currentTasks)
+    .then(res => {
+      this.setState({
+        userInput: ''
+      });
     });
   }
 
@@ -63,7 +61,7 @@ class Tasks extends Component {
         <div className="panelBody tasksBody">
           <h4 className="panelTitle tasksTitle">tasks</h4>
           <div className="taskList">
-            {this.state.tasks.map((val, index) =>
+            {this.props.tasks.map((val, index) =>
               <div className="taskItem" key={index} onClick={this.expandTask}>
                 <h4 className="taskTitle">{val}</h4>
                 <button size="sm" className="removeTaskBtn" onClick={this.removeTask.bind(this, index)}>-</button>

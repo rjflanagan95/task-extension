@@ -15,7 +15,7 @@ mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true
 });
 
-db.mongoose = mongoose;
+// db.mongoose = mongoose;
 
 // Express
 const app = express();
@@ -68,6 +68,23 @@ app.use(
   })
 );
 
+function authRequired(req, res, next) {
+  if (!req.session.passport) {
+    req.session.oauth2return = req.originalUrl;
+
+    if (
+      req.originalUrl !== "/login" &&
+      (req.originalUrl.split("/")[1].trim() !== "auth" &&
+        req.originalUrl.split("/")[1].trim() !== "static")
+    ) {
+      return res.redirect("/login");
+    }
+  }
+  next();
+}
+app.use(authRequired);
+
+// const routes = require("./routes")
 const routes = require("./routes")(router, db, passport, process.env.NODE_ENV);
 app.use(routes);
 

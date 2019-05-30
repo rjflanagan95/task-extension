@@ -2,7 +2,6 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 function extractProfile(profile) {
-    console.log("extracting profile...");
     return {
       id: profile.id,
       name: profile.displayName

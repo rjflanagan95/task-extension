@@ -12,6 +12,7 @@ class Login extends Component {
     return (
         <div className="login">
             <a href="/auth/google">click here to authenticate with google</a>
+            <a href="/auth/logout">click here to logout</a>
         </div>
     );
   }
