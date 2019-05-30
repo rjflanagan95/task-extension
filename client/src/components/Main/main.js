@@ -40,8 +40,13 @@ class Main extends Component {
 
     return (
       <Container className="contentArea">
+        <Row className="headerRow">
+          <Col>
+            <a href="/auth/logout"><div className="logoutBtn">Log Out</div></a>
+          </Col>
+        </Row>
+
         <Row>
-    
           <Col className="column-1">
             <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />
             <Efficiency className="panel"></Efficiency>

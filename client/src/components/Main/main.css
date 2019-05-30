@@ -57,3 +57,18 @@
 .panelText {
     font-size: smaller;
 }
+
+.headerRow {
+    vertical-align: middle;
+}
+
+.logoutBtn {
+    font-weight: bold;
+    background-color: #CED2DD;
+    float: right;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    margin: 0 0 15px 0;
+    border-radius: 8px;
+
+}

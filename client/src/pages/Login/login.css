@@ -1,0 +1,13 @@
+.login {
+    background-color: #e59500;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.googleBtn {
+    height: 46px;
+    width: 191px;
+}
