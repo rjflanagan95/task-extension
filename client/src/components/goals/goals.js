@@ -134,7 +134,7 @@ class Goals extends Component {
     return (
       <div className="panel goalsPanel">
         {goalTypes.map((goalType, typeIndex) =>
-        <div className="goalsCard">
+        <div className="goalsCard" key={typeIndex}>
           <h4 className="goalsTitle panelTitle">{goalType}</h4>
           <div className="goalsList">
             {goals[typeIndex].map((val, itemIndex) =>

@@ -6,7 +6,13 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   _id: { type: String, required: true },
   name: { type: String, required: true },
-  tasks: [],
+  tasks: [
+    {
+      title: { type: String, required: true },
+      dueDate: { type: Date },
+      steps: []
+    }
+  ],
   reminders: [],
   dailyGoals: [],
   weeklyGoals: [],
