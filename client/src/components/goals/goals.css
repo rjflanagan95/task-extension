@@ -28,3 +28,24 @@
     width: 25px;
     border-radius: 7px;
 }
+
+.goalItem {
+    margin: 5px 0 5px 0;
+    height: 35px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.goalTitle {
+    font-size: smaller;
+    float: left;
+    position: relative;
+    top: 20%;
+}
+
+.removeGoalBtn {
+    float: right;
+    height: 25px;
+    width: 25px;
+    border-radius: 7px;
+}
