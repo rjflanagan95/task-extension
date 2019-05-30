@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./reminders.css";
+import API from "../../utils/API";
 
 class Reminders extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: '',
-      reminders: ["reminder 1", "reminder 2", "reminder 3"]
+      userInput: ''
     }
 
     this.addReminder = this.addReminder.bind(this);
@@ -21,28 +21,30 @@ class Reminders extends Component {
 
   addReminder(event) {
     event.preventDefault();
-    console.log("hiya buddy");
 
-    let currentReminders = this.state.reminders;
+    let currentReminders = this.props.reminders;
     let newReminder = this.state.userInput;
 
     currentReminders.push(newReminder);
 
-    this.setState({
-      userInput: '',
-      reminders: currentReminders
+    API.updateReminders(currentReminders)
+    .then(res => {
+      this.setState({
+        userInput: ''
+      });
     });
-
   }
 
   removeReminder(index) {
-
-    let currentReminders = this.state.reminders;
+    let currentReminders = this.props.reminders;
     currentReminders.splice(index, 1);
 
-    this.setState({
-      reminders: currentReminders
-    })
+    API.updateReminders(currentReminders)
+    .then(res => {
+      this.setState({
+        userInput: ''
+      });
+    });
   }
 
   render() {
@@ -52,7 +54,7 @@ class Reminders extends Component {
         <div className="panelBody remindersBody">
           <h4 className="panelTitle remindersTitle">reminders</h4>
           <div className="remindersList">
-            {this.state.reminders.map((val, index) => 
+            {this.props.reminders.map((val, index) => 
               <div key={index} className="reminderItem">
                 <div>
                   <h4 className="reminderTitle">{val}</h4>

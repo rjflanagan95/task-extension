@@ -20,5 +20,13 @@ module.exports = {
         db.User.findOneAndUpdate( { _id: userID }, { $set: { tasks: req.body }})
         .then(dbres => res.json(dbres))
         .catch(err => res.status(422).json(err));
+    },
+
+    updateReminders: async function(req, res) {
+        const userID = req.session.passport.user.id;
+
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { reminders: req.body }})
+        .then(dbres => res.json(dbres))
+        .catch(err => res.status(422).json(err));
     }
 }

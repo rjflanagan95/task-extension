@@ -34,8 +34,6 @@ class Main extends Component {
           weeklyGoals: res.data.weeklyGoals,
           monthlyGoals: res.data.monthlyGoals
         });
-
-        console.log(this.state);
     }).catch(err => console.log(err));
   }
 

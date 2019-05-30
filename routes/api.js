@@ -6,15 +6,7 @@ module.exports = function(router, db, passport, nodeEnv) {
 
     router.route("/users/tasks").put(controller.updateTasks);
 
-    // router.get("/api/users", function(req, res) {
-    //     db.User.findById(req.session.passport.user.id)
-    //     .then(function(data) {
-    //         res.send(data);
-    //     })
-    //     .catch(function(err) {
-    //         res.json(err);
-    //     });
-    // });
+    router.route("/users/reminders").put(controller.updateReminders);
 
     return router;
 }
