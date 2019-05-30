@@ -28,5 +28,29 @@ module.exports = {
         db.User.findByIdAndUpdate({ _id: userID }, { $set: { reminders: req.body }})
         .then(dbres => res.json(dbres))
         .catch(err => res.status(422).json(err));
+    },
+
+    updateDailyGoals: async function(req, res) {
+        const userID = req.session.passport.user.id;
+
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { dailyGoals: req.body }})
+        .then(dbres => res.json(dbres))
+        .catch(err => res.status(422).json(err));
+    },
+
+    updateWeeklyGoals: async function(req, res) {
+        const userID = req.session.passport.user.id;
+
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { weeklyGoals: req.body }})
+        .then(dbres => res.json(dbres))
+        .catch(err => res.status(422).json(err));
+    },
+
+    updateMonthlyGoals: async function(req, res) {
+        const userID = req.session.passport.user.id;
+
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { monthlyGoals: req.body }})
+        .then(dbres => res.json(dbres))
+        .catch(err => res.status(422).json(err));
     }
 }
