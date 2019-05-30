@@ -18,6 +18,12 @@
     top: 20%;
 }
 
+.taskDueDate {
+    font-size: smaller;
+    float: right;
+    margin-right: 15px;
+}
+
 .removeTaskBtn {
     float: right;
     height: 25px;
@@ -26,13 +32,22 @@
 }
 
 .taskForm {
-    height: 30px;
+    height: 35px;
+    margin-bottom: 15px;
+    /* padding: 5px 0 10px 0; */
 }
 
 .taskInput {
     float: left;
     height: 25px;
     width: 80%;
+    border-radius: 5px;
+}
+
+.dateInput {
+    float: left;
+    height: 25px;
+    width: 50%;
     border-radius: 5px;
 }
 

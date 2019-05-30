@@ -71,7 +71,6 @@ app.use(
 function authRequired(req, res, next) {
   if (!req.session.passport) {
     req.session.oauth2return = req.originalUrl;
-
     if (
       req.originalUrl !== "/login" &&
       (req.originalUrl.split("/")[1].trim() !== "auth" &&

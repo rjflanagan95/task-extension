@@ -6,23 +6,28 @@ class Tasks extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: ''
+      inputTitle: '',
+      inputDate: ''
     }
 
     this.addTask = this.addTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
   }
 
-  changeUserInput(input) {
+  changeUserInput(target) {
     this.setState({
-      userInput: input
+      [target.name]: target.value
     });
   }
 
   addTask(event) {
     event.preventDefault();
     
-    let newTask = this.state.userInput;
+    let newTask = {
+      title: this.state.inputTitle,
+      dueDate: this.state.inputDate
+    }
+    
     let currentTasks = this.props.tasks;
 
     currentTasks.push(newTask);
@@ -30,7 +35,8 @@ class Tasks extends Component {
     API.updateTasks(currentTasks)
     .then(res => {
       this.setState({
-        userInput: ''
+        inputTitle: '',
+        inputDate: ''
       });
     });
   }
@@ -44,7 +50,8 @@ class Tasks extends Component {
     API.updateTasks(currentTasks)
     .then(res => {
       this.setState({
-        userInput: ''
+        inputTitle: '',
+        inputDate: ''
       });
     });
   }
@@ -63,15 +70,25 @@ class Tasks extends Component {
           <div className="taskList">
             {this.props.tasks.map((val, index) =>
               <div className="taskItem" key={index} onClick={this.expandTask}>
-                <h4 className="taskTitle">{val}</h4>
-                <button size="sm" className="removeTaskBtn" onClick={this.removeTask.bind(this, index)}>-</button>
+                <div className="taskHeader">
+                  <h4 className="taskTitle">{val.title}</h4>
+                  <button size="sm" className="removeTaskBtn" onClick={this.removeTask.bind(this, index)}>-</button>
+                </div>
+                <span className="taskDueDate">{val.dueDate}</span>
+                {/* {val.steps.map((step, index) =>
+                  <div className="taskStep" key={index}>
+                    <input type="checkbox"></input>
+                    <h5 className="stepText">{step}</h5>
+                  </div>
+                )} */}
               </div>
             )}
           </div>
         </div>
         <div className="taskForm">
           <form>
-            <input className="taskInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} type="text"/>
+            <input className="taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text" placeholder="enter a task and due date"/>
+            <input className="dateInput" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>
             <button size="sm" className="addTaskBtn" onClick={this.addTask}>+</button>
           </form>
         </div>

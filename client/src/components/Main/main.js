@@ -15,7 +15,17 @@ class Main extends Component {
     super(props)
 
     this.state = {
-      tasks: ["Default Task 1", "Default Task 2"],
+      tasks: [
+        {
+        title: "Default Task 1",
+        dueDate: "6/15/2019",
+        steps:[]
+        }, {
+        title: "Default Task 2",
+        dueDate: "6/25/2019",
+        steps: []
+        }
+      ],
       reminders: ["Default Reminder 1", "Default Reminder 2"],
       dailyGoals: ["Goal 1", "Goal 2", "Goal 3"],
       weeklyGoals: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5"],
