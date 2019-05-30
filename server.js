@@ -1,9 +1,21 @@
 const express = require("express");
 const passport = require("passport");
 const mongoose = require("mongoose");
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
 const path = require("path");
 require("dotenv").config();
 
+
+// Mongo DB
+const db = require("./models");
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/taskapp";
+
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true
+});
+
+db.mongoose = mongoose;
 
 // Express
 const app = express();
@@ -18,39 +30,50 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(express.static(path.join(__dirname, "client/build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
-
-// Mongo DB
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/taskapp";
-
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true
-});
-
-const db = require("./models");
-
-const routes = require("./routes")(router, db, passport, process.env.NODE_ENV);
-app.use(routes);
-
-
 // Passport
 passport.use(require("./auth/googleConfig.js")(db, process.env.NODE_ENV));
 
 passport.serializeUser((user, done) => {
-  console.log("SERIALIZE");
-  db.User.findOrCreate({
-    where: { id: user.id },
-    defaults: { name: user.name }
-  }).then(() => {
+  db.User.findOne({ _id: user.id }, function(req, res) {
+    if (!res) {
+      const newUser = {
+        _id: user.id,
+        name: user.name
+      }
+      db.User.create(newUser);
+    }
+  }
+  ).then((res) => {
     done(null, user);
-  });
+  }).catch(function(err) {
+    console.log(err)
+  })
 });
 passport.deserializeUser((user, done) => {
   done(null, user);
+});
+
+app.use(cookieParser());
+app.use(session({ secret: process.env.SESSION_SECRET }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: {
+      secure: false,
+      httpOnly: true
+    }
+  })
+);
+
+const routes = require("./routes")(router, db, passport, process.env.NODE_ENV);
+app.use(routes);
+
+app.use(express.static(path.join(__dirname, "client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 // Start the API server
