@@ -42,7 +42,7 @@ class dailyGoals extends Component {
                 {this.props.dailyGoals.map((val, index) =>
                 <li className="goalItem" key={index}>{val}</li>)}
             </div>
-            <div className="dailyGoalsForm">
+            <div className="goalsForm">
                 <form>
                 <input className="goalsInput" name="dailyGoalsInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.dailyGoalsInput} type="text"/>
                 <button size="sm" className="addGoalBtn" onClick={this.addDailyGoal}>+</button>
