@@ -5,7 +5,7 @@ export default {
         return axios.get("/api/users");
     },
 
-    // addTask: function(task) {
-    //     return axios.post("/api/users/tasks");
-    // }
+    updateTasks: function(task) {
+        return axios.put("/api/users/tasks", task);
+    }
 }

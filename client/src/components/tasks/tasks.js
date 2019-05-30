@@ -21,32 +21,32 @@ class Tasks extends Component {
 
   addTask(event) {
     event.preventDefault();
-    console.log("hiya buddy");
+    
+    let newTask = this.state.userInput;
+    let currentTasks = this.props.tasks;
 
-    // let currentTasks = this.state.tasks;
-    // let newTask = this.state.userInput;
+    currentTasks.push(newTask);
 
-    // currentTasks.push(newTask);
-    // // instead of changing the state, add the new task to the array and update the DB, then refresh props + state
-
-    // this.setState({
-    //   userInput: '',
-    //   tasks: currentTasks
-    // });
-
-
-    // API.addTask(newTask);
+    API.updateTasks(currentTasks)
+    .then(res => {
+      this.setState({
+        userInput: ''
+      });
+    });
   }
 
   removeTask(index, event) {
     event.preventDefault();
 
-    // let currentTasks = this.state.tasks;
-    // currentTasks.splice(index, 1);
+    let currentTasks = this.props.tasks;
+    currentTasks.splice(index, 1);
 
-    // this.setState({
-    //   tasks: currentTasks
-    // });
+    API.updateTasks(currentTasks)
+    .then(res => {
+      this.setState({
+        userInput: ''
+      });
+    });
   }
 
   expandTask(event) {
