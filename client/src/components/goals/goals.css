@@ -14,3 +14,17 @@
     height: 200px;
     overflow: scroll;
 }
+
+.goalsInput {
+    float: left;
+    height: 25px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.addGoalBtn {
+    float: right;
+    height: 25px;
+    width: 25px;
+    border-radius: 7px;
+}
