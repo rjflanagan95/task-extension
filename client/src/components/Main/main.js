@@ -8,7 +8,6 @@ import Efficiency from "../efficiency/efficiency";
 import Reminders from "../reminders/reminders";
 import Timer from "../timer/timer"
 import "./main.css";
-import axios from "axios";
 
 class Main extends Component {
   constructor(props) {
@@ -44,7 +43,7 @@ class Main extends Component {
         <Row>
     
           <Col className="column-1">
-            <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals}></Goals>
+            <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />
             <Efficiency className="panel"></Efficiency>
           </Col>
 
