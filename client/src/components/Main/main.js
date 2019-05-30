@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import  { Redirect } from 'react-router-dom'
 import { Container, Row, Col } from "reactstrap";
 import API from "../../utils/API";
 
@@ -26,13 +27,21 @@ class Main extends Component {
 
     API.getUserData()
       .then(res => {
-        this.setState({
+        // if no response from API, force the user to log in
+        if (!res) {
+          return <Redirect to="/login"/>
+        }
+        // otherwise set the state to data from the database
+        else {
+          this.setState({
           tasks: res.data.tasks,
           reminders: res.data.reminders,
           dailyGoals: res.data.dailyGoals,
           weeklyGoals: res.data.weeklyGoals,
           monthlyGoals: res.data.monthlyGoals
         });
+        }
+
     }).catch(err => console.log(err));
   }
 
