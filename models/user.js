@@ -8,7 +8,9 @@ const UserSchema = new Schema({
   name: { type: String, required: true },
   tasks: [],
   reminders: [],
-  goals: []
+  dailyGoals: [],
+  weeklyGoals: [],
+  monthlyGoals: []
 });
 
 // This creates our model from the above schema, using mongoose's model method
