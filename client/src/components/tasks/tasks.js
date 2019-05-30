@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./tasks.css";
+import API from "../../utils/API";
 
 class Tasks extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: '',
-      tasks: this.props.tasks
+      userInput: ''
     }
 
     this.addTask = this.addTask.bind(this);
@@ -23,32 +23,30 @@ class Tasks extends Component {
     event.preventDefault();
     console.log("hiya buddy");
 
-    let currentTasks = this.state.tasks;
-    let newTask = this.state.userInput;
+    // let currentTasks = this.state.tasks;
+    // let newTask = this.state.userInput;
 
-    currentTasks.push(newTask);
+    // currentTasks.push(newTask);
+    // // instead of changing the state, add the new task to the array and update the DB, then refresh props + state
 
-    this.setState({
-      userInput: '',
-      tasks: currentTasks
-    });
-
-    // chrome.storage.sync.set({"test": "test response"}, function() {
-    //   chrome.storage.sync.get("test", function(items) {
-    //     console.log(items);
-    //   });
+    // this.setState({
+    //   userInput: '',
+    //   tasks: currentTasks
     // });
+
+
+    // API.addTask(newTask);
   }
 
   removeTask(index, event) {
     event.preventDefault();
 
-    let currentTasks = this.state.tasks;
-    currentTasks.splice(index, 1);
+    // let currentTasks = this.state.tasks;
+    // currentTasks.splice(index, 1);
 
-    this.setState({
-      tasks: currentTasks
-    });
+    // this.setState({
+    //   tasks: currentTasks
+    // });
   }
 
   expandTask(event) {
@@ -63,7 +61,7 @@ class Tasks extends Component {
         <div className="panelBody tasksBody">
           <h4 className="panelTitle tasksTitle">tasks</h4>
           <div className="taskList">
-            {this.state.tasks.map((val, index) =>
+            {this.props.tasks.map((val, index) =>
               <div className="taskItem" key={index} onClick={this.expandTask}>
                 <h4 className="taskTitle">{val}</h4>
                 <button size="sm" className="removeTaskBtn" onClick={this.removeTask.bind(this, index)}>-</button>

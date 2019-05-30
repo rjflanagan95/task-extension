@@ -27,13 +27,12 @@ class Main extends Component {
 
     API.getUserData()
       .then(res => {
-        console.log(res);
         this.setState({
-          tasks: res.tasks,
-          reminders: res.reminders,
-          dailyGoals: res.dailyGoals,
-          weeklyGoals: res.weeklyGoals,
-          monthlyGoals: res.monthlyGoals
+          tasks: res.data.tasks,
+          reminders: res.data.reminders,
+          dailyGoals: res.data.dailyGoals,
+          weeklyGoals: res.data.weeklyGoals,
+          monthlyGoals: res.data.monthlyGoals
         });
 
         console.log(this.state);
