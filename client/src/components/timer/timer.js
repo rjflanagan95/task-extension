@@ -15,9 +15,6 @@ class Timer extends Component {
     return (
       <div className="panel timerPanel">
         <div className="panelBody timerBody">
-          {/* <h2 className="panelTitle timerTitle">test Title</h2>
-          <h4 className="panelSubtitle timerSubtitle">test subtitle</h4>
-          <p className="panelText timerSubtitle">test text</p> */}
           <img alt="pomodoro timer" className="timerImg" src={tomatoImg}/>
         </div>
       </div>

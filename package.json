@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/rjflanagan95/task-extension#readme",
   "dependencies": {
+    "@material-ui/icons": "^4.0.1",
     "axios": "^0.18.0",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.0.0",

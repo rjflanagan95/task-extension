@@ -1,10 +1,8 @@
 .timerPanel {
     height: auto;
-    margin-bottom: 20px;
 }
 
 .timerImg {
-    /* background-color: rgb(97, 113, 159); */
     background-color: #734B5E;
     width: 100%;
 }
