@@ -7,6 +7,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Button from "@material-ui/core/Button";
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 class Reminders extends Component {
   constructor(props) {
@@ -58,28 +61,24 @@ class Reminders extends Component {
     return (
       <div className="panel remindersPanel">
         <div className="panelBody remindersBody">
-          <h4 className="panelTitle remindersTitle">Reminders</h4>
+          <Paper className="panelTitle remindersTitle"><Typography variant="h6">Reminders</Typography></Paper>
           <div className="panelList remindersList">
             {this.props.reminders.map((val, index) => 
-            <Grid container className="panelBoxItem reminderItem" key={index}>
-              <Grid item xs={9}>
-                <div className="panelBoxTitle reminderTitle">{val}</div>
-              </Grid>
-              <Grid item xs={3}>
-                <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>
-                  <DeleteIcon fontSize="small" />
-                </IconButton>
-              </Grid>
-            </Grid>
+            <Paper className="panelBoxItem reminderItem" key={index}>
+              <Typography variant="subtitle2" className="reminderTitle">{val}</Typography>
+              <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>
+                <DeleteIcon fontSize="small" />
+              </IconButton>
+            </Paper>
             )}
           </div>
         </div>
-        <form className="panelForm reminderForm">
+        <Paper className="panelForm reminderForm">
           <TextField type="text" required id="standard-required" label="reminder" defaultValue="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
           <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addReminder" onClick={this.addReminder}>
             <AddIcon />
           </Fab>
-        </form>
+        </Paper>
       </div>
     );
   }

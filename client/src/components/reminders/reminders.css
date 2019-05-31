@@ -3,9 +3,19 @@
 }
 
 .remindersTitle {
-    background-color: #BCBDC0;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 5px;
+}
+
+.remindersList {
+    height: 180px;
+}
+
+.reminderTitle {
+    padding: 5px 10px 5px 10px;
 }
 
 .reminderForm {
-    background-color: #BCBDC0;
+    /* background-color: #BCBDC0; */
+    padding: 5px 10px 5px 10px;
 }

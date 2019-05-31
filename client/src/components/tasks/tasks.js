@@ -132,7 +132,7 @@ class Tasks extends Component {
     return (
       <div className="panel tasksPanel">
         <div className="panelBody tasksBody">
-          <Paper><h4 className="tasksTitle">Tasks</h4></Paper>
+          <Paper className="panelTitle tasksTitle"><Typography variant="h6">Tasks</Typography></Paper>
           <div className="panelList taskList">
             {this.props.tasks.map((val, taskIndex) =>
               <ExpansionPanel className="expandItem taskItem" key={taskIndex}>
