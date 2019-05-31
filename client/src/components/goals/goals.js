@@ -146,7 +146,7 @@ class Goals extends Component {
             {goals[typeIndex].map((val, itemIndex) =>
               <Grid container className="panelBoxItem goalItem" key={itemIndex}>
                 <Grid item xs={9}>
-                  <h4 className="panelBoxTitle goalTitle">{val}</h4>
+                  <div className="panelBoxTitle goalTitle">{val}</div>
                 </Grid>
                 <Grid item xs={3}>
                   <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeGoalBtn" onClick={this.removeGoal.bind(this, itemIndex, goalType)}>

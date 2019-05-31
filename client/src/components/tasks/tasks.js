@@ -76,11 +76,14 @@ class Tasks extends Component {
           <div className="panelList taskList">
             {this.props.tasks.map((val, index) =>
               <Grid container className="panelBoxItem taskItem" key={index} onClick={this.expandTask}>
-                <Grid item xs={9}>
-                  <h4 className="panelBoxTitle taskTitle">{val.title}</h4>
+                <Grid item xs={6}>
+                  <div className="panelBoxTitle taskTitle">{val.title}</div>
+                  {/* <div className="taskDueDate">{val.dueDate}</div> */}
+                </Grid>
+                <Grid item xs={4}>
                   <div className="taskDueDate">{val.dueDate}</div>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={2}>
                   <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, index)}>
                   <DeleteIcon fontSize="small" />
                 </IconButton>
