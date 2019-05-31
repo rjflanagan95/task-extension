@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Button from "@material-ui/core/Button";
 
 import moment from "moment";
 
@@ -22,6 +23,7 @@ class Tasks extends Component {
       inputTitle: '',
       inputDate: '',
       inputTime: '',
+      stepInput: ''
     }
 
     this.addTask = this.addTask.bind(this);
@@ -40,7 +42,7 @@ class Tasks extends Component {
     let newTask = {
       title: this.state.inputTitle,
       dueDate: this.state.inputDate,
-      dueTime: this.state.inputTime
+      dueTime: this.state.inputTime,
     }
     
     let currentTasks = this.props.tasks;
@@ -73,6 +75,48 @@ class Tasks extends Component {
     });
   }
 
+  addStep(index, event) {
+    event.preventDefault();
+    
+    let newStep = this.state.stepInput;
+    let currentTasks = this.props.tasks;
+    let steps = this.props.tasks[index].steps;
+
+    steps.push(newStep);
+
+    currentTasks.steps = steps;
+
+    API.updateTasks(currentTasks)
+    .then(res => {
+      this.setState({
+        inputTitle: '',
+        inputDate: '',
+        inputTime: "--:-- --",
+        stepInput: ""
+      });
+    });
+  }
+
+  removeStep(taskIndex, stepIndex, event) {
+    event.preventDefault();
+
+    let currentTasks = this.props.tasks;
+    let currentSteps = currentTasks[taskIndex].steps;
+    currentSteps.splice(stepIndex, 1);
+
+    currentTasks.steps = currentSteps;
+
+    API.updateTasks(currentTasks)
+    .then(res => {
+      this.setState({
+        inputTitle: '',
+        inputDate: '',
+        inputTime: "--:-- --",
+        stepInput: ""
+      });
+    });
+  }
+
   expandTask(event) {
     event.preventDefault();
 
@@ -85,8 +129,8 @@ class Tasks extends Component {
         <div className="panelBody tasksBody">
           <h4 className="panelTitle tasksTitle">Tasks</h4>
           <div className="panelList taskList">
-            {this.props.tasks.map((val, index) =>
-              <ExpansionPanel className="expandItem taskItem">
+            {this.props.tasks.map((val, taskIndex) =>
+              <ExpansionPanel className="expandItem taskItem" key={taskIndex}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                   <div className="expandHeader taskHeader">
                     <div className="expandTitle taskTitle">{val.title}</div>
@@ -116,17 +160,25 @@ class Tasks extends Component {
                     <Grid item xs={11}>
                       { (val.steps) ? (
                         <div className="taskStepsField">
-                          {val.steps.map((step, index) =>
-                          <div className="taskStep" key={index}>
+                          {val.steps.map((step, stepIndex) =>
+                          <div className="taskStep" key={stepIndex}>
+                            <IconButton size="small" aria-label="Delete" className="removeStepBtn" onClick={this.removeStep.bind(this, taskIndex, stepIndex)}>
+                              <DeleteIcon fontSize="small" />
+                            </IconButton>
                             <input type="checkbox" className="stepCheckbox"></input>
                             <div className="stepText">{step}</div>
                           </div>
                           )}
                         </div>
                       ) : ("") }
+                      <div className="stepInputForm">
+                        <TextField className="stepInput" onChange={(e) => this.changeUserInput(e.target)} name="stepInput" value={this.state.stepInput} type="text"/>
+                        <Button size="small" variant="outlined" className="addStepBtn" onClick={this.addStep.bind(this, taskIndex)}>add step
+                        </Button>
+                      </div>
                     </Grid>
                     <Grid item xs={1}>
-                      <IconButton size="small" aria-label="Delete" className="removeTaskBtn" onClick={this.removeTask.bind(this, index)}>
+                      <IconButton size="small" aria-label="Delete" className="removeTaskBtn" onClick={this.removeTask.bind(this, taskIndex)}>
                         <DeleteIcon fontSize="small" />
                       </IconButton>
                     </Grid>
