@@ -12,9 +12,30 @@
 
 .taskDueDate {
     font-size: smaller;
-    margin-left: 15px;
+}
+
+.taskDueTime {
+    font-size: smaller;
 }
 
 .taskForm {
     background-color: #BCBDC0;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+
+    display: block;
+}
+
+.taskFormTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskFormBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
 }
