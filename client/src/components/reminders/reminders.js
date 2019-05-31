@@ -75,16 +75,10 @@ class Reminders extends Component {
           </div>
         </div>
         <form className="panelForm reminderForm">
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <TextField type="text" required id="standard-required" label="Required" defaultValue="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
-            </Grid>
-            <Grid item>
-            <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addReminder" onClick={this.addReminder}>
-                  <AddIcon />
-                </Fab>
-            </Grid>
-          </Grid>
+          <TextField type="text" required id="standard-required" label="reminder" defaultValue="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
+          <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addReminder" onClick={this.addReminder}>
+            <AddIcon />
+          </Fab>
         </form>
       </div>
     );

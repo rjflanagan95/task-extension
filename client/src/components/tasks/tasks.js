@@ -95,20 +95,12 @@ class Tasks extends Component {
             )}
           </div>
           <form className="panelForm taskForm">
-            <Grid container spacing={3}>
-              <Grid item xs={12}> 
-                <TextField required id="standard-required" label="Required" defaultValue="task name" className="panelFormTextInput taskInput" margin="normal" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"
-                />
-              </Grid>
-              <Grid item>
-                <TextField type="date "className="dateInput" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} />
-              </Grid>
-              <Grid item>
-                <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addTaskBtn "onClick={this.addTask}>
-                  <AddIcon />
-                </Fab>
-              </Grid>
-            </Grid>
+            <TextField required id="standard-required" label="task" defaultValue="task name" className="panelFormTextInput taskInput" margin="normal" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"
+            />
+
+            <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addTaskBtn "onClick={this.addTask}>
+              <AddIcon />
+            </Fab>
           </form>
         </div>
       </div>
