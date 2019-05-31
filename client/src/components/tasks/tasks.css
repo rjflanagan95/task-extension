@@ -4,15 +4,14 @@
 
 .taskList {
     height: 240px;
-    overflow: scroll;
 }
 
 .tasksTitle {
-    background-color: #BCBDC0;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 5px;
 }
 
 .taskItem {
-    background-color: #BCBDC0;
 }
 
 .taskHeader {
@@ -22,7 +21,6 @@
 }
 
 .taskTitle {
-    /* background-color: #BCBDC0; */
 }
 
 .dueInfo {
@@ -31,11 +29,9 @@
 }
 
 .taskDueDate {
-    font-size: smaller;
 }
 
 .taskDueTime {
-    font-size: smaller;
 }
 
 .expandedTask {
@@ -47,11 +43,8 @@
 }
 
 .taskForm {
-    background-color: #BCBDC0;
     padding: 5px 10px 5px 10px;
     margin-top: 10px;
-    border-radius: 5px;
-
     display: block;
 }
 

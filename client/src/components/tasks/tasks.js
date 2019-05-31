@@ -8,6 +8,8 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from "@material-ui/core/Button";
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 import moment from "moment";
 
@@ -75,16 +77,19 @@ class Tasks extends Component {
     });
   }
 
-  addStep(index, event) {
+  addStep(taskIndex, event) {
     event.preventDefault();
     
     let newStep = this.state.stepInput;
+    console.log("new step: " + newStep);
     let currentTasks = this.props.tasks;
-    let steps = this.props.tasks[index].steps;
+    console.log("current tasks: " + currentTasks);
+    let currentSteps = currentTasks[taskIndex].steps;
+    console.log("current steps: " + currentSteps);
 
-    steps.push(newStep);
+    currentSteps.push(newStep);
 
-    currentTasks.steps = steps;
+    currentTasks.steps = currentSteps;
 
     API.updateTasks(currentTasks)
     .then(res => {
@@ -127,30 +132,30 @@ class Tasks extends Component {
     return (
       <div className="panel tasksPanel">
         <div className="panelBody tasksBody">
-          <h4 className="panelTitle tasksTitle">Tasks</h4>
-          <div className="taskList">
+          <Paper><h4 className="tasksTitle">Tasks</h4></Paper>
+          <div className="panelList taskList">
             {this.props.tasks.map((val, taskIndex) =>
               <ExpansionPanel className="expandItem taskItem" key={taskIndex}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                   <div className="taskHeader">
                     <div className="taskTitleDateTime">
-                      <div className="expandTitle taskTitle">{val.title}</div>
+                      <Typography variant="h6" className="expandTitle taskTitle">{val.title}</Typography>
                       {/* if we have a date and time */}
                       { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                         <div className="dueInfo">
-                          <div className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY") + " at " + val.dueTime}</div>
+                          <Typography variant="subtitle2" className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY") + " at " + val.dueTime}</Typography>
                         </div>
                       ) : (
                         // if we have a date but not time
                         ((val.dueDate) && (!val.dueTime || (val.dueTime === "--:-- --"))) ? (
                           <div className="dueInfo">
-                            <div className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY")}</div>
+                            <Typography variant="subtitle2" className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY")}</Typography>
                           </div>
                         ) : (
                           // if we have no date but have time
                           ((!val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                             <div className="dueInfo">
-                              <div className="taskDueTime">{"Due at " + val.dueTime}</div>
+                              <Typography variant="subtitle2" className="taskDueTime">{"Due at " + val.dueTime}</Typography>
                             </div>
                           ) : ("")))
                       }
@@ -172,7 +177,7 @@ class Tasks extends Component {
                               <DeleteIcon fontSize="small" />
                             </IconButton>
                             <input type="checkbox" className="stepCheckbox"></input>
-                            <div className="stepText">{step}</div>
+                            <Typography variant="subtitle2" className="stepText">{step}</Typography>
                           </div>
                           )}
                         </div>
@@ -186,7 +191,7 @@ class Tasks extends Component {
               </ExpansionPanel>
             )}
           </div>
-          <form className="taskForm">
+          <Paper className="taskForm">
             <div className="taskFormTop">
               <TextField required id="standard-required" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
               <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addTaskBtn "onClick={this.addTask}>
@@ -199,7 +204,7 @@ class Tasks extends Component {
               step: 900, // 15 min
               }} />
             </div>
-          </form>
+          </Paper>
         </div>
       </div>
     );

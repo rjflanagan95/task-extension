@@ -40,7 +40,6 @@
 
 /* scrollable lists within panels */
 .panelList {
-    height: 180px;
     overflow: scroll;
 }
 
