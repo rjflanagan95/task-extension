@@ -5,12 +5,6 @@ class Efficiency extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    //   title: this.props.title,
-    //   subtitle: this.props.subtitle,
-    //   text: this.props.text,
-    //   githubLink: this.props.githubLink,
-    //   hostLink: this.props.hostLink,
-    //   image: this.props.image
     }
   }
 
@@ -20,8 +14,6 @@ class Efficiency extends Component {
       <div className="panel efficiencyPanel">
         <div className="panelBody efficiencyBody">
           <h4 className="panelTitle efficiencyTitle">Efficiency</h4>
-          <h6 className="panelSubtitle efficiencySubtitle">subtitle</h6>
-          <p className="panelText efficiencyText">text</p>
         </div>
       </div>
     );

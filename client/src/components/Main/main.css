@@ -1,67 +1,8 @@
 .contentArea {
-    /* width: 100%; */
-    /* height: 100vh; */
     height: auto;
-    /* min-height: 790px; */
-    /* background-color: rgb(50, 71, 132); */
-    /* background-color: #d36135; */
     background-color: #357266;
-    /* text-align: center; */
     padding: 20px;
     overflow: hidden;
-}
-
-/* .row {
-    height: 880px;
-    background-color: #BA5C12;
-} */
-
-.column-1 {
-    width: 70%;
-    /* height: auto;
-    float: left; */
-    /* background-color: #419d78; */
-}
-
-.column-2 {
-    width: 30%;
-    /* float: right; */
-    /* background-color: #067bc2; */
-}
-
-/* general panel styling that applies to all components */
-.panel {
-    margin: 15px 0px 15px 0px;
-    border-radius: 10px;
-    /* background-color: #e59500; */
-    background-color: #734B5E;
-    padding: 15px 15px 15px 15px;
-}
-
-.panelBody {
-    /* background-color: #CED2DD; */
-    /* background-color: rgb(210, 216, 233); */
-    /* background-color: #e59500; */
-    background-color: #734B5E;
-    /* background-color: #DFFDFF; */
-}
-
-.panelTitle {
-    font-weight: bold;
-    font-size: larger;
-    padding: 5px 5px 5px 5px;
-    border-radius: 5px;
-    background-color: #BCBDC0;
-}
-
-.panelSubtitle {
-    font-style: italic;
-    font-weight: lighter;
-    font-size: smaller;
-}
-
-.panelText {
-    font-size: smaller;
 }
 
 .headerRow {
@@ -77,4 +18,59 @@
     margin: 0 0 15px 0;
     border-radius: 8px;
 
+}
+
+/* PANEL STYLING */
+/* general panel styling that applies to all components */
+/*  */
+.panel {
+    margin: 15px 0px 15px 0px;
+    border-radius: 10px;
+    background-color: #734B5E;
+    padding: 15px 15px 15px 15px;
+    height: fit-content;
+}
+
+/* boxed in title that appears at the top of a panel */
+.panelTitle {
+    font-weight: bold;
+    font-size: larger;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+/* scrollable lists within panels */
+.panelList {
+    height: 200px;
+    overflow: scroll;
+    margin-bottom: 5px;
+}
+
+/* boxed-in items from DB that get mapped over - tasks, reminders, goals */
+.panelBoxItem {
+    margin: 5px 0 5px 0;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+/* delete button for any mapped over item */
+.panelBoxItemDeleteBtn {
+    float: right;
+    height: 25px;
+    width: 25px;
+    border-radius: 7px;
+}
+
+/* main text for any mapped over item */
+.panelBoxTitle {
+    font-size: smaller;
+    text-align: left;
+    position: relative;
+    top: 20%;
+}
+
+.panelForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

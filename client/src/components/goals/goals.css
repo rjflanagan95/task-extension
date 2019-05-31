@@ -1,70 +1,20 @@
-.goalsPanel {
+.goalsBox {
     display: flex;
     justify-content: space-between;
-    /* background-color: #BCBDC0; */
-    margin: 15px 0px 15px 0px;
-    /* border-radius: 10px; */
-    /* padding: 15px 15px 15px 15px; */
 }
 
-.goalsCard {
+.goalsPanel {
     width: 32%;
-    background-color: #734B5E;
-    /* padding: 5px 10px 5px 10px; */
-    padding: 15px 15px 15px 15px;
-    border-radius: 10px;
 }
 
 .goalsTitle {
-    font-weight: bold;
-    font-size: larger;
-    padding: 5px 5px 5px 5px;
-    border-radius: 5px;
     background-color: #BCCCE0;
 }
 
-.goalsList {
-    height: 200px;
-    overflow: scroll;
-}
-
-.goalsForm {
-    margin-top: 10px;
-}
-
-.goalsInput {
-    float: left;
-    height: 25px;
-    width: 80%;
-    border-radius: 5px;
-}
-
-.addGoalBtn {
-    float: right;
-    height: 25px;
-    width: 25px;
-    border-radius: 7px;
-}
-
 .goalItem {
-    margin: 5px 0 5px 0;
-    height: 35px;
-    padding: 5px 5px 5px 5px;
-    border-radius: 5px;
     background-color: #BCCCE0;
 }
 
 .goalTitle {
-    font-size: smaller;
-    float: left;
-    position: relative;
-    top: 20%;
     background-color: #BCCCE0;
-}
-
-.removeGoalBtn {
-    float: right;
-    height: 25px;
-    width: 25px;
-    border-radius: 7px;
 }

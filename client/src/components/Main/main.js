@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import  { Redirect } from 'react-router-dom'
-import { Container, Row, Col } from "reactstrap";
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 import API from "../../utils/API";
 
 import Goals from "../goals/goals.js";
@@ -19,11 +21,11 @@ class Main extends Component {
         {
         title: "Default Task 1",
         dueDate: "6/15/2019",
-        steps:[]
+        steps:["step 1", "step 2", "step 3"]
         }, {
         title: "Default Task 2",
         dueDate: "6/25/2019",
-        steps: []
+        steps: ["step 1", "step 2", "step 3"]
         }
       ],
       reminders: ["Default Reminder 1", "Default Reminder 2"],
@@ -59,25 +61,20 @@ class Main extends Component {
 
     return (
       <Container className="contentArea">
-        <Row className="headerRow">
-          <Col>
-            <a href="/auth/logout"><div className="logoutBtn">Log Out</div></a>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col className="column-1">
+        <Box className="headerRow">
+          <a href="/auth/logout"><div className="logoutBtn">Log Out</div></a>
+        </Box>
+        <Grid container spacing={3}>
+          <Grid item xs={8}>
             <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />
             <Efficiency className="panel"></Efficiency>
-          </Col>
-
-          <Col className="column-2">
+          </Grid>
+          <Grid item xs={4}>
             <Tasks className="panel" tasks={this.state.tasks}></Tasks>
             <Reminders className="panel" reminders={this.state.reminders}></Reminders>
             <Timer className="panel"></Timer>
-          </Col>
-
-        </Row>
+          </Grid>
+        </Grid>
       </Container>
     );
   }

@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import "./goals.css";
 import API from "../../utils/API";
+import Grid from '@material-ui/core/Grid';
+import TextField from "@material-ui/core/TextField";
+import IconButton from '@material-ui/core/IconButton';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class Goals extends Component {
   constructor(props) {
@@ -132,24 +138,36 @@ class Goals extends Component {
     let goalTypes = this.state.goalTypes;
 
     return (
-      <div className="goalsPanel">
+      <div className="goalsBox">
         {goalTypes.map((goalType, typeIndex) =>
-        <div className="goalsCard" key={typeIndex}>
-          <h4 className="goalsTitle">{goalType}</h4>
-          <div className="goalsList">
+        <div className="panel goalsPanel" key={typeIndex}>
+          <h4 className="panelTitle goalsTitle">{goalType}</h4>
+          <div className="panelList goalsList">
             {goals[typeIndex].map((val, itemIndex) =>
-              <div className="goalItem" key={itemIndex}>
-                <h4 className="goalTitle">{val}</h4>
-                <button size="sm" className="removeGoalBtn" onClick={this.removeGoal.bind(this, itemIndex, goalType)}>-</button>
-              </div>
+              <Grid container className="panelBoxItem goalItem" key={itemIndex}>
+                <Grid item xs={9}>
+                  <h4 className="panelBoxTitle goalTitle">{val}</h4>
+                </Grid>
+                <Grid item xs={3}>
+                  <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeGoalBtn" onClick={this.removeGoal.bind(this, itemIndex, goalType)}>
+                    <DeleteIcon fontSize="small" />
+                  </IconButton>
+                </Grid>
+              </Grid>
             )}
           </div>
-          <div className="goalsForm">
-          <form>
-            <input className="goalsInput" onChange={(e) => this.changeUserInput(e.target.value, goalType)} value={ (goalType === "Daily Goals") ? (this.state.dailyGoalsInput) : ((goalType === "Weekly Goals") ? (this.state.weeklyGoalsInput) : (goalType === "Monthly Goals") ? (this.state.monthlyGoalsInput) : ("N/A")) } type="text"/>
-            <button size="sm" className="addGoalBtn" onClick={this.addGoal.bind(this, goalType)}>+</button>
+          <form className="panelForm goalsForm">
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <TextField type="text" required id="standard-required" label="Required" defaultValue="goal" className="panelFormTextInput goalInput" margin="normal" onChange={(e) => this.changeUserInput(e.target.value, goalType)} value={ (goalType === "Daily Goals") ? (this.state.dailyGoalsInput) : ((goalType === "Weekly Goals") ? (this.state.weeklyGoalsInput) : (goalType === "Monthly Goals") ? (this.state.monthlyGoalsInput) : ("N/A")) } />
+              </Grid>
+              <Grid item>
+                <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addGoalBtn" onClick={this.addGoal.bind(this, goalType)}>
+                  <AddIcon />
+                </Fab>
+              </Grid>
+            </Grid>
           </form>
-        </div>
         </div>
         )}
       </div>

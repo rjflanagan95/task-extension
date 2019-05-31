@@ -1,46 +1,7 @@
-.remindersList {
-    height: 200px;
-    overflow: scroll;
-}
-
 .reminderItem {
-    margin: 5px 0 5px 0;
-    height: 35px;
     background-color: #BCBDC0;
-    padding: 5px 5px 5px 5px;
-    border-radius: 5px;
 }
 
-.reminderTitle {
-    font-size: smaller;
-    float: left;
-
-    /* these properties fix the text position on tasks, but doesn't work here for some reason */
-    position: relative;
-    bottom: 20%;
-}
-
-.removeReminderBtn {
-    float: right;
-    height: 25px;
-    width: 25px;
-    border-radius: 7px;
-}
-
-.reminderForm {
-    height: 30px;
-}
-
-.reminderInput {
-    float: left;
-    height: 25px;
-    width: 80%;
-    border-radius: 5px;
-}
-
-.addReminder {
-    float: right;
-    height: 25px;
-    width: 25px;
-    border-radius: 7px;
+.remindersTitle {
+    background-color: #BCBDC0;
 }

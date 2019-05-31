@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import "./reminders.css";
 import API from "../../utils/API";
+import Grid from '@material-ui/core/Grid';
+import TextField from "@material-ui/core/TextField";
+import IconButton from '@material-ui/core/IconButton';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class Reminders extends Component {
   constructor(props) {
@@ -53,23 +59,33 @@ class Reminders extends Component {
       <div className="panel remindersPanel">
         <div className="panelBody remindersBody">
           <h4 className="panelTitle remindersTitle">Reminders</h4>
-          <div className="remindersList">
+          <div className="panelList remindersList">
             {this.props.reminders.map((val, index) => 
-              <div key={index} className="reminderItem">
-                <div>
-                  <h4 className="reminderTitle">{val}</h4>
-                  <button size="sm" className="removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
-                </div>
-              </div>
+            <Grid container className="panelBoxItem reminderItem" key={index}>
+              <Grid item xs={9}>
+                <h4 className="panelBoxTitle reminderTitle">{val}</h4>
+              </Grid>
+              <Grid item xs={3}>
+                <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>
+                  <DeleteIcon fontSize="small" />
+                </IconButton>
+              </Grid>
+            </Grid>
             )}
           </div>
         </div>
-        <div className="reminderForm">
-          <form>
-            <input className="reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} type="text"/>
-            <button size="sm" className="addReminder" onClick={this.addReminder}>+</button>
-          </form>
-        </div>
+        <form className="panelForm reminderForm">
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <TextField type="text" required id="standard-required" label="Required" defaultValue="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
+            </Grid>
+            <Grid item>
+            <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addReminder" onClick={this.addReminder}>
+                  <AddIcon />
+                </Fab>
+            </Grid>
+          </Grid>
+        </form>
       </div>
     );
   }

@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import "./tasks.css";
 import API from "../../utils/API";
+import Grid from '@material-ui/core/Grid';
+import TextField from "@material-ui/core/TextField";
+import IconButton from '@material-ui/core/IconButton';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class Tasks extends Component {
   constructor(props) {
@@ -67,29 +73,42 @@ class Tasks extends Component {
       <div className="panel tasksPanel">
         <div className="panelBody tasksBody">
           <h4 className="panelTitle tasksTitle">Tasks</h4>
-          <div className="taskList">
+          <div className="panelList taskList">
             {this.props.tasks.map((val, index) =>
-              <div className="taskItem" key={index} onClick={this.expandTask}>
-                <div className="taskHeader">
-                  <h4 className="taskTitle">{val.title}</h4>
-                  <button size="sm" className="removeTaskBtn" onClick={this.removeTask.bind(this, index)}>-</button>
+              <Grid container className="panelBoxItem taskItem" key={index} onClick={this.expandTask}>
+                <Grid item xs={9}>
+                  <h4 className="panelBoxTitle taskTitle">{val.title}</h4>
+                  <div className="taskDueDate">{val.dueDate}</div>
+                </Grid>
+                <Grid item xs={3}>
+                  <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, index)}>
+                  <DeleteIcon fontSize="small" />
+                </IconButton>
+                </Grid>
+              </Grid>
+              /* {val.steps.map((step, index) =>
+                <div className="taskStep" key={index}>
+                  <input type="checkbox"></input>
+                  <h5 className="stepText">{step}</h5>
                 </div>
-                <span className="taskDueDate">{val.dueDate}</span>
-                {/* {val.steps.map((step, index) =>
-                  <div className="taskStep" key={index}>
-                    <input type="checkbox"></input>
-                    <h5 className="stepText">{step}</h5>
-                  </div>
-                )} */}
-              </div>
+              )} */
             )}
           </div>
-        </div>
-        <div className="taskForm">
-          <form>
-            <input className="taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text" placeholder="enter a task and due date"/>
-            <input className="dateInput" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>
-            <button size="sm" className="addTaskBtn" onClick={this.addTask}>+</button>
+          <form className="panelForm taskForm">
+            <Grid container spacing={3}>
+              <Grid item xs={12}> 
+                <TextField required id="standard-required" label="Required" defaultValue="task name" className="panelFormTextInput taskInput" margin="normal" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"
+                />
+              </Grid>
+              <Grid item>
+                <TextField type="date "className="dateInput" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} />
+              </Grid>
+              <Grid item>
+                <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addTaskBtn "onClick={this.addTask}>
+                  <AddIcon />
+                </Fab>
+              </Grid>
+            </Grid>
           </form>
         </div>
       </div>
