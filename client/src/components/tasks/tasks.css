@@ -1,3 +1,12 @@
+.taskPanel {
+    height: 300px;
+}
+
+.taskList {
+    height: 240px;
+    overflow: scroll;
+}
+
 .tasksTitle {
     background-color: #BCBDC0;
 }
@@ -7,6 +16,9 @@
 }
 
 .taskHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .taskTitle {
@@ -30,7 +42,8 @@
 }
 
 .removeTaskBtn {
-    float: right;
+    position: absolute;
+    right: 55px;
 }
 
 .taskForm {
@@ -62,6 +75,7 @@
 }
 
 .stepCheckbox {
+    margin-left: 5px;
     margin-right: 10px;
 }
 
@@ -73,5 +87,4 @@
 }
 
 .addStepBtn {
-    float: right;
 }

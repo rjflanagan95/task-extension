@@ -128,36 +128,42 @@ class Tasks extends Component {
       <div className="panel tasksPanel">
         <div className="panelBody tasksBody">
           <h4 className="panelTitle tasksTitle">Tasks</h4>
-          <div className="panelList taskList">
+          <div className="taskList">
             {this.props.tasks.map((val, taskIndex) =>
               <ExpansionPanel className="expandItem taskItem" key={taskIndex}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                  <div className="expandHeader taskHeader">
-                    <div className="expandTitle taskTitle">{val.title}</div>
-                    {/* if we have a date and time */}
-                    { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
-                      <div className="dueInfo">
-                        <div className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY") + " at " + val.dueTime}</div>
-                      </div>
-                    ) : (
-                      // if we have a date but not time
-                      ((val.dueDate) && (!val.dueTime || (val.dueTime === "--:-- --"))) ? (
+                  <div className="taskHeader">
+                    <div className="taskTitleDateTime">
+                      <div className="expandTitle taskTitle">{val.title}</div>
+                      {/* if we have a date and time */}
+                      { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                         <div className="dueInfo">
-                          <div className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY")}</div>
+                          <div className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY") + " at " + val.dueTime}</div>
                         </div>
                       ) : (
-                        // if we have no date but have time
-                        ((!val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
+                        // if we have a date but not time
+                        ((val.dueDate) && (!val.dueTime || (val.dueTime === "--:-- --"))) ? (
                           <div className="dueInfo">
-                            <div className="taskDueTime">{"Due at " + val.dueTime}</div>
+                            <div className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY")}</div>
                           </div>
-                        ) : ("")))
-                    }
+                        ) : (
+                          // if we have no date but have time
+                          ((!val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
+                            <div className="dueInfo">
+                              <div className="taskDueTime">{"Due at " + val.dueTime}</div>
+                            </div>
+                          ) : ("")))
+                      }
+                    </div>
+                    <div className="removeTaskBtn">
+                      <IconButton size="small" aria-label="Delete" onClick={this.removeTask.bind(this, taskIndex)}>
+                        <DeleteIcon fontSize="small" />
+                      </IconButton>
+                    </div>
                   </div>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                  <Grid container className="expandedTask">
-                    <Grid item xs={11}>
+                  <div className="expandedTask">
                       { (val.steps) ? (
                         <div className="taskStepsField">
                           {val.steps.map((step, stepIndex) =>
@@ -173,16 +179,9 @@ class Tasks extends Component {
                       ) : ("") }
                       <div className="stepInputForm">
                         <TextField className="stepInput" onChange={(e) => this.changeUserInput(e.target)} name="stepInput" value={this.state.stepInput} type="text"/>
-                        <Button size="small" variant="outlined" className="addStepBtn" onClick={this.addStep.bind(this, taskIndex)}>add step
-                        </Button>
+                        <Button size="small" variant="outlined" className="addStepBtn" onClick={this.addStep.bind(this, taskIndex)}>add step</Button>
                       </div>
-                    </Grid>
-                    <Grid item xs={1}>
-                      <IconButton size="small" aria-label="Delete" className="removeTaskBtn" onClick={this.removeTask.bind(this, taskIndex)}>
-                        <DeleteIcon fontSize="small" />
-                      </IconButton>
-                    </Grid>
-                  </Grid>
+                  </div>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
             )}
