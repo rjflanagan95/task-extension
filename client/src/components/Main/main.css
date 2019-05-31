@@ -41,9 +41,8 @@
 
 /* scrollable lists within panels */
 .panelList {
-    height: 200px;
+    height: 180px;
     overflow: scroll;
-    margin-bottom: 5px;
 }
 
 /* boxed-in items from DB that get mapped over - tasks, reminders, goals */
@@ -68,10 +67,15 @@
     text-align: left;
 }
 
+/* contains all form elements */
 .panelForm {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 5px 5px 5px 5px;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .panelFormSubmit {
