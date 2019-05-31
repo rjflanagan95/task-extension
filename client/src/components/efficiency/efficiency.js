@@ -19,7 +19,7 @@ class Efficiency extends Component {
     return (
       <div className="panel efficiencyPanel">
         <div className="panelBody efficiencyBody">
-          <h4 className="panelTitle efficiencyTitle">efficiency</h4>
+          <h4 className="panelTitle efficiencyTitle">Efficiency</h4>
           <h6 className="panelSubtitle efficiencySubtitle">subtitle</h6>
           <p className="panelText efficiencyText">text</p>
         </div>

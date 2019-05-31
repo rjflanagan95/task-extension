@@ -2,9 +2,10 @@
     /* width: 100%; */
     /* height: 100vh; */
     height: auto;
-    min-height: 790px;
+    /* min-height: 790px; */
     /* background-color: rgb(50, 71, 132); */
-    background-color: #d36135;
+    /* background-color: #d36135; */
+    background-color: #357266;
     /* text-align: center; */
     padding: 20px;
     overflow: hidden;
@@ -19,27 +20,29 @@
     width: 70%;
     /* height: auto;
     float: left; */
-    background-color: #419d78;
+    /* background-color: #419d78; */
 }
 
 .column-2 {
     width: 30%;
     /* float: right; */
-    background-color: #067bc2;
+    /* background-color: #067bc2; */
 }
 
 /* general panel styling that applies to all components */
 .panel {
     margin: 15px 0px 15px 0px;
     border-radius: 10px;
-    background-color: #e59500;
+    /* background-color: #e59500; */
+    background-color: #734B5E;
     padding: 15px 15px 15px 15px;
 }
 
 .panelBody {
     /* background-color: #CED2DD; */
     /* background-color: rgb(210, 216, 233); */
-    background-color: #e59500;
+    /* background-color: #e59500; */
+    background-color: #734B5E;
     /* background-color: #DFFDFF; */
 }
 
@@ -64,7 +67,7 @@
 
 .logoutBtn {
     font-weight: bold;
-    background-color: #CED2DD;
+    background-color: #BCBDC0;
     float: right;
     color: black;
     padding: 10px 20px 10px 20px;
