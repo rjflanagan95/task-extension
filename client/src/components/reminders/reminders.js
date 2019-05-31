@@ -63,7 +63,7 @@ class Reminders extends Component {
             {this.props.reminders.map((val, index) => 
             <Grid container className="panelBoxItem reminderItem" key={index}>
               <Grid item xs={9}>
-                <h4 className="panelBoxTitle reminderTitle">{val}</h4>
+                <div className="panelBoxTitle reminderTitle">{val}</div>
               </Grid>
               <Grid item xs={3}>
                 <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>

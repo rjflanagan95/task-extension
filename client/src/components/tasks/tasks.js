@@ -7,6 +7,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 class Tasks extends Component {
   constructor(props) {
@@ -75,29 +79,37 @@ class Tasks extends Component {
           <h4 className="panelTitle tasksTitle">Tasks</h4>
           <div className="panelList taskList">
             {this.props.tasks.map((val, index) =>
+              // <ExpansionPanel>
+              //   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+              //     <div className="panelBoxTitle taskTitle">{val.title}</div>
+              //     <div className="taskDueDate">{val.dueDate}</div>
+              //   </ExpansionPanelSummary>
+              //   <ExpansionPanelDetails>
+              //     {val.steps.map((step, index) =>
+              //     <div className="taskStep" key={index}>
+              //       <input type="checkbox"></input>
+              //       <h5 className="stepText">{step}</h5>
+              //     </div>
+              //   )}
+              //   </ExpansionPanelDetails>
+              // </ExpansionPanel>
               <Grid container className="panelBoxItem taskItem" key={index} onClick={this.expandTask}>
-                <Grid item xs={9}>
-                  <h4 className="panelBoxTitle taskTitle">{val.title}</h4>
+                <Grid item xs={6}>
+                  <div className="panelBoxTitle taskTitle">{val.title}</div>
+                </Grid>
+                <Grid item xs={4}>
                   <div className="taskDueDate">{val.dueDate}</div>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={2}>
                   <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, index)}>
                   <DeleteIcon fontSize="small" />
                 </IconButton>
                 </Grid>
               </Grid>
-              /* {val.steps.map((step, index) =>
-                <div className="taskStep" key={index}>
-                  <input type="checkbox"></input>
-                  <h5 className="stepText">{step}</h5>
-                </div>
-              )} */
             )}
           </div>
           <form className="panelForm taskForm">
-            <TextField required id="standard-required" label="task" defaultValue="task name" className="panelFormTextInput taskInput" margin="normal" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"
-            />
-
+            <TextField required id="standard-required" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
             <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addTaskBtn "onClick={this.addTask}>
               <AddIcon />
             </Fab>
