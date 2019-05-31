@@ -81,3 +81,19 @@
 .panelFormSubmit {
     margin: 5px 5px 5px 5px;
 }
+
+
+/* EXPANDABLE PANEL STYLING */
+
+.expandItem {
+}
+
+.expandHeader {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.expandTitle {
+
+}

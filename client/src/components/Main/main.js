@@ -3,6 +3,8 @@ import  { Redirect } from 'react-router-dom'
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Button from "@material-ui/core/Button";
+
 import API from "../../utils/API";
 
 import Goals from "../goals/goals.js";
@@ -64,7 +66,11 @@ class Main extends Component {
     return (
       <Container className="contentArea">
         <Box className="headerRow">
-          <a href="/auth/logout"><div className="logoutBtn">Log Out</div></a>
+          <a href="auth/logout">
+            <Button variant="contained" className="logoutBtn">
+              Log Out
+            </Button>
+          </a>
         </Box>
         <Grid container spacing={3}>
           <Grid item xs={8}>
