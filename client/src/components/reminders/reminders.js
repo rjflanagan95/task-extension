@@ -52,7 +52,7 @@ class Reminders extends Component {
     return (
       <div className="panel remindersPanel">
         <div className="panelBody remindersBody">
-          <h4 className="panelTitle remindersTitle">reminders</h4>
+          <h4 className="panelTitle remindersTitle">Reminders</h4>
           <div className="remindersList">
             {this.props.reminders.map((val, index) => 
               <div key={index} className="reminderItem">

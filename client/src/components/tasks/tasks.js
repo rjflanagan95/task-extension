@@ -66,7 +66,7 @@ class Tasks extends Component {
     return (
       <div className="panel tasksPanel">
         <div className="panelBody tasksBody">
-          <h4 className="panelTitle tasksTitle">tasks</h4>
+          <h4 className="panelTitle tasksTitle">Tasks</h4>
           <div className="taskList">
             {this.props.tasks.map((val, index) =>
               <div className="taskItem" key={index} onClick={this.expandTask}>
