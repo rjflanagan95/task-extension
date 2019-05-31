@@ -21,10 +21,12 @@ class Main extends Component {
         {
         title: "Default Task 1",
         dueDate: "6/15/2019",
-        steps:["step 1", "step 2", "step 3"]
+        dueTime: "12:30 PM",
+        steps: ["step 1", "step 2", "step 3"]
         }, {
         title: "Default Task 2",
         dueDate: "6/25/2019",
+        dueTime: "07:30 PM",
         steps: ["step 1", "step 2", "step 3"]
         }
       ],

@@ -7,6 +7,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
+
+import moment from "moment";
+
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -17,7 +20,8 @@ class Tasks extends Component {
     super(props);
     this.state = {
       inputTitle: '',
-      inputDate: ''
+      inputDate: '',
+      inputTime: '',
     }
 
     this.addTask = this.addTask.bind(this);
@@ -35,7 +39,8 @@ class Tasks extends Component {
     
     let newTask = {
       title: this.state.inputTitle,
-      dueDate: this.state.inputDate
+      dueDate: this.state.inputDate,
+      dueTime: this.state.inputTime
     }
     
     let currentTasks = this.props.tasks;
@@ -46,7 +51,8 @@ class Tasks extends Component {
     .then(res => {
       this.setState({
         inputTitle: '',
-        inputDate: ''
+        inputDate: '',
+        inputTime: "--:-- --"
       });
     });
   }
@@ -61,7 +67,8 @@ class Tasks extends Component {
     .then(res => {
       this.setState({
         inputTitle: '',
-        inputDate: ''
+        inputDate: '',
+        inputTime: "--:-- --"
       });
     });
   }
@@ -94,13 +101,16 @@ class Tasks extends Component {
               //   </ExpansionPanelDetails>
               // </ExpansionPanel>
               <Grid container className="panelBoxItem taskItem" key={index} onClick={this.expandTask}>
-                <Grid item xs={6}>
+                <Grid item xs={5}>
                   <div className="panelBoxTitle taskTitle">{val.title}</div>
                 </Grid>
-                <Grid item xs={4}>
-                  <div className="taskDueDate">{val.dueDate}</div>
+                <Grid item xs={3}>
+                  <div className="taskDueDate">{(val.dueDate) ? (moment(val.dueDate).format("MM-DD-YYYY")) : ("") }</div>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={3}>
+                  <div className="taskDueTime">{(val.dueTime !== "--:-- --") ? (val.dueTime) : ("") }</div>
+                </Grid>
+                <Grid item xs={1}>
                   <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, index)}>
                   <DeleteIcon fontSize="small" />
                 </IconButton>
@@ -108,11 +118,19 @@ class Tasks extends Component {
               </Grid>
             )}
           </div>
-          <form className="panelForm taskForm">
-            <TextField required id="standard-required" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
-            <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addTaskBtn "onClick={this.addTask}>
-              <AddIcon />
-            </Fab>
+          <form className="taskForm">
+            <div className="taskFormTop">
+              <TextField required id="standard-required" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
+              <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addTaskBtn "onClick={this.addTask}>
+                <AddIcon />
+              </Fab>
+            </div>
+            <div className="taskFormBottom">
+              <TextField id="standard" defaultValue="" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>
+              <TextField id="time" type="time" defaultValue="--:-- --" className="inputTime" onChange={(e) => this.changeUserInput(e.target)} name="inputTime" value={this.state.inputTime} InputLabelProps={{shrink: true,}} inputProps={{
+              step: 900, // 15 min
+              }} />
+            </div>
           </form>
         </div>
       </div>
