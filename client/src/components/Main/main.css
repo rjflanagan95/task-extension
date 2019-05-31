@@ -49,6 +49,9 @@
 .panelTitle {
     font-weight: bold;
     font-size: larger;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    background-color: #BCBDC0;
 }
 
 .panelSubtitle {

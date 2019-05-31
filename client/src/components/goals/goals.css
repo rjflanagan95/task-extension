@@ -15,6 +15,14 @@
     border-radius: 10px;
 }
 
+.goalsTitle {
+    font-weight: bold;
+    font-size: larger;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    background-color: #BCCCE0;
+}
+
 .goalsList {
     height: 200px;
     overflow: scroll;
@@ -43,7 +51,7 @@
     height: 35px;
     padding: 5px 5px 5px 5px;
     border-radius: 5px;
-    background-color: #BCBDC0;
+    background-color: #BCCCE0;
 }
 
 .goalTitle {
@@ -51,6 +59,7 @@
     float: left;
     position: relative;
     top: 20%;
+    background-color: #BCCCE0;
 }
 
 .removeGoalBtn {
