@@ -133,22 +133,6 @@ class Tasks extends Component {
                   </Grid>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
-              // <Grid container className="panelBoxItem taskItem" key={index} onClick={this.expandTask}>
-              //   <Grid item xs={5}>
-              //     <div className="panelBoxTitle taskTitle">{val.title}</div>
-              //   </Grid>
-              //   <Grid item xs={3}>
-              //     <div className="taskDueDate">{(val.dueDate) ? (moment(val.dueDate).format("MM-DD-YYYY")) : ("") }</div>
-              //   </Grid>
-              //   <Grid item xs={3}>
-              //     <div className="taskDueTime">{(val.dueTime !== "--:-- --") ? (val.dueTime) : ("") }</div>
-              //   </Grid>
-              //   <Grid item xs={1}>
-                //   <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, index)}>
-                //   <DeleteIcon fontSize="small" />
-                // </IconButton>
-              //   </Grid>
-              // </Grid>
             )}
           </div>
           <form className="taskForm">
