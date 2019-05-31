@@ -90,20 +90,20 @@ class Tasks extends Component {
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                   <div className="expandHeader taskHeader">
                     <div className="expandTitle taskTitle">{val.title}</div>
-                    {/* if we have a date and time is not default */}
-                    { ((val.dueDate) && (val.dueTime)) ? (
+                    {/* if we have a date and time */}
+                    { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                       <div className="dueInfo">
                         <div className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY") + " at " + val.dueTime}</div>
                       </div>
                     ) : (
-                      // if we have a date but time is default
-                      ((val.dueDate) && (!val.dueTime)) ? (
+                      // if we have a date but not time
+                      ((val.dueDate) && (!val.dueTime || (val.dueTime === "--:-- --"))) ? (
                         <div className="dueInfo">
                           <div className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY")}</div>
                         </div>
                       ) : (
                         // if we have no date but have time
-                        ((!val.dueDate) && (val.dueTime)) ? (
+                        ((!val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                           <div className="dueInfo">
                             <div className="taskDueTime">{"Due at " + val.dueTime}</div>
                           </div>
@@ -112,16 +112,25 @@ class Tasks extends Component {
                   </div>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                  { (val.steps) ? (
-                    <div className="taskStepsField">
-                      {val.steps.map((step, index) =>
-                      <div className="taskStep" key={index}>
-                        <input type="checkbox" className="stepCheckbox"></input>
-                        <div className="stepText">{step}</div>
-                      </div>
-                      )}
-                    </div>
-                  ) : ("") }
+                  <Grid container className="expandedTask">
+                    <Grid item xs={11}>
+                      { (val.steps) ? (
+                        <div className="taskStepsField">
+                          {val.steps.map((step, index) =>
+                          <div className="taskStep" key={index}>
+                            <input type="checkbox" className="stepCheckbox"></input>
+                            <div className="stepText">{step}</div>
+                          </div>
+                          )}
+                        </div>
+                      ) : ("") }
+                    </Grid>
+                    <Grid item xs={1}>
+                      <IconButton size="small" aria-label="Delete" className="removeTaskBtn" onClick={this.removeTask.bind(this, index)}>
+                        <DeleteIcon fontSize="small" />
+                      </IconButton>
+                    </Grid>
+                  </Grid>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               // <Grid container className="panelBoxItem taskItem" key={index} onClick={this.expandTask}>
@@ -135,9 +144,9 @@ class Tasks extends Component {
               //     <div className="taskDueTime">{(val.dueTime !== "--:-- --") ? (val.dueTime) : ("") }</div>
               //   </Grid>
               //   <Grid item xs={1}>
-              //     <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, index)}>
-              //     <DeleteIcon fontSize="small" />
-              //   </IconButton>
+                //   <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, index)}>
+                //   <DeleteIcon fontSize="small" />
+                // </IconButton>
               //   </Grid>
               // </Grid>
             )}

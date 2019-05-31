@@ -26,6 +26,13 @@
     font-size: smaller;
 }
 
+.expandedTask {
+}
+
+.removeTaskBtn {
+    float: right;
+}
+
 .taskForm {
     background-color: #BCBDC0;
     padding: 5px 10px 5px 10px;
