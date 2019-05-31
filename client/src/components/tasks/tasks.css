@@ -6,8 +6,16 @@
     background-color: #BCBDC0;
 }
 
+.taskHeader {
+}
+
 .taskTitle {
-    background-color: #BCBDC0;
+    /* background-color: #BCBDC0; */
+}
+
+.dueInfo {
+    display: flex;
+    flex-direction: row;
 }
 
 .taskDueDate {
@@ -38,4 +46,14 @@
     justify-content: space-between;
     align-items: center;
     margin-right: 30px;
+}
+
+.taskStep {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.stepCheckbox {
+    margin-right: 10px;
 }
