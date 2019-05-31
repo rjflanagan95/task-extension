@@ -74,3 +74,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.panelFormSubmit {
+    margin: 5px 5px 5px 5px;
+}

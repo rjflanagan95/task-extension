@@ -157,16 +157,11 @@ class Goals extends Component {
             )}
           </div>
           <form className="panelForm goalsForm">
-            <Grid container spacing={3}>
-              <Grid item xs={12}>
-                <TextField type="text" required id="standard-required" label="Required" defaultValue="goal" className="panelFormTextInput goalInput" margin="normal" onChange={(e) => this.changeUserInput(e.target.value, goalType)} value={ (goalType === "Daily Goals") ? (this.state.dailyGoalsInput) : ((goalType === "Weekly Goals") ? (this.state.weeklyGoalsInput) : (goalType === "Monthly Goals") ? (this.state.monthlyGoalsInput) : ("N/A")) } />
-              </Grid>
-              <Grid item>
-                <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addGoalBtn" onClick={this.addGoal.bind(this, goalType)}>
-                  <AddIcon />
-                </Fab>
-              </Grid>
-            </Grid>
+            <TextField type="text" required id="standard-required" label="goal" defaultValue="goal" className="panelFormTextInput goalInput" margin="normal" onChange={(e) => this.changeUserInput(e.target.value, goalType)} value={ (goalType === "Daily Goals") ? (this.state.dailyGoalsInput) : ((goalType === "Weekly Goals") ? (this.state.weeklyGoalsInput) : (goalType === "Monthly Goals") ? (this.state.monthlyGoalsInput) : ("N/A")) } />
+
+            <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addGoalBtn" onClick={this.addGoal.bind(this, goalType)}>
+              <AddIcon />
+            </Fab>
           </form>
         </div>
         )}
