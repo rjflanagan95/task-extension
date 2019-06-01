@@ -156,11 +156,8 @@ class Goals extends Component {
             )}
           </div>
           <Paper className="panelForm goalsForm">
-            <TextField type="text" required id="standard-required" label="goal" defaultValue="goal" className="panelFormTextInput goalInput" onChange={(e) => this.changeUserInput(e.target.value, goalType)} value={ (goalType === "Daily Goals") ? (this.state.dailyGoalsInput) : ((goalType === "Weekly Goals") ? (this.state.weeklyGoalsInput) : (goalType === "Monthly Goals") ? (this.state.monthlyGoalsInput) : ("N/A")) } />
-
-            <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addGoalBtn" onClick={this.addGoal.bind(this, goalType)}>
-              <AddIcon />
-            </Fab>
+            <TextField type="text" id="standard" label="goal" defaultValue="goal" className="panelFormTextInput goalInput" onChange={(e) => this.changeUserInput(e.target.value, goalType)} value={ (goalType === "Daily Goals") ? (this.state.dailyGoalsInput) : ((goalType === "Weekly Goals") ? (this.state.weeklyGoalsInput) : (goalType === "Monthly Goals") ? (this.state.monthlyGoalsInput) : ("N/A")) } />
+            <Button size="small" variant="contained" className="panelFormSubmit addGoalBtn" onClick={this.addGoal.bind(this, goalType)}>+</Button>
           </Paper>
         </div>
         )}
