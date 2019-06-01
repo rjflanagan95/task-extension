@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./efficiency.css";
 
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+
 class Efficiency extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +16,7 @@ class Efficiency extends Component {
     return (
       <div className="panel efficiencyPanel">
         <div className="panelBody efficiencyBody">
-          <div className="panelTitle efficiencyTitle">Efficiency</div>
+          <Paper className="panelTitle efficiencyTitle"><Typography variant="h6">Efficiency</Typography></Paper>
         </div>
       </div>
     );

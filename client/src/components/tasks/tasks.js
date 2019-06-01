@@ -132,14 +132,14 @@ class Tasks extends Component {
     return (
       <div className="panel tasksPanel">
         <div className="panelBody tasksBody">
-          <Paper><h4 className="tasksTitle">Tasks</h4></Paper>
+          <Paper className="panelTitle tasksTitle"><Typography variant="h6">Tasks</Typography></Paper>
           <div className="panelList taskList">
             {this.props.tasks.map((val, taskIndex) =>
               <ExpansionPanel className="expandItem taskItem" key={taskIndex}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                   <div className="taskHeader">
                     <div className="taskTitleDateTime">
-                      <Typography variant="h6" className="expandTitle taskTitle">{val.title}</Typography>
+                      <Typography variant="subtitle1" className="expandTitle taskTitle">{val.title}</Typography>
                       {/* if we have a date and time */}
                       { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                         <div className="dueInfo">
