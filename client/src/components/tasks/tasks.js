@@ -193,10 +193,8 @@ class Tasks extends Component {
           </div>
           <Paper className="taskForm">
             <div className="taskFormTop">
-              <TextField required id="standard-required" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
-              <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addTaskBtn "onClick={this.addTask}>
-                <AddIcon />
-              </Fab>
+              <TextField id="standard" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
+              <Button size="small" variant="contained" aria-label="Add" className="panelFormSubmit addTaskBtn " onClick={this.addTask}>+</Button>
             </div>
             <div className="taskFormBottom">
               <TextField id="standard" defaultValue="" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>

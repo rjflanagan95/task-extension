@@ -7,6 +7,7 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Paper from '@material-ui/core/Paper';
+import Button from "@material-ui/core/Button";
 import Typography from '@material-ui/core/Typography';
 
 class Reminders extends Component {
@@ -72,10 +73,8 @@ class Reminders extends Component {
           </div>
         </div>
         <Paper className="panelForm reminderForm">
-          <TextField type="text" required id="standard-required" label="reminder" defaultValue="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
-          <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addReminder" onClick={this.addReminder}>
-            <AddIcon />
-          </Fab>
+          <TextField type="text" id="standard" label="reminder" defaultValue="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
+          <Button size="small" variant="contained" className="panelFormSubmit addReminder" onClick={this.addReminder}>+</Button>
         </Paper>
       </div>
     );
