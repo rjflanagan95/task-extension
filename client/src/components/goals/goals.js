@@ -7,6 +7,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Button from "@material-ui/core/Button";
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 class Goals extends Component {
   constructor(props) {
@@ -141,28 +144,24 @@ class Goals extends Component {
       <div className="goalsBox">
         {goalTypes.map((goalType, typeIndex) =>
         <div className="panel goalsPanel" key={typeIndex}>
-          <h4 className="panelTitle goalsTitle">{goalType}</h4>
+          <Paper><Typography variant="h6" className="panelTitle goalsTitle">{goalType}</Typography></Paper>
           <div className="panelList goalsList">
             {goals[typeIndex].map((val, itemIndex) =>
-              <Grid container className="panelBoxItem goalItem" key={itemIndex}>
-                <Grid item xs={9}>
-                  <div className="panelBoxTitle goalTitle">{val}</div>
-                </Grid>
-                <Grid item xs={3}>
-                  <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeGoalBtn" onClick={this.removeGoal.bind(this, itemIndex, goalType)}>
-                    <DeleteIcon fontSize="small" />
-                  </IconButton>
-                </Grid>
-              </Grid>
+              <Paper className="panelBoxItem goalItem" key={itemIndex}>
+                <Typography variant="subtitle1" className="panelBoxTitle goalTitle">{val}</Typography>
+                <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeGoalBtn" onClick={this.removeGoal.bind(this, itemIndex, goalType)}>
+                  <DeleteIcon fontSize="small" />
+                </IconButton>
+              </Paper>
             )}
           </div>
-          <form className="panelForm goalsForm">
+          <Paper className="panelForm goalsForm">
             <TextField type="text" required id="standard-required" label="goal" defaultValue="goal" className="panelFormTextInput goalInput" onChange={(e) => this.changeUserInput(e.target.value, goalType)} value={ (goalType === "Daily Goals") ? (this.state.dailyGoalsInput) : ((goalType === "Weekly Goals") ? (this.state.weeklyGoalsInput) : (goalType === "Monthly Goals") ? (this.state.monthlyGoalsInput) : ("N/A")) } />
 
             <Fab size="small" color="primary" aria-label="Add" className="panelFormSubmit addGoalBtn" onClick={this.addGoal.bind(this, goalType)}>
               <AddIcon />
             </Fab>
-          </form>
+          </Paper>
         </div>
         )}
       </div>

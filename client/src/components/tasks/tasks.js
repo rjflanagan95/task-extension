@@ -139,7 +139,7 @@ class Tasks extends Component {
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                   <div className="taskHeader">
                     <div className="taskTitleDateTime">
-                      <Typography variant="h6" className="expandTitle taskTitle">{val.title}</Typography>
+                      <Typography variant="subtitle1" className="expandTitle taskTitle">{val.title}</Typography>
                       {/* if we have a date and time */}
                       { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                         <div className="dueInfo">
