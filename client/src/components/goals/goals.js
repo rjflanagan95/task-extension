@@ -140,7 +140,7 @@ class Goals extends Component {
             {goals[typeIndex].map((val, itemIndex) =>
               <div className="panelBoxItem goalItem" key={itemIndex}>
                 <text className="panelBoxTitle goalTitle">{val}</text>
-                <button className="panelBoxItemDeleteBtn removeGoalBtn" onClick={this.removeGoal.bind(this, itemIndex, goalType)}>DELETE GOAL</button>
+                <button className="panelBoxItemDeleteBtn removeGoalBtn" onClick={this.removeGoal.bind(this, itemIndex, goalType)}>-</button>
               </div>
             )}
           </div>

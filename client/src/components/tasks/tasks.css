@@ -1,9 +1,10 @@
-.taskPanel {
-    height: 300px;
+.tasksPanel {
+    height: 350px;
+    width: 340px;
 }
 
 .taskList {
-    height: 240px;
+    height: 200px;
 }
 
 .tasksTitle {
@@ -23,23 +24,23 @@
 .taskForm {
     padding: 5px 10px 5px 10px;
     margin-top: 10px;
-    display: block;
 
     background-color: white;
     border-radius: 5px;
+
+    display: block;
 }
 
-.taskFormTop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.taskInput {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
-.taskFormBottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 30px;
+.inputDate {
+    width: 150px;
+    margin: 0 5px 5px 0;
 }
 
 .taskStep {

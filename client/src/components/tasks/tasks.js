@@ -124,7 +124,7 @@ class Tasks extends Component {
               <div className="panelBoxItem taskItem" key={taskIndex}>
                 <div className="taskHeader">
                   <text className="taskTitle">{val.title}</text>
-                  <button className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, taskIndex)}>DELETE TASK</button>
+                  <button className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, taskIndex)}>-</button>
                   {/* if we have a date and time */}
                   { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                     <div className="dueInfo">
@@ -172,16 +172,12 @@ class Tasks extends Component {
             )}
           </div>
           <div className="taskForm">
-            <div className="taskFormTop">
-              <input id="standard" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
-              <button size="small" variant="contained" aria-label="Add" className="panelFormSubmit addTaskBtn " onClick={this.addTask}>+</button>
-            </div>
-            <div className="taskFormBottom">
-              <input id="standard" defaultValue="" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>
-              <input id="time" type="time" defaultValue="--:-- --" className="inputTime" onChange={(e) => this.changeUserInput(e.target)} name="inputTime" value={this.state.inputTime} InputLabelProps={{shrink: true,}} inputProps={{
-              step: 900, // 15 min
-              }} />
-            </div>
+            <input id="standard" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
+            <input id="standard" defaultValue="" className="panelFormTextInput inputDate" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>
+            <input id="time" type="time" defaultValue="--:-- --" className="panelFormTextInput inputTime" onChange={(e) => this.changeUserInput(e.target)} name="inputTime" value={this.state.inputTime} InputLabelProps={{shrink: true,}} inputProps={{
+            step: 900, // 15 min
+            }} />
+            <button className="panelFormSubmit addTaskBtn " onClick={this.addTask}>+</button>
           </div>
         </div>
       </div>

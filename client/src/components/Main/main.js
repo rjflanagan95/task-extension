@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import  { Redirect } from 'react-router-dom'
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
+import  { Redirect } from 'react-router-dom';
+import { Container, Row, Col } from "reactstrap";
 
 import API from "../../utils/API";
 
@@ -63,24 +62,25 @@ class Main extends Component {
 
     return (
       <Container className="contentArea">
-        <div className="headerRow">
-          <a href="auth/logout">
-            <button className="logoutBtn">
-              LOG OUT
-            </button>
-          </a>
-        </div>
-        <Grid container spacing={3}>
-          <Grid item xs={8}>
+        <Row className="headerRow">
+          <Col>
+            <a href="/auth/logout"><div className="logoutBtn">Log Out</div></a>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col className="column-1">
             <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />
             <Efficiency className="panel"></Efficiency>
-          </Grid>
-          <Grid item xs={4}>
+          </Col>
+
+          <Col className="column-2">
             <Tasks className="panel" tasks={this.state.tasks}></Tasks>
             <Reminders className="panel" reminders={this.state.reminders}></Reminders>
             <Timer className="panel"></Timer>
-          </Grid>
-        </Grid>
+          </Col>
+
+        </Row>
       </Container>
     );
   }

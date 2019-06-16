@@ -4,7 +4,9 @@
 }
 
 .goalsPanel {
+    margin-right: 10px;
     width: 32%;
+    min-width: 220px;
 }
 
 .goalsList {

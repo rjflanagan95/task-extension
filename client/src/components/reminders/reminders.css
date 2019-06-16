@@ -1,3 +1,7 @@
 .remindersList {
     height: 180px;
 }
+
+.reminderInput {
+    width: 90%;
+}

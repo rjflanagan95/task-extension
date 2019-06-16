@@ -59,7 +59,7 @@ class Reminders extends Component {
             {this.props.reminders.map((val, index) => 
             <div className="panelBoxItem reminderItem" key={index}>
               <text className="panelBoxTitle reminderTitle">{val}</text>
-              <button className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>DELETE REMINDER</button>
+              <button className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
             </div>
             )}
           </div>
