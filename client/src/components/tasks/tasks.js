@@ -108,12 +108,6 @@ class Tasks extends Component {
     });
   }
 
-  expandTask(event) {
-    event.preventDefault();
-
-
-  }
-
   render() {
     return (
       <div className="panel tasksPanel">
