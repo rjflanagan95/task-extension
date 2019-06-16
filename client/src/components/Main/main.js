@@ -61,30 +61,31 @@ class Main extends Component {
   render() {
 
     return (
-      <Container className="contentArea">
+      <div>
         <Row className="headerRow">
           <Col>
             <a href="/auth/logout"><div className="logoutBtn">Log Out</div></a>
           </Col>
         </Row>
-
-        <Row className="row-1">
-          <Col>
-            <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />
-          </Col>
-        </Row>
-        <Row className="row-2">
-          <Col>
-            <Reminders className="panel" reminders={this.state.reminders}></Reminders>
-          </Col>
-          <Col>
-            <Tasks className="panel" tasks={this.state.tasks}></Tasks>
-          </Col>
-          <Col>
-            <Timer className="panel"></Timer>
-          </Col>
-        </Row>
-      </Container>
+        <Container className="contentArea">
+          <Row className="row-1">
+            <Col>
+              <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />
+            </Col>
+          </Row>
+          <Row className="row-2">
+            <Col>
+              <Reminders className="panel" reminders={this.state.reminders}></Reminders>
+            </Col>
+            <Col>
+              <Tasks className="panel" tasks={this.state.tasks}></Tasks>
+            </Col>
+            <Col>
+              <Timer className="panel"></Timer>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
