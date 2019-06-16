@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import  { Redirect } from 'react-router-dom'
 import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import Button from "@material-ui/core/Button";
 
 import API from "../../utils/API";
 
@@ -65,13 +63,13 @@ class Main extends Component {
 
     return (
       <Container className="contentArea">
-        <Box className="headerRow">
+        <div className="headerRow">
           <a href="auth/logout">
-            <Button variant="contained" className="logoutBtn">
-              Log Out
-            </Button>
+            <button className="logoutBtn">
+              LOG OUT
+            </button>
           </a>
-        </Box>
+        </div>
         <Grid container spacing={3}>
           <Grid item xs={8}>
             <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />

@@ -1,22 +1,8 @@
 import React, { Component } from "react";
 import "./tasks.css";
 import API from "../../utils/API";
-import Grid from '@material-ui/core/Grid';
-import TextField from "@material-ui/core/TextField";
-import IconButton from '@material-ui/core/IconButton';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
-import Button from "@material-ui/core/Button";
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 
 import moment from "moment";
-
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 class Tasks extends Component {
   constructor(props) {
@@ -132,77 +118,71 @@ class Tasks extends Component {
     return (
       <div className="panel tasksPanel">
         <div className="panelBody tasksBody">
-          <Paper className="panelTitle tasksTitle"><Typography variant="h6">Tasks</Typography></Paper>
+          <div className="panelTitle tasksTitle"><text>Tasks</text></div>
           <div className="panelList taskList">
             {this.props.tasks.map((val, taskIndex) =>
-              <ExpansionPanel className="expandItem taskItem" key={taskIndex}>
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                  <div className="taskHeader">
-                    <div className="taskTitleDateTime">
-                      <Typography variant="subtitle1" className="expandTitle taskTitle">{val.title}</Typography>
-                      {/* if we have a date and time */}
-                      { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
-                        <div className="dueInfo">
-                          <Typography variant="subtitle2" className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY") + " at " + val.dueTime}</Typography>
-                        </div>
-                      ) : (
-                        // if we have a date but not time
-                        ((val.dueDate) && (!val.dueTime || (val.dueTime === "--:-- --"))) ? (
-                          <div className="dueInfo">
-                            <Typography variant="subtitle2" className="taskDueDate">{"Due " + moment(val.dueDate).format("MM/DD/YY")}</Typography>
-                          </div>
-                        ) : (
-                          // if we have no date but have time
-                          ((!val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
-                            <div className="dueInfo">
-                              <Typography variant="subtitle2" className="taskDueTime">{"Due at " + val.dueTime}</Typography>
-                            </div>
-                          ) : ("")))
-                      }
+              <div className="panelBoxItem taskItem" key={taskIndex}>
+                <div className="taskHeader">
+                  <text className="taskTitle">{val.title}</text>
+                  <button className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, taskIndex)}>DELETE TASK</button>
+                  {/* if we have a date and time */}
+                  { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
+                    <div className="dueInfo">
+                      <text className="taskDue">{"Due " + moment(val.dueDate).format("MM/DD/YY") + " at " + val.dueTime}</text>
                     </div>
-                    <div className="removeTaskBtn">
-                      <IconButton size="small" aria-label="Delete" onClick={this.removeTask.bind(this, taskIndex)}>
-                        <DeleteIcon fontSize="small" />
-                      </IconButton>
-                    </div>
-                  </div>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                  <div className="expandedTask">
-                      { (val.steps) ? (
-                        <div className="taskStepsField">
-                          {val.steps.map((step, stepIndex) =>
-                          <div className="taskStep" key={stepIndex}>
-                            <IconButton size="small" aria-label="Delete" className="removeStepBtn" onClick={this.removeStep.bind(this, taskIndex, stepIndex)}>
-                              <DeleteIcon fontSize="small" />
-                            </IconButton>
-                            <input type="checkbox" className="stepCheckbox"></input>
-                            <Typography variant="subtitle2" className="stepText">{step}</Typography>
-                          </div>
-                          )}
-                        </div>
-                      ) : ("") }
-                      <div className="stepInputForm">
-                        <TextField className="stepInput" onChange={(e) => this.changeUserInput(e.target)} name="stepInput" value={this.state.stepInput} type="text"/>
-                        <Button size="small" variant="outlined" className="addStepBtn" onClick={this.addStep.bind(this, taskIndex)}>add step</Button>
+                  ) : (
+                    // if we have a date but not time
+                    ((val.dueDate) && (!val.dueTime || (val.dueTime === "--:-- --"))) ? (
+                      <div className="dueInfo">
+                        <text className="taskDue">{"Due " + moment(val.dueDate).format("MM/DD/YY")}</text>
                       </div>
+                    ) : (
+                      // if we have no date but have time
+                      ((!val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
+                        <div className="dueInfo">
+                          <text className="taskDue">{"Due at " + val.dueTime}</text>
+                        </div>
+                      ) : ("")))
+                  }
+                </div>
+
+                {/* task details, hidden until task it clicked on */}
+
+                {/* <div className="expandedTask">
+                  { (val.steps) ? (
+                    <div className="taskStepsField">
+                      {val.steps.map((step, stepIndex) =>
+                      <div className="taskStep" key={stepIndex}>
+                        <IconButton size="small" aria-label="Delete" className="removeStepBtn" onClick={this.removeStep.bind(this, taskIndex, stepIndex)}>
+                          <DeleteIcon fontSize="small" />
+                        </IconButton>
+                        <input type="checkbox" className="stepCheckbox"></input>
+                        <text className="stepText">{step}</text>
+                      </div>
+                      )}
+                    </div>
+                  ) : ("") }
+                  <div className="stepInputForm">
+                    <input className="stepInput" onChange={(e) => this.changeUserInput(e.target)} name="stepInput" value={this.state.stepInput} type="text"/>
+                    <button className="addStepBtn" onClick={this.addStep.bind(this, taskIndex)}>add step</button>
                   </div>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
+                </div> */}
+
+              </div>
             )}
           </div>
-          <Paper className="taskForm">
+          <div className="taskForm">
             <div className="taskFormTop">
-              <TextField id="standard" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
-              <Button size="small" variant="contained" aria-label="Add" className="panelFormSubmit addTaskBtn " onClick={this.addTask}>+</Button>
+              <input id="standard" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
+              <button size="small" variant="contained" aria-label="Add" className="panelFormSubmit addTaskBtn " onClick={this.addTask}>+</button>
             </div>
             <div className="taskFormBottom">
-              <TextField id="standard" defaultValue="" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>
-              <TextField id="time" type="time" defaultValue="--:-- --" className="inputTime" onChange={(e) => this.changeUserInput(e.target)} name="inputTime" value={this.state.inputTime} InputLabelProps={{shrink: true,}} inputProps={{
+              <input id="standard" defaultValue="" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>
+              <input id="time" type="time" defaultValue="--:-- --" className="inputTime" onChange={(e) => this.changeUserInput(e.target)} name="inputTime" value={this.state.inputTime} InputLabelProps={{shrink: true,}} inputProps={{
               step: 900, // 15 min
               }} />
             </div>
-          </Paper>
+          </div>
         </div>
       </div>
     );

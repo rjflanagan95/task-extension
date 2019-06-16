@@ -7,45 +7,26 @@
 }
 
 .tasksTitle {
-    /* margin-bottom: 10px;
-    padding: 5px 5px 5px 5px; */
 }
 
 .taskItem {
 }
 
 .taskHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.taskTitle {
-}
-
-.dueInfo {
-    display: flex;
-    flex-direction: row;
-}
-
-.taskDueDate {
-}
-
-.taskDueTime {
-}
-
-.expandedTask {
+    width: 100%;
+    font-size: smaller;
 }
 
 .removeTaskBtn {
-    position: absolute;
-    right: 55px;
 }
 
 .taskForm {
     padding: 5px 10px 5px 10px;
     margin-top: 10px;
     display: block;
+
+    background-color: white;
+    border-radius: 5px;
 }
 
 .taskFormTop {
@@ -73,6 +54,8 @@
 }
 
 .stepInputForm {
+    display: flex;
+    justify-content: space-between;
 }
 
 .stepInput {

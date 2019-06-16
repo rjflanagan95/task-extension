@@ -1,12 +1,7 @@
 .contentArea {
     height: auto;
-    background-color: #357266;
     padding: 20px;
     overflow: hidden;
-}
-
-.headerRow {
-    vertical-align: middle;
 }
 
 .logoutBtn {
@@ -20,9 +15,11 @@
 
 }
 
-/* PANEL STYLING */
-/* general panel styling that applies to all components */
 /*  */
+/* PANEL STYLING */
+/*  */
+
+/* general panel styling that applies to all components */
 .panel {
     margin: 15px 0px 15px 0px;
     border-radius: 10px;
@@ -32,11 +29,14 @@
 
 /* boxed in title that appears at the top of a panel */
 .panelTitle {
-    /* font-weight: bold;
-    font-size: larger;
-    padding: 5px 5px 5px 5px;
-    border-radius: 5px; */
-    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 6px;
+    height: 30px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
     padding: 5px 10px 5px 10px;
 }
 
@@ -47,9 +47,10 @@
 
 /* boxed-in items from DB that get mapped over - tasks, reminders, goals */
 .panelBoxItem {
+    background-color: #BCBDC0;
+    border-radius: 5px;
     margin: 5px 0 5px 0;
     padding: 5px 5px 5px 5px;
-    border-radius: 5px;
 
     display: flex;
     justify-content: space-between;
@@ -58,29 +59,40 @@
 
 /* delete button for any mapped over item */
 .panelBoxItemDeleteBtn {
+    font-size: smaller;
     float: right;
 }
 
 /* main text for any mapped over item */
 .panelBoxTitle {
     font-size: smaller;
-    text-align: left;
-    padding: 5px 10px 5px 10px;
 }
 
 /* contains all form elements */
 .panelForm {
+    background-color: white;
+    border-radius: 5px;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding: 5px 10px 5px 10px;
     margin-top: 10px;
-    border-radius: 5px;
+}
+
+.panelFormTextInput {
+    border-radius: 3px;
 }
 
 .panelFormSubmit {
-    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 
@@ -90,9 +102,6 @@
 }
 
 .expandHeader {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
 }
 
 .expandTitle {
