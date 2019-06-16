@@ -12,19 +12,6 @@
     font-size: smaller;
 }
 
-.expandedTask {
-    overflow: hidden;
-}
-
-#toggle {
-    display: none;
-    visibility: hidden;
-}
-
-#toggle:checked ~ #expand {
-    height: 200px;
-}
-
 .taskForm {
     padding: 5px 10px 5px 10px;
     margin-top: 10px;

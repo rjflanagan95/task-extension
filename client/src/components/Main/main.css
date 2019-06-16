@@ -1,12 +1,6 @@
 .contentArea {
     /* height: auto; */
-    overflow: hidden;
-}
-
-.reminder-timer-row {
-    display: flex;
-    align-content: space-between;
-    justify-content: space-between;
+    width: 100%;
 }
 
 .headerRow {
@@ -32,7 +26,7 @@
 
 .logoutBtn:hover {
     border: 1px solid gray;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .row-1 {
@@ -52,6 +46,7 @@
 /* general panel styling that applies to all components */
 .panel {
     margin: 15px 5px 15px 5px;
+    border: 1px solid black;
     border-radius: 10px;
     background-color: #734B5E;
     padding: 15px 15px 15px 15px;
@@ -60,6 +55,7 @@
 /* boxed in title that appears at the top of a panel */
 .panelTitle {
     background-color: white;
+    border: 1px solid black;
     border-radius: 6px;
     height: 30px;
     font-weight: bold;
@@ -78,6 +74,7 @@
 /* boxed-in items from DB that get mapped over - tasks, reminders, goals */
 .panelBoxItem {
     background-color: #BCBDC0;
+    border: 1px solid black;
     border-radius: 5px;
     margin: 5px 0 5px 0;
     padding: 5px 5px 5px 5px;
@@ -97,6 +94,10 @@
     height: 20px;
 }
 
+.panelBoxItemDeleteBtn:hover {
+    border: 1px solid gray;
+}
+
 /* main text for any mapped over item */
 .panelBoxTitle {
     font-size: smaller;
@@ -105,6 +106,7 @@
 /* contains all form elements */
 .panelForm {
     background-color: white;
+    border: 1px solid black;
     border-radius: 5px;
     
     display: flex;
@@ -113,6 +115,9 @@
 
     padding: 5px 10px 5px 10px;
     margin-top: 10px;
+
+    position: relative;
+    bottom: -5px;
 }
 
 .panelFormTextInput {
