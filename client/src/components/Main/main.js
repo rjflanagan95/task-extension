@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import  { Redirect } from 'react-router-dom'
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Button from "@material-ui/core/Button";
+import  { Redirect } from 'react-router-dom';
+import { Container, Row, Col } from "reactstrap";
 
 import API from "../../utils/API";
 
@@ -65,24 +62,28 @@ class Main extends Component {
 
     return (
       <Container className="contentArea">
-        <Box className="headerRow">
-          <a href="auth/logout">
-            <Button variant="contained" className="logoutBtn">
-              Log Out
-            </Button>
-          </a>
-        </Box>
-        <Grid container spacing={3}>
-          <Grid item xs={8}>
+        <Row className="headerRow">
+          <Col>
+            <a href="/auth/logout"><div className="logoutBtn">Log Out</div></a>
+          </Col>
+        </Row>
+
+        <Row className="row-1">
+          <Col>
             <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />
-            <Efficiency className="panel"></Efficiency>
-          </Grid>
-          <Grid item xs={4}>
-            <Tasks className="panel" tasks={this.state.tasks}></Tasks>
+          </Col>
+        </Row>
+        <Row className="row-2">
+          <Col>
             <Reminders className="panel" reminders={this.state.reminders}></Reminders>
+          </Col>
+          <Col>
+            <Tasks className="panel" tasks={this.state.tasks}></Tasks>
+          </Col>
+          <Col>
             <Timer className="panel"></Timer>
-          </Grid>
-        </Grid>
+          </Col>
+        </Row>
       </Container>
     );
   }

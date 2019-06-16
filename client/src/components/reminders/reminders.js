@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import "./reminders.css";
 import API from "../../utils/API";
-import TextField from "@material-ui/core/TextField";
-import IconButton from '@material-ui/core/IconButton';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
-import Paper from '@material-ui/core/Paper';
-import Button from "@material-ui/core/Button";
-import Typography from '@material-ui/core/Typography';
 
 class Reminders extends Component {
   constructor(props) {
@@ -60,22 +52,22 @@ class Reminders extends Component {
     return (
       <div className="panel remindersPanel">
         <div className="panelBody remindersBody">
-          <Paper className="panelTitle remindersTitle"><Typography variant="h6">Reminders</Typography></Paper>
+          <div className="panelTitle remindersTitle">
+            <text>Reminders</text>
+          </div>
           <div className="panelList remindersList">
             {this.props.reminders.map((val, index) => 
-            <Paper className="panelBoxItem reminderItem" key={index}>
-              <Typography variant="subtitle1" className="panelBoxTitle reminderTitle">{val}</Typography>
-              <IconButton size="small" aria-label="Delete" className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>
-                <DeleteIcon fontSize="small" />
-              </IconButton>
-            </Paper>
+            <div className="panelBoxItem reminderItem" key={index}>
+              <text className="panelBoxTitle reminderTitle">{val}</text>
+              <button className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
+            </div>
             )}
           </div>
+          <div className="panelForm reminderForm">
+            <input type="text" id="standard" label="reminder" defaultValue="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
+            <button className="panelFormSubmit addReminder" onClick={this.addReminder}>+</button>
+          </div>
         </div>
-        <Paper className="panelForm reminderForm">
-          <TextField type="text" id="standard" label="reminder" defaultValue="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
-          <Button size="small" variant="contained" className="panelFormSubmit addReminder" onClick={this.addReminder}>+</Button>
-        </Paper>
       </div>
     );
   }

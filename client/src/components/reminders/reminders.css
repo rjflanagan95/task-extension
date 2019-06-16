@@ -1,18 +1,12 @@
-.reminderItem {
-    background-color: #BCBDC0;
-}
-
-.remindersTitle {
-    margin-bottom: 10px;
-    padding: 5px 5px 5px 5px;
+.remindersPanel {
+    width: 340px;
+    height: 290px;
 }
 
 .remindersList {
     height: 180px;
 }
 
-.reminderTitle {
-}
-
-.reminderForm {
+.reminderInput {
+    width: 90%;
 }

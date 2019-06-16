@@ -1,24 +1,19 @@
 .goalsBox {
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 .goalsPanel {
+    margin-right: 10px;
     width: 32%;
+    min-width: 340px;
 }
 
 .goalsList {
     height: 180px;
 }
 
-.goalsTitle {
-}
-
-.goalItem {
-}
-
-.goalTitle {
-}
-
-.goalsForm {
+.goalInput {
+    width: 90%;
 }

@@ -1,64 +1,49 @@
-.taskPanel {
-    height: 300px;
+.tasksPanel {
+    height: 350px;
+    width: 340px;
 }
 
 .taskList {
-    height: 240px;
-}
-
-.tasksTitle {
-    /* margin-bottom: 10px;
-    padding: 5px 5px 5px 5px; */
-}
-
-.taskItem {
+    height: 200px;
 }
 
 .taskHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.taskTitle {
-}
-
-.dueInfo {
-    display: flex;
-    flex-direction: row;
-}
-
-.taskDueDate {
-}
-
-.taskDueTime {
+    width: 100%;
+    font-size: smaller;
 }
 
 .expandedTask {
+    overflow: hidden;
 }
 
-.removeTaskBtn {
-    position: absolute;
-    right: 55px;
+#toggle {
+    display: none;
+    visibility: hidden;
+}
+
+#toggle:checked ~ #expand {
+    height: 200px;
 }
 
 .taskForm {
     padding: 5px 10px 5px 10px;
     margin-top: 10px;
+
+    background-color: white;
+    border-radius: 5px;
+
     display: block;
 }
 
-.taskFormTop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.taskInput {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
-.taskFormBottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 30px;
+.inputDate {
+    width: 150px;
+    margin: 0 5px 5px 0;
 }
 
 .taskStep {
@@ -73,11 +58,6 @@
 }
 
 .stepInputForm {
-}
-
-.stepInput {
-
-}
-
-.addStepBtn {
+    display: flex;
+    justify-content: space-between;
 }
