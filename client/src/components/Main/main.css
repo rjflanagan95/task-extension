@@ -1,20 +1,16 @@
 .contentArea {
-    height: auto;
-    /* width: 100%; */
+    /* height: auto; */
     overflow: hidden;
 }
 
-.column-1 {
-    width: 70%;
-}
-
-.column-2 {
-    width: 30%;
+.reminder-timer-row {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
 }
 
 .headerRow {
     width: 100%;
-    margin-bottom: 10px;
 }
 
 .logoutBtn {
@@ -28,13 +24,22 @@
 
 }
 
+.row-1 {
+
+}
+
+.row-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
 /*  */
 /* PANEL STYLING */
 /*  */
 
 /* general panel styling that applies to all components */
 .panel {
-    margin: 15px 0px 15px 0px;
+    margin: 15px 5px 15px 5px;
     border-radius: 10px;
     background-color: #734B5E;
     padding: 15px 15px 15px 15px;

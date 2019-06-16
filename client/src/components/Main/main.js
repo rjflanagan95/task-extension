@@ -68,18 +68,14 @@ class Main extends Component {
           </Col>
         </Row>
 
-        <Row>
-          <Col className="column-1">
-            <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />
-            <Efficiency className="panel"></Efficiency>
-          </Col>
-
-          <Col className="column-2">
-            <Tasks className="panel" tasks={this.state.tasks}></Tasks>
-            <Reminders className="panel" reminders={this.state.reminders}></Reminders>
-            <Timer className="panel"></Timer>
-          </Col>
-
+        <Row className="row-1">
+          <Goals className="panel" dailyGoals={this.state.dailyGoals} weeklyGoals={this.state.weeklyGoals} monthlyGoals={this.state.monthlyGoals} />
+        </Row>
+        <Row className="row-2">
+          <Reminders className="panel" reminders={this.state.reminders}></Reminders>
+            {/* <Efficiency className="panel"></Efficiency> */}
+          <Tasks className="panel" tasks={this.state.tasks}></Tasks>
+          <Timer className="panel"></Timer>
         </Row>
       </Container>
     );

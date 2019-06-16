@@ -153,9 +153,7 @@ class Tasks extends Component {
                     <div className="taskStepsField">
                       {val.steps.map((step, stepIndex) =>
                       <div className="taskStep" key={stepIndex}>
-                        <IconButton size="small" aria-label="Delete" className="removeStepBtn" onClick={this.removeStep.bind(this, taskIndex, stepIndex)}>
-                          <DeleteIcon fontSize="small" />
-                        </IconButton>
+                        <button className="removeStepBtn" onClick={this.removeStep.bind(this, taskIndex, stepIndex)}>-</button>
                         <input type="checkbox" className="stepCheckbox"></input>
                         <text className="stepText">{step}</text>
                       </div>

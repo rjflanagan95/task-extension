@@ -1,3 +1,8 @@
+.remindersPanel {
+    width: 340px;
+    height: 290px;
+}
+
 .remindersList {
     height: 180px;
 }
