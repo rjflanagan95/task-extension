@@ -1,14 +1,30 @@
 .tasksPanel {
     height: 350px;
-    width: 340px;
+    width: 360px;
 }
 
 .taskList {
     height: 200px;
 }
 
+.taskItem {
+    display: block;
+    background-color: #BCBDC0;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    /* height: 70px; */
+    margin: 5px 0 5px 0;
+    overflow: scroll;
+}
+
 .taskHeader {
-    width: 100%;
+    width: 300px;
+    font-size: smaller;
+    padding: 5px;
+}
+
+.taskDetails {
     font-size: smaller;
 }
 
@@ -17,9 +33,13 @@
     margin-top: 10px;
 
     background-color: white;
+    border: 1px solid black;
     border-radius: 5px;
 
     display: block;
+
+    position: relative;
+    bottom: -10px;
 }
 
 .taskInput {
@@ -31,20 +51,4 @@
 .inputDate {
     width: 150px;
     margin: 0 5px 5px 0;
-}
-
-.taskStep {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.stepCheckbox {
-    margin-left: 5px;
-    margin-right: 10px;
-}
-
-.stepInputForm {
-    display: flex;
-    justify-content: space-between;
 }

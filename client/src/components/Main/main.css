@@ -98,6 +98,11 @@
     border: 1px solid gray;
 }
 
+.panelBoxItemDeleteBtn:focus {
+    border: 1px solid gray;
+    outline: none;
+}
+
 /* main text for any mapped over item */
 .panelBoxTitle {
     font-size: smaller;
@@ -141,6 +146,10 @@
 
 .panelFormSubmit:hover {
     border: 1px solid gray;
+}
+
+.panelFormSubmit:focus {
+    outline: none;
 }
 
 
