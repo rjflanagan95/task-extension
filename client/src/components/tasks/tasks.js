@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./tasks.css";
 import API from "../../utils/API";
+import { Container, Row, Col } from "reactstrap";
 
 import moment from "moment";
 
@@ -115,7 +116,7 @@ class Tasks extends Component {
           <div className="panelTitle tasksTitle"><text>Tasks</text></div>
           <div className="panelList taskList">
             {this.props.tasks.map((val, taskIndex) =>
-              <div className="panelBoxItem taskItem" key={taskIndex}>
+              <div className="taskItem" key={taskIndex}>
                 <div className="taskHeader">
                   <text className="taskTitle">{val.title}</text>
                   <button className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, taskIndex)}>-</button>
@@ -140,14 +141,12 @@ class Tasks extends Component {
                   }
                 </div>
 
-                {/* task details, hidden until task it clicked on */}
-
-                {/* <div className="expandedTask">
+                {/* <div className="taskDetails">
                   { (val.steps) ? (
-                    <div className="taskStepsField">
+                    <div className="taskStepsList">
                       {val.steps.map((step, stepIndex) =>
                       <div className="taskStep" key={stepIndex}>
-                        <button className="removeStepBtn" onClick={this.removeStep.bind(this, taskIndex, stepIndex)}>-</button>
+                        <button className="panelBoxItemDeleteBtn removeStepBtn" onClick={this.removeStep.bind(this, taskIndex, stepIndex)}>-</button>
                         <input type="checkbox" className="stepCheckbox"></input>
                         <text className="stepText">{step}</text>
                       </div>
@@ -155,11 +154,12 @@ class Tasks extends Component {
                     </div>
                   ) : ("") }
                   <div className="stepInputForm">
-                    <input className="stepInput" onChange={(e) => this.changeUserInput(e.target)} name="stepInput" value={this.state.stepInput} type="text"/>
-                    <button className="addStepBtn" onClick={this.addStep.bind(this, taskIndex)}>add step</button>
+                    <input className="panelFormTextInput stepInput" onChange={(e) => this.changeUserInput(e.target)} name="stepInput" value={this.state.stepInput} type="text"/>
+                    <button className="panelFormSubmit addStepBtn" onClick={this.addStep.bind(this, taskIndex)}>+</button>
                   </div>
                 </div> */}
-
+              
+              
               </div>
             )}
           </div>
