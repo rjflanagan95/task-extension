@@ -28,24 +28,26 @@ class Tasks extends Component {
   addTask(event) {
     event.preventDefault();
     
-    let newTask = {
-      title: this.state.inputTitle,
-      dueDate: this.state.inputDate,
-      dueTime: this.state.inputTime,
+    if (this.state.inputTitle !== "") {
+      let newTask = {
+        title: this.state.inputTitle,
+        dueDate: this.state.inputDate,
+        dueTime: this.state.inputTime,
+      }
+      
+      let currentTasks = this.props.tasks;
+
+      currentTasks.push(newTask);
+
+      API.updateTasks(currentTasks)
+      .then(res => {
+        this.setState({
+          inputTitle: '',
+          inputDate: '',
+          inputTime: "--:-- --"
+        });
+      });      
     }
-    
-    let currentTasks = this.props.tasks;
-
-    currentTasks.push(newTask);
-
-    API.updateTasks(currentTasks)
-    .then(res => {
-      this.setState({
-        inputTitle: '',
-        inputDate: '',
-        inputTime: "--:-- --"
-      });
-    });
   }
 
   removeTask(index, event) {
@@ -68,11 +70,8 @@ class Tasks extends Component {
     event.preventDefault();
     
     let newStep = this.state.stepInput;
-    console.log("new step: " + newStep);
     let currentTasks = this.props.tasks;
-    console.log("current tasks: " + currentTasks);
     let currentSteps = currentTasks[taskIndex].steps;
-    console.log("current steps: " + currentSteps);
 
     currentSteps.push(newStep);
 

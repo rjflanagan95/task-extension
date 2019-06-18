@@ -35,48 +35,51 @@ class Goals extends Component {
   }
 
   addGoal(goalType, event) {
-    console.log("goal type: " + goalType);
     event.preventDefault();
 
     if (goalType === "Daily Goals") {
-      let currentDailyGoals = this.props.dailyGoals;
-      let newDailyGoal = this.state.dailyGoalsInput;
-      currentDailyGoals.push(newDailyGoal);
+      if (this.state.dailyGoalsInput !== "") {
+        let currentDailyGoals = this.props.dailyGoals;
+        let newDailyGoal = this.state.dailyGoalsInput;
+        currentDailyGoals.push(newDailyGoal);
 
-      API.updateDailyGoals(currentDailyGoals)
-      .then(res => {
-        this.setState({
-          dailyGoalsInput: '',
-        });
-      });
+        API.updateDailyGoals(currentDailyGoals)
+        .then(res => {
+          this.setState({
+            dailyGoalsInput: '',
+          });
+        });        
+      }
     }
     else if (goalType === "Weekly Goals") {
-      let currentWeeklyGoals = this.props.weeklyGoals;
-      let newWeeklyGoal = this.state.weeklyGoalsInput;
-  
-      currentWeeklyGoals.push(newWeeklyGoal);
-  
-      API.updateWeeklyGoals(currentWeeklyGoals)
-      .then(res => {
-        this.setState({
-          weeklyGoalsInput: ''
-        });
-      });
+      if (this.state.weeklyGoalsInput !== "") {
+        let currentWeeklyGoals = this.props.weeklyGoals;
+        let newWeeklyGoal = this.state.weeklyGoalsInput;
+    
+        currentWeeklyGoals.push(newWeeklyGoal);
+    
+        API.updateWeeklyGoals(currentWeeklyGoals)
+        .then(res => {
+          this.setState({
+            weeklyGoalsInput: ''
+          });
+        });        
+      }
     }
     else if (goalType === "Monthly Goals") {
-      event.preventDefault();
-
-      let currentMonthlyGoals = this.props.monthlyGoals;
-      let newMonthlyGoal = this.state.monthlyGoalsInput;
-  
-      currentMonthlyGoals.push(newMonthlyGoal);
-  
-      API.updateMonthlyGoals(currentMonthlyGoals)
-      .then(res => {
-        this.setState({
-          monthlyGoalsInput: ''
-        });
-      });
+      if (this.state.monthlyGoalsInput !== "") {
+        let currentMonthlyGoals = this.props.monthlyGoals;
+        let newMonthlyGoal = this.state.monthlyGoalsInput;
+    
+        currentMonthlyGoals.push(newMonthlyGoal);
+    
+        API.updateMonthlyGoals(currentMonthlyGoals)
+        .then(res => {
+          this.setState({
+            monthlyGoalsInput: ''
+          });
+        });        
+      }
     }
   }
 

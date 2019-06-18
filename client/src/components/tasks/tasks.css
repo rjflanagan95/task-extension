@@ -19,9 +19,13 @@
 }
 
 .taskHeader {
-    width: 300px;
+    width: 100%;
     font-size: smaller;
     padding: 5px;
+}
+
+.removeTaskBtn {
+    margin-bottom: 5px;
 }
 
 .taskDetails {
