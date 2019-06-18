@@ -11,11 +11,7 @@ require("dotenv").config();
 const db = require("./models");
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/taskapp";
 
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true
-});
-
-// db.mongoose = mongoose;
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
 // Express
 const app = express();
@@ -54,7 +50,7 @@ passport.deserializeUser((user, done) => {
 });
 
 app.use(cookieParser());
-app.use(session({ secret: process.env.SESSION_SECRET }));
+// app.use(session({ secret: process.env.SESSION_SECRET }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -64,7 +60,9 @@ app.use(
     cookie: {
       secure: false,
       httpOnly: true
-    }
+    },
+    resave: true,
+    saveUninitialized: true
   })
 );
 

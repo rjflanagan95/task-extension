@@ -22,17 +22,19 @@ class Reminders extends Component {
   addReminder(event) {
     event.preventDefault();
 
-    let currentReminders = this.props.reminders;
-    let newReminder = this.state.userInput;
+    if (this.state.userInput !== "") {
+      let currentReminders = this.props.reminders;
+      let newReminder = this.state.userInput;
 
-    currentReminders.push(newReminder);
+      currentReminders.push(newReminder);
 
-    API.updateReminders(currentReminders)
-    .then(res => {
-      this.setState({
-        userInput: ''
+      API.updateReminders(currentReminders)
+      .then(res => {
+        this.setState({
+          userInput: ''
+        });
       });
-    });
+    }
   }
 
   removeReminder(index) {
