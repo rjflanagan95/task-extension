@@ -13,6 +13,10 @@ export default {
         return axios.put("/api/users/reminders", reminders);
     },
 
+    updateLists: function(items, listID) {
+        return axios.put("/api/users/lists", items);
+    },
+
     updateDailyGoals: function(goals) {
         return axios.put("/api/users/dailygoals", goals);
     },

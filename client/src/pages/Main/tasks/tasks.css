@@ -1,0 +1,53 @@
+.taskList {
+    height: 200px;
+}
+
+.taskItem {
+    display: block;
+    background-color: #BCBDC0;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    /* height: 70px; */
+    margin: 5px 0 5px 0;
+    overflow: scroll;
+}
+
+.taskHeader {
+    width: 100%;
+    font-size: smaller;
+    padding: 5px;
+}
+
+.removeTaskBtn {
+    margin-bottom: 5px;
+}
+
+.taskDetails {
+    font-size: smaller;
+}
+
+.taskForm {
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    display: block;
+
+    position: relative;
+    bottom: -10px;
+}
+
+.taskInput {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.inputDate {
+    width: 150px;
+    margin: 0 5px 5px 0;
+}

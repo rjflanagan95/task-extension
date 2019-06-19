@@ -8,6 +8,8 @@ module.exports = function(router, db, passport, nodeEnv) {
 
     router.route("/users/reminders").put(controller.updateReminders);
 
+    router.route("./users/lists").put(controller.updateLists);
+
     router.route("/users/dailygoals").put(controller.updateDailyGoals);
 
     router.route("/users/weeklygoals").put(controller.updateWeeklyGoals);

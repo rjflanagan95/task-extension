@@ -29,6 +29,12 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
 
+    updateLists: async function(req, res) {
+        const userID = req.session.passport.user.id;
+
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { lists: req.body}})
+    },
+
     updateDailyGoals: async function(req, res) {
         const userID = req.session.passport.user.id;
 
