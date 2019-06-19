@@ -13,19 +13,11 @@ export default {
         return axios.put("/api/users/reminders", reminders);
     },
 
-    updateLists: function(items, listID) {
-        return axios.put("/api/users/lists", items);
+    updateList1: function(items) {
+        return axios.put("/api/users/list1", items);
     },
 
-    updateDailyGoals: function(goals) {
-        return axios.put("/api/users/dailygoals", goals);
-    },
-
-    updateWeeklyGoals: function(goals) {
-        return axios.put("/api/users/weeklygoals", goals);
-    },
-
-    updateMonthlyGoals: function(goals) {
-        return axios.put("/api/users/monthlygoals", goals);
+    updateList2: function(items) {
+        return axios.put("/api/users/list2", items);
     }
 }

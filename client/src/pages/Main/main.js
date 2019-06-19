@@ -16,6 +16,7 @@ class Main extends Component {
     super(props)
 
     this.state = {
+      location: "10003",
       tasks: [
         {
         title: "Default Task 1",
@@ -30,9 +31,6 @@ class Main extends Component {
         }
       ],
       reminders: ["Default Reminder 1", "Default Reminder 2"],
-      dailyGoals: ["Goal 1", "Goal 2", "Goal 3"],
-      weeklyGoals: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5"],
-      monthlyGoals: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5", "Goal 6", "Goal 7"],
       list1: {
         title: "List 1",
         items: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5"]
@@ -55,16 +53,11 @@ class Main extends Component {
         // otherwise set the state to data from the database
         else {
           this.setState({
+          location: res.data.location,
           tasks: res.data.tasks,
           reminders: res.data.reminders,
-          list1: res.data.lists.list1,
-          // lists: {
-            // list1: {
-              // title: '',
-              // items: []
-            // }
-          // }
-          list2: res.data.lists.list2
+          list1: res.data.list1,
+          list2: res.data.list2
         });
         }
 
@@ -87,14 +80,14 @@ class Main extends Component {
             </Col>
             <Col xs={6}>
               <Row>
-                <Center />
+                <Center location={this.state.location}/>
               </Row>
               <Row>
                 <Col xs={6}>
-                  <GoalsCard title={this.state.list1.title} items={this.state.list1.items} />
+                  <GoalsCard listID="list1" title={this.state.list1.title} items={this.state.list1.items} />
                 </Col>
                 <Col xs={6}>
-                  <GoalsCard title={this.state.list2.title} items={this.state.list2.items} />
+                  <GoalsCard listID="list2" title={this.state.list2.title} items={this.state.list2.items} />
                 </Col>
               </Row>
             </Col>

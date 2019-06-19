@@ -5,7 +5,7 @@ class Center extends Component {
         super(props);
 
         this.state = {
-            location: "11226"
+            location: this.props.location
         }
     }
 
@@ -16,7 +16,7 @@ class Center extends Component {
                     <h2>3:30 PM</h2>
                 </div>
                 <div className="centerWeather">
-                    <h5>68, Mostly cloudy.</h5>
+                    <h5>68, Mostly cloudy. - {this.state.location}</h5>
                 </div>
             </div>
         )

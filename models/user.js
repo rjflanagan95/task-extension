@@ -7,6 +7,7 @@ const moment = require("moment");
 const UserSchema = new Schema({
   _id: { type: String, required: true },
   name: { type: String, required: true },
+  location: { type: String, required: true, default: "10003" },
   tasks: [
     {
       title: { type: String, required: true },
@@ -17,9 +18,14 @@ const UserSchema = new Schema({
     }
   ],
   reminders: [],
-  dailyGoals: [],
-  weeklyGoals: [],
-  monthlyGoals: []
+  list1: {
+    title: {type: String, required: true, default: "List 1"},
+    items: []
+  },
+  list2: {
+    title: {type: String, required: true, default: "List 2"},
+    items: []
+  }
 });
 
 // This creates our model from the above schema, using mongoose's model method

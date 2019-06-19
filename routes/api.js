@@ -8,13 +8,9 @@ module.exports = function(router, db, passport, nodeEnv) {
 
     router.route("/users/reminders").put(controller.updateReminders);
 
-    router.route("./users/lists").put(controller.updateLists);
+    router.route("./users/list1").put(controller.updateList1);
 
-    router.route("/users/dailygoals").put(controller.updateDailyGoals);
-
-    router.route("/users/weeklygoals").put(controller.updateWeeklyGoals);
-
-    router.route("/users/monthlygoals").put(controller.updateMonthlyGoals);
+    router.route("./users/list2").put(controller.updateList2);
     
     return router;
 }

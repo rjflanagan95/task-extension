@@ -8,7 +8,8 @@ class GoalsCard extends Component {
 
         this.state = {
             userInput: '',
-            cardTitle: 'Short Term Goals'
+            cardTitle: 'List 1',
+            listID: this.props.listID
         }
 
         this.addItem = this.addItem.bind(this);
@@ -26,28 +27,43 @@ class GoalsCard extends Component {
         let newItem = this.state.userInput;
         currentItems.push(newItem);
 
-        let listID = this.props.listID;
-
-        API.updateLists(currentItems, listID)
-        .then(res => {
-            this.setState({
-                userInput: ''
+        if (this.state.listID === "list1") {
+            API.updateList1(currentItems)
+            .then(res => {
+                this.setState({
+                    userInput: ''
+                })
             })
-        })
+        } else if (this.state.listID === "list2") {
+            API.updateList2(currentItems)
+            .then(res => {
+                this.setState({
+                    userInput: ''
+                })
+            })
+        }
+        
     }
 
     removeItem(itemIndex) {
         let currentItems = this.props.items;
         currentItems.splice(itemIndex, 1);
 
-        let listID = this.props.listID;
-
-        API.updateLists(currentItems, listID)
-        .then(res => {
-            this.setState({
-                userInput: ''
+        if (this.state.listID === "list1") {
+            API.updateList1(currentItems)
+            .then(res => {
+                this.setState({
+                    userInput: ''
+                })
             })
-        })
+        } else if (this.state.listID === "list2") {
+            API.updateList2(currentItems)
+            .then(res => {
+                this.setState({
+                    userInput: ''
+                })
+            })
+        }
     }
 
     render() {
