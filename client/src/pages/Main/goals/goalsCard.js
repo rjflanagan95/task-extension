@@ -7,9 +7,7 @@ class GoalsCard extends Component {
         super(props);
 
         this.state = {
-            userInput: '',
-            cardTitle: 'List 1',
-            listID: this.props.listID
+            userInput: ''
         }
 
         this.addItem = this.addItem.bind(this);
@@ -27,15 +25,22 @@ class GoalsCard extends Component {
         let newItem = this.state.userInput;
         currentItems.push(newItem);
 
-        if (this.state.listID === "list1") {
-            API.updateList1(currentItems)
+        let newList = {
+            title: this.props.title,
+            items: currentItems
+        }
+
+        console.log(newList);
+
+        if (this.props.listID === "list1") {
+            API.updateList1(newList)
             .then(res => {
                 this.setState({
                     userInput: ''
                 })
             })
-        } else if (this.state.listID === "list2") {
-            API.updateList2(currentItems)
+        } else if (this.props.listID === "list2") {
+            API.updateList2(newList)
             .then(res => {
                 this.setState({
                     userInput: ''
@@ -49,14 +54,14 @@ class GoalsCard extends Component {
         let currentItems = this.props.items;
         currentItems.splice(itemIndex, 1);
 
-        if (this.state.listID === "list1") {
+        if (this.props.listID === "list1") {
             API.updateList1(currentItems)
             .then(res => {
                 this.setState({
                     userInput: ''
                 })
             })
-        } else if (this.state.listID === "list2") {
+        } else if (this.props.listID === "list2") {
             API.updateList2(currentItems)
             .then(res => {
                 this.setState({
@@ -67,16 +72,13 @@ class GoalsCard extends Component {
     }
 
     render() {
-        let currentItems = this.props.items;
-        let cardTitle = this.props.title;
-
         return (
             <div className="panel">
                 <div className="panelTitle">
-                    {cardTitle}
+                    {this.props.title}
                 </div>
                 <div className="panelList">
-                    {currentItems.map((val, itemIndex) =>
+                    {this.props.items.map((val, itemIndex) =>
                         <div className="panelBoxItem" key={itemIndex}>
                             <text className="panelBoxTitle">{val}</text>
                             <button className="panelBoxItemDeleteBtn" onClick={this.removeItem.bind(this, itemIndex)}>-</button>

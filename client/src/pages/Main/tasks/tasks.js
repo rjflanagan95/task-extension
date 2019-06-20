@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./tasks.css";
 import API from "../../../utils/API";
-import { Container, Row, Col } from "reactstrap";
 
 import moment from "moment";
 
@@ -102,7 +101,7 @@ class Tasks extends Component {
       this.setState({
         inputTitle: '',
         inputDate: '',
-        inputTime: "--:-- --",
+        inputTime: "HH:MM",
         stepInput: ""
       });
     });

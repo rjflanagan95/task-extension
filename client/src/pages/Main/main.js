@@ -53,12 +53,18 @@ class Main extends Component {
         // otherwise set the state to data from the database
         else {
           this.setState({
-          location: res.data.location,
-          tasks: res.data.tasks,
-          reminders: res.data.reminders,
-          list1: res.data.list1,
-          list2: res.data.list2
-        });
+            location: res.data.location,
+            tasks: res.data.tasks,
+            reminders: res.data.reminders,
+            list1: {
+              title: res.data.list1.title,
+              items: res.data.list1.items
+            },
+            list2: {
+              title: res.data.list2.title,
+              items: res.data.list2.items
+            }
+          })
         }
 
     }).catch(err => console.log(err));
