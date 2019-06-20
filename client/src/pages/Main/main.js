@@ -64,7 +64,9 @@ class Main extends Component {
               title: res.data.list2.title,
               items: res.data.list2.items
             }
-          })
+          });
+
+          
         }
 
     }).catch(err => console.log(err));
