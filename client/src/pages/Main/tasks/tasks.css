@@ -18,6 +18,15 @@
     padding: 5px;
 }
 
+.taskDeleteBtn {
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: smaller;
+    float: right;
+    width: 20px;
+    height: 20px;
+}
+
 .taskDetails {
     font-size: smaller;
 }

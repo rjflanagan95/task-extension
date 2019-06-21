@@ -117,7 +117,7 @@ class Tasks extends Component {
               <div className="taskItem" key={taskIndex}>
                 <div className="taskHeader">
                   <div>{val.title}</div>
-                  <button className="panelBoxItemDeleteBtn" onClick={this.removeTask.bind(this, taskIndex)}>-</button>
+                  <button className="taskDeleteBtn" onClick={this.removeTask.bind(this, taskIndex)}>-</button>
                   {/* if we have a date and time */}
                   { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                     <div className="dueInfo">

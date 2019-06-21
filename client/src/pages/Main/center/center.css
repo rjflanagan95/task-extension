@@ -9,6 +9,10 @@
     justify-content: center;
 }
 
+h1 {
+    font-weight: bold;
+}
+
 .centerWeather {
     display: flex;
     justify-content: center;

@@ -30,7 +30,7 @@
 
 /* general panel styling that applies to all components */
 .panel {
-    margin: 15px 5px 15px 5px;
+    margin: 15px 0px 15px 0px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: #734B5E;
@@ -76,7 +76,9 @@
     border: 1px solid black;
     border-radius: 4px;
     font-size: smaller;
-    float: right;
+    position: relative;
+    top: 1px;
+    right: 1px;
     width: 20px;
     height: 20px;
 }

@@ -75,7 +75,7 @@ class Center extends Component {
             <div className="panel">
                 <div className="centerCard">
                     <div className="centerClock">
-                        <h2>{this.state.time + " " + this.state.amPm}</h2>
+                        <h1>{this.state.time + " " + this.state.amPm}</h1>
                     </div>
                     <div className="centerWeather">
                         <h5>{this.state.temp} - {this.state.description} - {this.state.city}</h5>
