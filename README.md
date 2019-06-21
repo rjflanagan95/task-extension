@@ -3,12 +3,12 @@
 # Task App
 
 ## What is it?
-This is a simple and currently untitled app for managing your tasks, reminders, and goals. This app is meant to be a one-stop-shop for everything you need to keep in mind as you go about your day.
+This is a currently untitled app meant to be a one-stop-shop for everything you need to keep in mind as you go about your day. Features a clock, local weather, reminders, tasks with due dates, and customizable lists.
 
-For now, they're really just lists, but below I'll get into my vision for this app.
-The back-end is written with Node, running on an Express server and Mongo database. The front-end is built with React.js and custom CSS.
+## Tech
+The back-end is written with Node, running on an Express server and Mongo database. The front-end is built with React.js and custom CSS. The weather information comes from the [Open Weather Map API](https://openweathermap.org/).
 
-### Recent Changes (v2)
+### Major Changes (v2)
 - New component layout
 - New clock and weather panel
 - Turned three goals panels into two lists
