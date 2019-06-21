@@ -2,7 +2,7 @@
     border: 1px solid black;
     border-radius: 10px;
     background-color: #734B5E;
-    padding: 10px;
+    padding: 20px;
 
     width: fit-content;
 }
@@ -12,8 +12,7 @@
     border: 1px solid black;
     border-radius: 5px;
     width: fit-content;
-    padding: 8px;
-    margin-bottom: 5px;
+    padding: 10px;
 }
 
 .changeFormSubmit {

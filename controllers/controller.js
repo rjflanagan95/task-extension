@@ -36,6 +36,7 @@ module.exports = {
     // update contents of list 1
     updateList1: async function(req, res) {
         const userID = req.session.passport.user.id;
+        console.log(req.body);
 
         db.User.findByIdAndUpdate({ _id: userID }, { $set: { list1items: req.body}})
         .then(dbres => res.json(dbres))

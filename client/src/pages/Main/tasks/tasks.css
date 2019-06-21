@@ -34,12 +34,21 @@
 }
 
 .taskInput {
+    border: 1px solid black;
+    border-radius: 3px;
     display: block;
     width: 100%;
     margin-bottom: 5px;
 }
 
 .inputDate {
+    border: 1px solid black;
+    border-radius: 3px;
     width: 150px;
     margin: 0 5px 5px 0;
+}
+
+.inputTime {
+    border: 1px solid black;
+    border-radius: 3px;
 }
