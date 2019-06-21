@@ -25,17 +25,15 @@ class GoalsCard extends Component {
         let newItem = this.state.userInput;
         currentItems.push(newItem);
 
-        console.log(newItem);
-
         if (this.props.listID === "list1") {
-            API.updateList1(newItem)
+            API.updateList1(currentItems)
             .then(res => {
                 this.setState({
                     userInput: ''
                 })
             })
         } else if (this.props.listID === "list2") {
-            API.updateList2(newItem)
+            API.updateList2(currentItems)
             .then(res => {
                 this.setState({
                     userInput: ''

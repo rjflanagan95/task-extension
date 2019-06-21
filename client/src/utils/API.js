@@ -14,11 +14,11 @@ export default {
     },
 
     updateList1: function(items) {
-        return axios.put("/api/users/list1", items);
+        return axios.put("/api/users/list1items", items);
     },
 
     updateList2: function(items) {
-        return axios.put("/api/users/list2", items);
+        return axios.put("/api/users/list2items", items);
     },
 
     getWeather: function() {
@@ -30,10 +30,10 @@ export default {
     },
 
     changeList1: function(newTitle) {
-        return axios.put("/api/users/list1/title", newTitle);
+        return axios.put("/api/users/list1title", newTitle);
     },
 
     changeList2: function(newTitle) {
-        return axios.put("/api/users/list2/title", newTitle);
+        return axios.put("/api/users/list2title", newTitle);
     }
 }

@@ -36,7 +36,6 @@ module.exports = {
     // update contents of list 1
     updateList1: async function(req, res) {
         const userID = req.session.passport.user.id;
-        console.log(req.body);
 
         db.User.findByIdAndUpdate({ _id: userID }, { $set: { list1items: req.body}})
         .then(dbres => res.json(dbres))
@@ -107,6 +106,7 @@ module.exports = {
         .catch(err => console.log(err));
     },
 
+    // change the title of list 1
     changeList1: async function(req, res) {
         const userID = req.session.passport.user.id;
 
@@ -120,6 +120,7 @@ module.exports = {
         .catch(err => console.log(err));
     },
 
+    // change the title of list 2
     changeList2: async function(req, res) {
         const userID = req.session.passport.user.id;
         
