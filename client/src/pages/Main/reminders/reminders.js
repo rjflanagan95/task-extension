@@ -55,18 +55,18 @@ class Reminders extends Component {
       <div className="panel remindersPanel">
         <div className="panelBody remindersBody">
           <div className="panelTitle remindersTitle">
-            <text>Reminders</text>
+            <div>Reminders</div>
           </div>
           <div className="panelList remindersList">
             {this.props.reminders.map((val, index) => 
             <div className="panelBoxItem reminderItem" key={index}>
-              <text className="panelBoxTitle reminderTitle">{val}</text>
+              <div className="panelBoxTitle reminderTitle">{val}</div>
               <button className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
             </div>
             )}
           </div>
           <div className="panelForm reminderForm">
-            <input type="text" id="standard" label="reminder" defaultValue="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
+            <input type="text" id="standard" label="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
             <button className="panelFormSubmit addReminder" onClick={this.addReminder}>+</button>
           </div>
         </div>

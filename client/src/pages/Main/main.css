@@ -134,3 +134,10 @@
 .panelFormSubmit:focus {
     outline: none;
 }
+
+
+/* TIMER PANEL */
+.timerImg {
+    background-color: #734B5E;
+    width: 100%;
+}

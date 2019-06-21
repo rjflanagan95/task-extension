@@ -19,5 +19,9 @@ export default {
 
     updateList2: function(items) {
         return axios.put("/api/users/list2", items);
+    },
+
+    getWeather: function() {
+        return axios.get("/weather");
     }
 }

@@ -81,7 +81,7 @@ class Tasks extends Component {
       this.setState({
         inputTitle: '',
         inputDate: '',
-        inputTime: "--:-- --",
+        inputTime: "",
         stepInput: ""
       });
     });
@@ -109,31 +109,31 @@ class Tasks extends Component {
 
   render() {
     return (
-      <div className="panel tasksPanel">
-        <div className="panelBody tasksBody">
-          <div className="panelTitle tasksTitle"><text>Tasks</text></div>
+      <div className="panel">
+        <div className="panelBody">
+          <div className="panelTitle"><div>Tasks</div></div>
           <div className="panelList taskList">
             {this.props.tasks.map((val, taskIndex) =>
               <div className="taskItem" key={taskIndex}>
                 <div className="taskHeader">
-                  <text className="taskTitle">{val.title}</text>
-                  <button className="panelBoxItemDeleteBtn removeTaskBtn" onClick={this.removeTask.bind(this, taskIndex)}>-</button>
+                  <div>{val.title}</div>
+                  <button className="panelBoxItemDeleteBtn" onClick={this.removeTask.bind(this, taskIndex)}>-</button>
                   {/* if we have a date and time */}
                   { ((val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                     <div className="dueInfo">
-                      <text className="taskDue">{"Due " + moment(val.dueDate).format("MM/DD/YY") + " at " + val.dueTime}</text>
+                      <div>{"Due " + moment(val.dueDate).format("MM/DD/YY") + " at " + val.dueTime}</div>
                     </div>
                   ) : (
                     // if we have a date but not time
                     ((val.dueDate) && (!val.dueTime || (val.dueTime === "--:-- --"))) ? (
                       <div className="dueInfo">
-                        <text className="taskDue">{"Due " + moment(val.dueDate).format("MM/DD/YY")}</text>
+                        <div>{"Due " + moment(val.dueDate).format("MM/DD/YY")}</div>
                       </div>
                     ) : (
                       // if we have no date but have time
                       ((!val.dueDate) && (val.dueTime && (val.dueTime !== "--:-- --"))) ? (
                         <div className="dueInfo">
-                          <text className="taskDue">{"Due at " + val.dueTime}</text>
+                          <div>{"Due at " + val.dueTime}</div>
                         </div>
                       ) : ("")))
                   }
@@ -146,25 +146,23 @@ class Tasks extends Component {
                       <div className="taskStep" key={stepIndex}>
                         <button className="panelBoxItemDeleteBtn removeStepBtn" onClick={this.removeStep.bind(this, taskIndex, stepIndex)}>-</button>
                         <input type="checkbox" className="stepCheckbox"></input>
-                        <text className="stepText">{step}</text>
+                        <div className="stepdiv">{step}</div>
                       </div>
                       )}
                     </div>
                   ) : ("") }
                   <div className="stepInputForm">
-                    <input className="panelFormTextInput stepInput" onChange={(e) => this.changeUserInput(e.target)} name="stepInput" value={this.state.stepInput} type="text"/>
+                    <input className="panelFormdivInput stepInput" onChange={(e) => this.changeUserInput(e.target)} name="stepInput" value={this.state.stepInput} type="div"/>
                     <button className="panelFormSubmit addStepBtn" onClick={this.addStep.bind(this, taskIndex)}>+</button>
                   </div>
                 </div> */}
-              
-              
               </div>
             )}
           </div>
           <div className="taskForm">
-            <input id="standard" label="task" defaultValue="task name" className="panelFormTextInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="text"/>
-            <input id="standard" defaultValue="" className="panelFormTextInput inputDate" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>
-            <input id="time" type="time" defaultValue="--:-- --" className="panelFormTextInput inputTime" onChange={(e) => this.changeUserInput(e.target)} name="inputTime" value={this.state.inputTime} InputLabelProps={{shrink: true,}} inputProps={{
+            <input id="standard" label="task" className="panelFormdivInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="div"/>
+            <input id="standard" className="panelFormdivInput inputDate" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/>
+            <input id="time" type="time" className="panelFormdivInput inputTime" onChange={(e) => this.changeUserInput(e.target)} name="inputTime" value={this.state.inputTime} inputlabelprops={{shrink: true,}} inputprops={{
             step: 900, // 15 min
             }} />
             <button className="panelFormSubmit addTaskBtn " onClick={this.addTask}>+</button>

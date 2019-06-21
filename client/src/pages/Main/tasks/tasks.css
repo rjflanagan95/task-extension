@@ -8,7 +8,6 @@
     border: 1px solid black;
     border-radius: 5px;
 
-    /* height: 70px; */
     margin: 5px 0 5px 0;
     overflow: scroll;
 }
@@ -19,26 +18,19 @@
     padding: 5px;
 }
 
-.removeTaskBtn {
-    margin-bottom: 5px;
-}
-
 .taskDetails {
     font-size: smaller;
 }
 
 .taskForm {
-    padding: 5px 10px 5px 10px;
-    margin-top: 10px;
-
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
 
-    display: block;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
 
-    position: relative;
-    bottom: -10px;
+    display: block;
 }
 
 .taskInput {

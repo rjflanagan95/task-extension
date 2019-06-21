@@ -25,6 +25,13 @@ const UserSchema = new Schema({
   list2: {
     title: {type: String, required: true, default: "List 2"},
     items: []
+  },
+  weather: {
+    temp: { type: String },
+    temp_max: { type: String },
+    temp_min: { type: String },
+    description: { type: String },
+    city: { type: String }
   }
 });
 

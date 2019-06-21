@@ -11,6 +11,8 @@ module.exports = function(router, db, passport, nodeEnv) {
     router.route("/users/list1").put(controller.updateList1);
 
     router.route("/users/list2").put(controller.updateList2);
+
+    router.route("/weather").get(controller.getWeather);
     
     return router;
 }

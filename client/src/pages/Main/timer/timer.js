@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./timer.css";
 import tomatoImg from "./tomato.png";
 
 class Timer extends Component {

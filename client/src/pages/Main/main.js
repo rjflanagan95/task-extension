@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import  { Redirect } from 'react-router-dom';
 import { Container, Row, Col } from "react-bootstrap";
+import "./main.css";
 
 import API from "../../utils/API.js";
 
@@ -9,7 +10,7 @@ import GoalsCard from "./goals/goalsCard";
 import Tasks from "./tasks/tasks.js";
 import Reminders from "./reminders/reminders";
 import Timer from "./timer/timer"
-import "./main.css";
+
 
 class Main extends Component {
   constructor(props) {
@@ -38,6 +39,13 @@ class Main extends Component {
       list2: {
         title: "List 2",
         items: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5", "Goal 6", "Goal 7"]
+      },
+      weather: {
+        city: "New York",
+        temp: "72",
+        temp_max: "75",
+        temp_min: "70",
+        description: "Rain"
       }
     }
   }
@@ -63,10 +71,18 @@ class Main extends Component {
             list2: {
               title: res.data.list2.title,
               items: res.data.list2.items
-            }
+            },
+            weather: res.data.weather
           });
 
-          
+          API.getWeather(this.state.location)
+          .then(res => {
+              this.setState({
+                weather: res.data.weather
+              });
+          });
+
+
         }
 
     }).catch(err => console.log(err));
@@ -88,7 +104,7 @@ class Main extends Component {
             </Col>
             <Col xs={6}>
               <Row>
-                <Center location={this.state.location}/>
+                <Center location={this.state.location} weather={this.state.weather}/>
               </Row>
               <Row>
                 <Col xs={6}>

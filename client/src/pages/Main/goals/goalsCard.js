@@ -80,13 +80,13 @@ class GoalsCard extends Component {
                 <div className="panelList">
                     {this.props.items.map((val, itemIndex) =>
                         <div className="panelBoxItem" key={itemIndex}>
-                            <text className="panelBoxTitle">{val}</text>
+                            <div className="panelBoxTitle">{val}</div>
                             <button className="panelBoxItemDeleteBtn" onClick={this.removeItem.bind(this, itemIndex)}>-</button>
                         </div>
                     )}
                 </div>
                 <div className="panelForm goalsForm">
-                    <input type="text" id="standard" label="goal" defaultValue="goal" className="panelFormTextInput" onChange={(e) => this.changeUserInput(e.target.value)} value={ this.state.userInput } />
+                    <input type="text" id="standard" label="goal" className="panelFormTextInput" onChange={(e) => this.changeUserInput(e.target.value)} value={ this.state.userInput } />
                     <button className="panelFormSubmit" onClick={this.addItem.bind(this)}>+</button>
                 </div>
             </div>
