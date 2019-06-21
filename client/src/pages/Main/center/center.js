@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../main.css";
 import "./center.css";
+
 import API from "../../../utils/API";
 
 class Center extends Component {
@@ -12,11 +13,11 @@ class Center extends Component {
             location: this.props.location,
             time: "00:00",
             amPm: "AM",
-            city: this.props.weather.city,
-            temp: this.props.weather.temp,
+            city: "",
+            temp: "",
             temp_max: "",
             temp_min: "",
-            description: this.props.weather.description
+            description: ""
         }
 
         this.getTime = this.getTime.bind(this);
@@ -24,6 +25,7 @@ class Center extends Component {
     }
 
     componentDidMount() {
+        this.getWeather();
         this.loadInterval = setInterval(this.getTime, 1000);
     }
 
@@ -55,17 +57,17 @@ class Center extends Component {
     }
 
     getWeather() {
-        // API.getWeather(this.state.location)
-        // .then(res => {
-        //     console.log(res.data.weather);
-        //     this.setState({
-        //         temp: res.data.weather.temp,
-        //         temp_max: res.data.weather.temp_max,
-        //         temp_min: res.data.weather.temp_min,
-        //         description: res.data.weather.description,
-        //         city: res.data.weather.city
-        //     });
-        // });
+        // get new weather information
+        API.getWeather(this.state.location)
+        .then(res => {
+          this.setState({
+            city: res.data.weather.city,
+            temp: res.data.weather.temp,
+            temp_max: res.data.weather.temp_max,
+            temp_min: res.data.weather.temp_min,
+            description: res.data.weather.description
+          });
+        });
     }
 
     render() {

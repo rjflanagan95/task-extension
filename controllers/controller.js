@@ -2,6 +2,7 @@ const db = require("../models");
 const request = require("request");
 
 module.exports = {
+    // get user data on loading the page
     getUserData: async function(req, res) {
         const userID = req.session.passport.user.id;
 
@@ -14,6 +15,7 @@ module.exports = {
         });
     },
 
+    // update tasks after adding/removing
     updateTasks: async function(req, res) {
         const userID = req.session.passport.user.id;
 
@@ -22,6 +24,7 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
 
+    // update reminders after adding/removing
     updateReminders: async function(req, res) {
         const userID = req.session.passport.user.id;
 
@@ -30,27 +33,29 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
 
+    // update contents of list 1
     updateList1: async function(req, res) {
         const userID = req.session.passport.user.id;
 
-        db.User.findByIdAndUpdate({ _id: userID }, { $set: { list1: req.body}})
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { list1items: req.body}})
         .then(dbres => res.json(dbres))
         .catch(err => res.status(422).json(err));
     },
 
+    // update contents of list 2
     updateList2: async function(req, res) {
         const userID = req.session.passport.user.id;
 
-        db.User.findByIdAndUpdate({ _id: userID }, { $set: { list2: req.body}})
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { list2items: req.body}})
         .then(dbres => res.json(dbres))
         .catch(err => res.status(422).json(err));
     },
 
+    // get weather from Open Weather Map API
     getWeather: async function(req, res) {
         const userID = req.session.passport.user.id;
-
-        // remember to add api key to heroku
         const weatherKey = process.env.OPEN_WEATHER;
+
         db.User.findById(userID)
         .then(function(data) {
             let queryZIP = data.location;
@@ -82,5 +87,52 @@ module.exports = {
         .catch(function(err) {
             res.json(err);
         });
+    },
+
+
+    // SETTINGS MENU
+
+    changeZIP: async function(req, res) {
+        const userID = req.session.passport.user.id;
+
+        console.log(req.body);
+
+        let newZIP = "";
+
+        for (let key in req.body) {
+            newZIP = key;
+        }
+
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { location: newZIP } })
+        .then(dbres => res.send(dbres))
+        .catch(err => console.log(err));
+    },
+
+    changeList1: async function(req, res) {
+        const userID = req.session.passport.user.id;
+
+        let newTitle = "";
+
+        for (let key in req.body) {
+            newTitle = key;
+        }
+
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { list1title: newTitle} })
+        .then(dbres => res.json(dbres))
+        .catch(err => console.log(err));
+    },
+
+    changeList2: async function(req, res) {
+        const userID = req.session.passport.user.id;
+        
+        let newTitle = "";
+
+        for (let key in req.body) {
+            newTitle = key;
+        }
+
+        db.User.findByIdAndUpdate({ _id: userID }, { $set: { list2title: newTitle} })
+        .then(dbres => res.json(dbres))
+        .catch(err => console.log(err));
     }
 }

@@ -23,5 +23,17 @@ export default {
 
     getWeather: function() {
         return axios.get("/weather");
+    },
+
+    changeZIP: function(newZIP) {
+        return axios.put("/api/users/location", newZIP);
+    },
+
+    changeList1: function(newTitle) {
+        return axios.put("/api/users/list1/title", newTitle);
+    },
+
+    changeList2: function(newTitle) {
+        return axios.put("/api/users/list2/title", newTitle);
     }
 }
