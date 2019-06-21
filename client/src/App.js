@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import Main from "./components/Main/main";
 import Login from "./pages/Login/login";
+import Main from "./pages/Main/main";
+import Settings from "./pages/Settings/settings";
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/settings" component={Settings} />
         </Switch>
         
       </Router>

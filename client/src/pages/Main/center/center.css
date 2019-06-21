@@ -1,0 +1,19 @@
+.centerCard {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.centerClock {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.centerWeather {
+    display: flex;
+    justify-content: center;
+}

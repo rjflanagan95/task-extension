@@ -1,0 +1,63 @@
+.taskList {
+    height: 200px;
+}
+
+.taskItem {
+    display: block;
+    background-color: #BCBDC0;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    margin: 5px 0 5px 0;
+    overflow: scroll;
+}
+
+.taskHeader {
+    width: 100%;
+    font-size: smaller;
+    padding: 5px;
+}
+
+.taskDeleteBtn {
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: smaller;
+    float: right;
+    width: 20px;
+    height: 20px;
+}
+
+.taskDetails {
+    font-size: smaller;
+}
+
+.taskForm {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+
+    display: block;
+}
+
+.taskInput {
+    border: 1px solid black;
+    border-radius: 3px;
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.inputDate {
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 150px;
+    margin: 0 5px 5px 0;
+}
+
+.inputTime {
+    border: 1px solid black;
+    border-radius: 3px;
+}

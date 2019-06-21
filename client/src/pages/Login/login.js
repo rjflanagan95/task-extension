@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Paper from '@material-ui/core/Paper';
 import "./login.css";
 
 class Login extends Component {
@@ -14,7 +13,7 @@ class Login extends Component {
 
     return (
       <div className="login">
-        <Paper className="loginBox">
+        <div className="loginBox">
           <a href="/auth/google">
             <img className="googleBtn" alt="Google Sign-In Button" src={this.state.img} onMouseOver={() => {
               this.setState({
@@ -34,7 +33,7 @@ class Login extends Component {
                 })
             }}/>
           </a>
-        </Paper>
+        </div>
       </div>
     );
   }

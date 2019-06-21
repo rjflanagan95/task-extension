@@ -13,15 +13,27 @@ export default {
         return axios.put("/api/users/reminders", reminders);
     },
 
-    updateDailyGoals: function(goals) {
-        return axios.put("/api/users/dailygoals", goals);
+    updateList1: function(items) {
+        return axios.put("/api/users/list1items", items);
     },
 
-    updateWeeklyGoals: function(goals) {
-        return axios.put("/api/users/weeklygoals", goals);
+    updateList2: function(items) {
+        return axios.put("/api/users/list2items", items);
     },
 
-    updateMonthlyGoals: function(goals) {
-        return axios.put("/api/users/monthlygoals", goals);
+    getWeather: function() {
+        return axios.get("/weather");
+    },
+
+    changeZIP: function(newZIP) {
+        return axios.put("/api/users/location", newZIP);
+    },
+
+    changeList1: function(newTitle) {
+        return axios.put("/api/users/list1title", newTitle);
+    },
+
+    changeList2: function(newTitle) {
+        return axios.put("/api/users/list2title", newTitle);
     }
 }

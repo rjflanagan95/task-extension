@@ -6,7 +6,6 @@ import API from "../../utils/API";
 
 import Goals from "../goals/goals.js";
 import Tasks from "../tasks/tasks.js";
-import Efficiency from "../efficiency/efficiency";
 import Reminders from "../reminders/reminders";
 import Timer from "../timer/timer"
 import "./main.css";
