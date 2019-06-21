@@ -60,6 +60,7 @@ module.exports = {
         .then(function(data) {
             let queryZIP = data.location;
             let queryURL = "http://api.openweathermap.org/data/2.5/weather?zip=" + queryZIP + ",us&appid=" + weatherKey;
+
             request(queryURL, function (err, response, body) {
                 if (err) {
                     console.log(err);
@@ -77,8 +78,8 @@ module.exports = {
                         description: body.weather[0].main,
                         city: body.name
                     }
-                    db.User.findByIdAndUpdate({ _id: userID },
-                        { $set: { weather: weatherObj }})
+
+                    db.User.findByIdAndUpdate({ _id: userID }, { $set: { weather: weatherObj }})
                         .then(dbres => res.json(dbres))
                         .catch(err => console.log(err));
                 }
@@ -95,10 +96,7 @@ module.exports = {
     changeZIP: async function(req, res) {
         const userID = req.session.passport.user.id;
 
-        console.log(req.body);
-
         let newZIP = "";
-
         for (let key in req.body) {
             newZIP = key;
         }
@@ -112,7 +110,6 @@ module.exports = {
         const userID = req.session.passport.user.id;
 
         let newTitle = "";
-
         for (let key in req.body) {
             newTitle = key;
         }
@@ -126,7 +123,6 @@ module.exports = {
         const userID = req.session.passport.user.id;
         
         let newTitle = "";
-
         for (let key in req.body) {
             newTitle = key;
         }

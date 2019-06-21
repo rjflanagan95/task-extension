@@ -5,19 +5,15 @@ import API from "../../utils/API.js";
 import "../Main/main.css";
 import "./settings.css";
 
-class Login extends Component {
+class Settings extends Component {
   constructor(props) {
     super(props);
     this.state = {
       location: "",
       zipInput: "",
-      list1: {
-        title: ""
-      },
+      list1title: "",
       title1input: "",
-      list2: { 
-        title: ""
-      },
+      list2title: "",
       title2input: ""
     }
 
@@ -27,7 +23,6 @@ class Login extends Component {
   }
 
   componentDidMount() {
-
     API.getUserData()
       .then(res => {
         // if no response from API, force the user to log in
@@ -45,7 +40,6 @@ class Login extends Component {
             title2input: ""
           });
         }
-
     }).catch(err => console.log(err));
   }
 
@@ -62,7 +56,6 @@ class Login extends Component {
     if (newZIP !== "") {
       API.changeZIP(newZIP)
       .then(res => {
-        console.log(res);
         this.setState({
           location: res.data.location,
           zipInput: ''
@@ -77,8 +70,8 @@ class Login extends Component {
     if (newTitle !== "") {
       API.changeList1(newTitle)
       .then(res => {
-        console.log(res);
         this.setState({
+          list1title: res.data.list1title,
           title1input: ''
         });
       })
@@ -91,8 +84,8 @@ class Login extends Component {
     if (newTitle !== "") {
       API.changeList2(newTitle)
       .then(res => {
-        console.log(res);
         this.setState({
+          list2title: res.data.list2title,
           title2input: ''
         });
       })
@@ -110,7 +103,7 @@ class Login extends Component {
           <Col xs={4}>
             <div className="changePanel">
               <div className="changeItem">
-                <div>Current ZIP: {this.state.location}</div>
+                <div>Current ZIP (Weather): {this.state.location}</div>
                 <input className="panelFormTextInput" placeholder="new ZIP" name="zipInput" value={this.state.zipInput} onChange={(e) => this.changeUserInput(e.target)}/><button className="changeFormSubmit" onClick={this.changeZIP}>Update</button>
               </div>
               <div className="changeItem">
@@ -127,9 +120,8 @@ class Login extends Component {
           </Col>
         </Row>
       </Container>
-      
     );
   }
 }
 
-export default Login;
+export default Settings;

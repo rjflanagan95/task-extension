@@ -17,7 +17,7 @@ class Main extends Component {
     super(props)
 
     this.state = {
-      location: "10003",
+      location: "",
       tasks: [
         {
         title: "Default Task 1",

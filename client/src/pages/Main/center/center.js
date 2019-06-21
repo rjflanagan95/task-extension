@@ -10,7 +10,7 @@ class Center extends Component {
 
         this.state = {
             // ZIP code
-            location: this.props.location,
+            location: "",
             time: "00:00",
             amPm: "AM",
             city: "",
