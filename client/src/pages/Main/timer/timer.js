@@ -7,9 +7,9 @@ class Timer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      workInterval: 0.1,
+      workInterval: 25,
+      breakInterval: 5,
       workCycles: 4,
-      breakCycles: 3,
       count: 0,
       timerMinutes: "00",
       timerSeconds: "00",
@@ -23,6 +23,14 @@ class Timer extends Component {
     this.showTimer = this.showTimer.bind(this);
     this.workCycle = this.workCycle.bind(this);
     this.breakCycle = this.breakCycle.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      workInterval: this.props.settings[0],
+      breakInterval: this.props.settings[1],
+      workCycles: this.props.settings[2]
+    })
   }
 
   // start the timer after the start button is clicked

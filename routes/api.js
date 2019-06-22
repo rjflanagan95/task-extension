@@ -19,6 +19,8 @@ module.exports = function(router, db, passport, nodeEnv) {
     router.route("/users/list1title").put(controller.changeList1);
 
     router.route("/users/list2title").put(controller.changeList2);
+
+    router.route("/users/timersettings").put(controller.updateTimerSettings);
     
     return router;
 }

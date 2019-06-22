@@ -3,15 +3,12 @@
     border-radius: 10px;
     background-color: #734B5E;
     padding: 20px;
-
-    width: fit-content;
 }
 
 .changeItem {
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
-    width: fit-content;
     padding: 10px;
 }
 
@@ -19,7 +16,12 @@
     background-color: #BCBDC0;
     border: 1px solid black;
     border-radius: 5px;
+    float: right;
     
     margin: 5px;
     padding: 1px;
+}
+
+.timerSettingsInput {
+    width: 50%;
 }

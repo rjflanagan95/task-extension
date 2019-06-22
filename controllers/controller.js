@@ -132,5 +132,13 @@ module.exports = {
         db.User.findByIdAndUpdate({ _id: userID }, { $set: { list2title: newTitle} })
         .then(dbres => res.json(dbres))
         .catch(err => console.log(err));
+    },
+
+    updateTimerSettings: async function(req, res) {
+        const userID = req.session.passport.user.id;
+
+        db.User.findByIdAndUpdate( userID, { $set: { timerSettings: req.body }})
+        .then(dbres => res.json(dbres))
+        .catch(err => console.log(err));
     }
 }
