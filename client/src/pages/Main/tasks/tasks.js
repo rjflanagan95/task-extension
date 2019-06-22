@@ -178,16 +178,16 @@ class Tasks extends Component {
             )}
           </div>
           <div className="taskForm">
-            <Row>
+            <Row className="taskFormRow">
               <Col xs={12}>
                 <input id="standard" label="task" className="panelFormdivInput taskInput" onChange={(e) => this.changeUserInput(e.target)} name="inputTitle" value={this.state.inputTitle} type="div"/>
               </Col>
             </Row>
-            <Row>
+            <Row className="taskFormRow">
               <Col xs={12}>
                 <input id="standard" className="panelFormdivInput inputDate" onChange={(e) => this.changeUserInput(e.target)} name="inputDate" value={this.state.inputDate} type="date"/></Col>
             </Row>
-            <Row>
+            <Row className="taskFormRow">
               <Col xs={9}>
                 {/* step 900 = 15 minutes */}
                 <input id="time" type="time" className="panelFormdivInput inputTime" onChange={(e) => this.changeUserInput(e.target)} name="inputTime" value={this.state.inputTime} inputlabelprops={{shrink: true,}} inputprops={{step: 900}} />

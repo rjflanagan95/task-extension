@@ -7,9 +7,8 @@
 .centerClock {
     display: flex;
     justify-content: center;
-}
 
-h1 {
+    font-size: xx-large;
     font-weight: bold;
 }
 

@@ -46,16 +46,19 @@
     border-radius: 6px;
     height: 30px;
     font-weight: bold;
+    
+    padding: 5px 10px;
 
     display: flex;
-    align-items: center;
     justify-content: left;
-    padding: 5px 10px;
+    align-items: center;
 }
 
 /* scrollable lists within panels */
 .panelList {
+    max-width: 100%;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 /* boxed-in items from DB that get mapped over - tasks, reminders, goals */

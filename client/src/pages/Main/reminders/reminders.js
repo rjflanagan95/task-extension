@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./reminders.css";
 import API from "../../../utils/API";
 import { Row, Col } from "react-bootstrap";
 
@@ -53,32 +52,32 @@ class Reminders extends Component {
   render() {
 
     return (
-      <div className="panel remindersPanel">
-        <div className="panelBody remindersBody">
-          <div className="panelTitle remindersTitle">
+      <div className="panel">
+        <div className="panelBody">
+          <div className="panelTitle">
             <div>Reminders</div>
           </div>
-          <div className="panelList remindersList">
+          <div className="panelList">
             {this.props.reminders.map((val, index) => 
-            <div className="panelBoxItem reminderItem" key={index}>
+            <div className="panelBoxItem" key={index}>
               <Row>
                 <Col xs={9}>
-                  <div className="panelBoxTitle reminderTitle">{val}</div>
+                  <div className="panelBoxTitle">{val}</div>
                 </Col>
                 <Col xs={3}>
-                  <button className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
+                  <button className="panelBoxItemDeleteBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
                 </Col>
               </Row>
             </div>
             )}
           </div>
-          <div className="panelForm reminderForm">
+          <div className="panelForm">
             <Row>
               <Col xs={9}>
-                <input type="text" id="standard" label="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
+                <input type="text" id="standard" label="reminder" className="panelFormTextInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
               </Col>
               <Col xs={3}>
-                <button className="panelFormSubmit addReminder" onClick={this.addReminder}>+</button>
+                <button className="panelFormSubmit" onClick={this.addReminder}>+</button>
               </Col>
             </Row>
           </div>

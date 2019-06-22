@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../main.css";
 import "./center.css";
+import { Row, Col } from "react-bootstrap";
 
 import API from "../../../utils/API";
 
@@ -74,12 +75,20 @@ class Center extends Component {
         return (
             <div className="panel">
                 <div className="centerCard">
-                    <div className="centerClock">
-                        <h1>{this.state.time + " " + this.state.amPm}</h1>
-                    </div>
-                    <div className="centerWeather">
-                        <h5>{this.state.temp} - {this.state.description} - {this.state.city}</h5>
-                    </div>                    
+                    <Row>
+                        <Col xs={12}>
+                            <div className="centerClock">
+                                <div>{this.state.time + " " + this.state.amPm}</div>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12}>
+                            <div className="centerWeather">
+                                <h5>{this.state.temp} - {this.state.description} - {this.state.city}</h5>
+                            </div>
+                        </Col>
+                    </Row>    
                 </div>
             </div>
         )
