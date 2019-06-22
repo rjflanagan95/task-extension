@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./goals.css";
 import API from "../../../utils/API";
+import { Row, Col } from "react-bootstrap";
 
 class GoalsCard extends Component {
     constructor(props) {
@@ -73,14 +73,26 @@ class GoalsCard extends Component {
                 <div className="panelList">
                     {this.props.items.map((val, itemIndex) =>
                         <div className="panelBoxItem" key={itemIndex}>
-                            <div className="panelBoxTitle">{val}</div>
-                            <button className="panelBoxItemDeleteBtn" onClick={this.removeItem.bind(this, itemIndex)}>-</button>
+                            <Row>
+                                <Col xs={9}>
+                                    <div className="panelBoxTitle">{val}</div>
+                                </Col>
+                                <Col xs={3}>
+                                    <button className="panelBoxItemDeleteBtn" onClick={this.removeItem.bind(this, itemIndex)}>-</button>
+                                </Col>
+                            </Row>
                         </div>
                     )}
                 </div>
                 <div className="panelForm goalsForm">
-                    <input type="text" id="standard" label="goal" className="panelFormTextInput" onChange={(e) => this.changeUserInput(e.target.value)} value={ this.state.userInput } />
-                    <button className="panelFormSubmit" onClick={this.addItem.bind(this)}>+</button>
+                    <Row>
+                        <Col xs={9}>
+                            <input type="text" id="standard" label="goal" className="panelFormTextInput" onChange={(e) => this.changeUserInput(e.target.value)} value={ this.state.userInput } />
+                        </Col>
+                        <Col xs={3}>
+                            <button className="panelFormSubmit" onClick={this.addItem.bind(this)}>+</button>
+                        </Col>
+                    </Row>
                 </div>
             </div>
         )

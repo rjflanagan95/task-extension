@@ -30,11 +30,11 @@
 
 /* general panel styling that applies to all components */
 .panel {
-    margin: 15px 0px 15px 0px;
+    margin: 15px 0px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: #734B5E;
-    padding: 15px 15px 15px 15px;
+    padding: 15px;
 
     width: 100%;
 }
@@ -50,7 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px;
 }
 
 /* scrollable lists within panels */
@@ -63,12 +63,8 @@
     background-color: #BCBDC0;
     border: 1px solid black;
     border-radius: 5px;
-    margin: 5px 0 5px 0;
-    padding: 5px 5px 5px 5px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin: 5px 0;
+    padding: 5px;
 }
 
 /* delete button for any mapped over item */
@@ -76,9 +72,6 @@
     border: 1px solid black;
     border-radius: 4px;
     font-size: smaller;
-    position: relative;
-    top: 1px;
-    right: 1px;
     width: 20px;
     height: 20px;
 }
@@ -107,7 +100,7 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px;
     margin-top: 10px;
 
     position: relative;
