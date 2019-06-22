@@ -1,5 +1,7 @@
+import "./timer.css";
 import React, { Component } from "react";
 import tomatoImg from "./tomato.png";
+import { Row, Col } from "react-bootstrap";
 
 class Timer extends Component {
   constructor(props) {
@@ -10,11 +12,14 @@ class Timer extends Component {
       count: 0,
       timerMinutes: "00",
       timerSeconds: "00",
-      timerStatus: false
+      timerStatus: false,
+      showTomato: true,
+      pomodoroStatus: "working..."
     }
 
     this.startTimer = this.startTimer.bind(this);
     this.stopTimer = this.stopTimer.bind(this);
+    this.showTimer = this.showTimer.bind(this);
   }
 
   startTimer() {
@@ -45,7 +50,7 @@ class Timer extends Component {
 
     if (this.state.count === 0) {
       clearInterval(this.timer);
-      
+
       this.setState({
         timerStatus: false,
         timerMinutes: "00",
@@ -64,16 +69,38 @@ class Timer extends Component {
     })
   }
 
+  showTimer() {
+    this.setState({
+      showTomato: false
+    });
+  }
+
 
   render() {
 
     return (
-      <div className="panel timerPanel">
-        <div className="panelBody timerBody">
-          <img alt="pomodoro timer" className="timerImg" src={tomatoImg}/>
-          <div>{this.state.timerMinutes}:{this.state.timerSeconds}</div>
-          <button onClick={this.startTimer}>Start Timer</button>
-          <button onClick={this.stopTimer}>Stop Timer</button>
+      <div className="panel">
+        <div className="panelBody">
+          {(this.state.showTomato) ? (
+            <img alt="pomodoro timer" className="timerImg" src={tomatoImg} onClick={this.showTimer}/>
+          ) : (
+            <div className="timerPanel">
+              <Row>
+                <Col className="timerRow">
+                  <div className="statusPanel">
+                    <Row><Col><div className="statusText">{this.state.pomodoroStatus}</div></Col></Row>
+                    <Row><Col><div className="statusText">{this.state.timerMinutes}:{this.state.timerSeconds}</div></Col></Row>
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="timerRow">
+                  <button onClick={this.startTimer} className="timerBtn">Start</button>
+                  <button onClick={this.stopTimer} className="timerBtn">Stop</button>
+                </Col>
+              </Row>
+            </div>
+          )}
         </div>
       </div>
     );
