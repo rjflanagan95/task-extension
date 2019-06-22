@@ -1,4 +1,4 @@
-![Screenshot of Task App, v2](https://lh3.googleusercontent.com/55RDiGjMy20rLYuiBJtP7B_002qtdlpyZnqESUrWAkH4cIjamF3IlGs638oxO59aaAQAuJ_mGEhscCdAQIE2QzNtevOo3DZzXhcu5mGSYn16EBOHynYdqPA5HVin0VZ-A-lHtdQVToDobxnhaXQSH_zHppmeFFMnO-gTBFVJonpkJsBlHwBlE4rGVSr0AU3QPrugQqjL0EyJSUukYsu7aFHO4JjwBmV_7D2oKisyaRicIrYmn_D6CRJPKl8Po4mo1yNewjozSZaWWOe3GEiorgPZquCk5KWri9nP5DcyeZvrNk74umaS3aDGoinTByOGyQJyLIO2s9oO_EbpfPzJxP7rH8tl0_O8_iAr96GvIa8loJ24qFdc2z0PVmk4eRUj9QmTMZxbyHFaWkMYZHjD3ATHlBM19zWx9_4MkO5UIFd88RHGdm7NFV6Z7lcK-qgMx9SKrSdMSoyWCHV48D6_WhE-S4Vz1TcARAfNc7oxAYUx49MGvLWrDJRAWr3bgQCDaMUTn430tnEGOcgwU3z4sorTkv3sH-3BJguLUhUTSdz1w_pAh_mm-T2JSiqq4gZFMSFzfCx12oS2axrjvwy4ycUBc9fEJEosOEdW9YcGV0KmIM6f0Cgsj5981z40nXA1kLqq_OP6J0Nw1qnZq0tkADGqG94INoo=w2304-h1292-no)
+![Screenshot of Task App, v2](https://lh3.googleusercontent.com/RbMcflwcVL9ZmLQoV9J8yqI6T2yc4k34WxhvE8cN65KUzFd4CuxGbvrsmqkRdnIVdE-W9JrFlD-EsJvfeOFSTKV8YqxiParamUNgwHpcggYiHNizvj9M5obSDsfpx1FM5Oh816XPM0dg0xfxwwIKYRe1DkWVvhX5TX8OdMURwPMJl1pZHGyRtADj0pXMFRMpCnxykVNcy4J1_5UN9z2KHyNN6PGAflUFgo6PHZgeTbHjoBxyawlxiyNtGs5Yn_nBbXdLbocxcN7oDHn1HF0rWwc72Fk6FyKxfjgEH9dai7jz-K3AMvmtZSJRa7w5Q0CKAye7_oED-fJ43WOWFmjBSWIDe-NVJ5NJ8ypNwU5-WtIOt9nCSdrF1MLcrUT99FUkFjdo6l7AFdJODbmXS_73tgEmYe_-vsJv-qe7pTbf7EP8C2SVg0FIzaI6fC6KNSToakdXLzqA3nSfvfH54QJlxalWXpbK9tVALiMubJuAd1PKmvtWjCg-j4Bv9ATs_yIiRfeg6p7VTnSIEaR-0V6o87DFOofZ9w6LH8s8Ky9BlXag0WOtTy-JPsULYUtp2K8pvAMIVNqq2FgNimXi8mYQCAQbXNykxcB8GeOjk7e2jqiqd79PkLnpFeJLMMdqR2FZzSocoDK3aTWY2Mb2mkFDyb8dAK85roc=w2270-h1302-no)
 
 # Task App
 
@@ -15,6 +15,9 @@ The back-end is written with Node, running on an Express server and Mongo databa
 - Created new Settings tab, where location and list names can be edited
 
 ## Current Issues
+### Settings Menu Not Refreshing
+Settings menu doesn't immediately refresh after changing location or list names.
+
 ### (Not) Redirecting to /login
 When running the app in a local environment, the app successfully redirects the user to /login if they are not logged in. On the Heroku site, the app hangs without rendering anything until the user manually adds /login to the URL.
 
