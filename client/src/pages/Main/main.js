@@ -35,12 +35,7 @@ class Main extends Component {
       list1title: "List 1",
       list1items: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5"],
       list2title: "List 2",
-      list2items: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5", "Goal 6", "Goal 7"],
-      timerSettings: {
-        workInterval: 25,
-        breakInterval: 5,
-        workCycles: 4
-      }
+      list2items: ["Goal 1", "Goal 2", "Goal 3", "Goal 4", "Goal 5", "Goal 6", "Goal 7"]
     }
   }
 
@@ -68,8 +63,6 @@ class Main extends Component {
               workCycles: res.data.timerSettings.workCycle
             }
           });
-
-          console.log(this.state);
         }
     })
     .catch(err => console.log(err));
@@ -86,7 +79,7 @@ class Main extends Component {
           </Row>
           <Row>
             <Col xs={3}>
-              <Timer settings={this.state.timerSettings}/>
+              <Timer/>
             </Col>
             <Col xs={6}>
               <Row>
