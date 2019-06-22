@@ -56,7 +56,12 @@ class Main extends Component {
             list1title: res.data.list1title,
             list1items: res.data.list1items,
             list2title: res.data.list2title,
-            list2items: res.data.list2items
+            list2items: res.data.list2items,
+            timerSettings: {
+              workInterval: res.data.timerSettings.workInterval,
+              breakInterval: res.data.timerSettings.breakInterval,
+              workCycles: res.data.timerSettings.workCycle
+            }
           });
         }
     })
@@ -74,7 +79,7 @@ class Main extends Component {
           </Row>
           <Row>
             <Col xs={3}>
-              <Timer />
+              <Timer/>
             </Col>
             <Col xs={6}>
               <Row>

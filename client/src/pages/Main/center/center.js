@@ -34,19 +34,23 @@ class Center extends Component {
         setInterval(() => {
             let date, h, m, t, amPm;
         
+            // get current time
             date = new Date();
             h = date.getHours();
+            // if hours are 13-23 (for 12 hour clock display)
             if (h > 12) {
                 h = h - 12;
             }
 
             m = date.getMinutes();
+            // display minutes as "--:03"
             if (m < 10) {
                 m = "0" + m;
             }
 
             t = `${h}:${m}`;
             
+            // pm if hours > 12
             amPm = date.getHours() >= 12 ? "PM" : "AM";
 
             this.setState({

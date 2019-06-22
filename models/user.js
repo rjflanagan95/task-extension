@@ -28,6 +28,11 @@ const UserSchema = new Schema({
     temp_min: { type: String },
     description: { type: String },
     city: { type: String }
+  },
+  timerSettings: {
+    workInterval: { type: Number, required: true, default: 25 },
+    breakInterval: { type: Number, required: true, default: 5 },
+    workCycles: { type: Number, required: true, default: 4 },
   }
 });
 

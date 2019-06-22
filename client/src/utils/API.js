@@ -35,5 +35,9 @@ export default {
 
     changeList2: function(newTitle) {
         return axios.put("/api/users/list2title", newTitle);
+    },
+
+    updateTimerSettings: function(newTimerSettings) {
+        return axios.put("/api/users/timersettings", newTimerSettings);
     }
 }
