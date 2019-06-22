@@ -6,7 +6,7 @@
 This is a currently untitled app meant to be a one-stop-shop for everything you need to keep in mind as you go about your day. Features a clock, local weather, reminders, tasks with due dates, and customizable lists.
 
 ## Tech
-The back-end is written with Node, running on an Express server and Mongo database. The front-end is built with React.js and custom CSS. The weather information comes from the [Open Weather Map API](https://openweathermap.org/).
+The back-end is written with Node, running on an Express server and Mongo database. The front-end is built with React.js and custom CSS. User authentication is through [Passport.js](http://www.passportjs.org/), and currently only supports Google OAuth 2.0. The weather information comes from the [Open Weather Map API](https://openweathermap.org/).
 
 ### Major Changes (v2)
 - New component layout

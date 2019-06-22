@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./reminders.css";
 import API from "../../../utils/API";
+import { Row, Col } from "react-bootstrap";
 
 class Reminders extends Component {
   constructor(props) {
@@ -60,14 +61,26 @@ class Reminders extends Component {
           <div className="panelList remindersList">
             {this.props.reminders.map((val, index) => 
             <div className="panelBoxItem reminderItem" key={index}>
-              <div className="panelBoxTitle reminderTitle">{val}</div>
-              <button className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
+              <Row>
+                <Col xs={9}>
+                  <div className="panelBoxTitle reminderTitle">{val}</div>
+                </Col>
+                <Col xs={3}>
+                  <button className="panelBoxItemDeleteBtn removeReminderBtn" onClick={this.removeReminder.bind(this, index)}>-</button>
+                </Col>
+              </Row>
             </div>
             )}
           </div>
           <div className="panelForm reminderForm">
-            <input type="text" id="standard" label="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
-            <button className="panelFormSubmit addReminder" onClick={this.addReminder}>+</button>
+            <Row>
+              <Col xs={9}>
+                <input type="text" id="standard" label="reminder" className="panelFormTextInput reminderInput" onChange={(e) => this.changeUserInput(e.target.value)} value={this.state.userInput} />
+              </Col>
+              <Col xs={3}>
+                <button className="panelFormSubmit addReminder" onClick={this.addReminder}>+</button>
+              </Col>
+            </Row>
           </div>
         </div>
       </div>
