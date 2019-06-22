@@ -139,37 +139,86 @@ class Settings extends Component {
           <Col xs={4}>
             <div className="changePanel">
               <div className="changeItem">
-                <div>Current ZIP (Weather): {this.state.location}</div>
-                <input className="panelFormTextInput" placeholder="new ZIP" name="zipInput" value={this.state.zipInput} onChange={(e) => this.changeUserInput(e.target)}/><button className="changeFormSubmit" onClick={this.changeZIP}>Update</button>
+                <Row>
+                  <Col xs={9}>
+                    <Row>
+                      <Col>
+                        <div>Current ZIP (Weather): {this.state.location}</div>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col
+                        ><input className="panelFormTextInput" placeholder="new ZIP" name="zipInput" value={this.state.zipInput} onChange={(e) => this.changeUserInput(e.target)}/>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={3}>
+                    <button className="changeFormSubmit" onClick={this.changeZIP}>Update</button>
+                  </Col>
+                </Row>
               </div>
             </div>
           </Col>
           <Col xs={4}>
             <div className="changePanel">
               <div className="changeItem">
-                <div>Current Title: {this.state.list1title}</div>
-                <input className="panelFormTextInput" placeholder="new list name" name="title1input" value={this.state.title1input} onChange={(e) => this.changeUserInput(e.target)}/>
-                <button className="changeFormSubmit" onClick={this.changeList1}>Update</button>
+                <Row>
+                  <Col xs={9}>
+                    <Row>
+                      <Col>
+                      <div>Current Title: {this.state.list1title}</div>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <input className="panelFormTextInput" placeholder="new list name" name="title1input" value={this.state.title1input} onChange={(e) => this.changeUserInput(e.target)}/>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={3}>
+                    <button className="changeFormSubmit" onClick={this.changeList1}>Update</button>
+                  </Col>
+                </Row>
               </div>
               <div className="changeItem">
-                <div>Current Title: {this.state.list2title}</div>
-                <input className="panelFormTextInput" placeholder="new list name" name="title2input" value={this.state.title2input} onChange={(e) => this.changeUserInput(e.target)}/>
-                <button className="changeFormSubmit" onClick={this.changeList2}>Update</button>
+                <Row>
+                  <Col xs={9}>
+                    <Row>
+                      <Col>
+                      <div>Current Title: {this.state.list2title}</div>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <input className="panelFormTextInput" placeholder="new list name" name="title2input" value={this.state.title2input} onChange={(e) => this.changeUserInput(e.target)}/>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={3}>
+                    <button className="changeFormSubmit" onClick={this.changeList2}>Update</button>
+                  </Col>
+                </Row>
               </div>
             </div>
           </Col>
           <Col xs={4}>
             <div className="changePanel">
               <div className="changeItem">
-                <div>Work Interval: {this.state.workInterval}</div>
-                <input type="number" min="1" max="59" className="panelFormTextInput timerSettingsInput" name="workIntervalInput" value={this.state.workIntervalInput} onChange={(e) => this.changeUserInput(e.target)}/>
+                <Row>
+                  <Col xs={9}>
+                  <div>Work Interval: {this.state.workInterval}</div>
+                  <input type="number" min="1" max="59" className="panelFormTextInput timerSettingsInput" name="workIntervalInput" value={this.state.workIntervalInput} onChange={(e) => this.changeUserInput(e.target)}/>
 
-                <div>Break Interval: {this.state.breakInterval}</div>
-                <input type="number" min="1" max="59"  className="panelFormTextInput timerSettingsInput" name="breakIntervalInput" value={this.state.breakIntervalInput} onChange={(e) => this.changeUserInput(e.target)}/>
+                  <div>Break Interval: {this.state.breakInterval}</div>
+                  <input type="number" min="1" max="59"  className="panelFormTextInput timerSettingsInput" name="breakIntervalInput" value={this.state.breakIntervalInput} onChange={(e) => this.changeUserInput(e.target)}/>
 
-                <div>Work Cycles: {this.state.workCycles}</div>
-                <input type="number" min="1" max="8"  className="panelFormTextInput timerSettingsInput" name="workCyclesInput" value={this.state.workCyclesInput} onChange={(e) => this.changeUserInput(e.target)}/>
-                <button className="changeFormSubmit" onClick={this.updateTimerSettings}>Update</button>
+                  <div>Work Cycles: {this.state.workCycles}</div>
+                  <input type="number" min="1" max="8"  className="panelFormTextInput timerSettingsInput" name="workCyclesInput" value={this.state.workCyclesInput} onChange={(e) => this.changeUserInput(e.target)}/>
+                  </Col>
+                  <Col xs={3}>
+                    <button className="changeFormSubmit" onClick={this.updateTimerSettings}>Update</button>
+                  </Col>
+                </Row>
               </div>
             </div>
           </Col>
