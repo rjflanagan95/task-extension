@@ -62,8 +62,14 @@ class Main extends Component {
             list1items: res.data.list1items,
             list2title: res.data.list2title,
             list2items: res.data.list2items,
-            timerSettings: res.data.timerSettings
+            timerSettings: {
+              workInterval: res.data.timerSettings.workInterval,
+              breakInterval: res.data.timerSettings.breakInterval,
+              workCycles: res.data.timerSettings.workCycle
+            }
           });
+
+          console.log(this.state);
         }
     })
     .catch(err => console.log(err));

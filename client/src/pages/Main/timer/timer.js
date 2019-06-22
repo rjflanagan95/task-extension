@@ -2,14 +2,18 @@ import "./timer.css";
 import React, { Component } from "react";
 import tomatoImg from "./tomato.png";
 import { Row, Col } from "react-bootstrap";
+import API from "../../../utils/API";
 
 class Timer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      workInterval: 25,
-      breakInterval: 5,
-      workCycles: 4,
+      // workInterval: 25,
+      // breakInterval: 5,
+      // workCycles: 4,
+      workInterval: this.props.settings.workInterval,
+      breakInterval: this.props.settings.breakInterval,
+      workCycles: this.props.settings.workCycles,
       count: 0,
       timerMinutes: "00",
       timerSeconds: "00",
@@ -26,11 +30,15 @@ class Timer extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      workInterval: this.props.settings[0],
-      breakInterval: this.props.settings[1],
-      workCycles: this.props.settings[2]
-    })
+    API.getUserData()
+    .then(res => {
+      console.log(res);
+      this.setState({
+        workInterval: res.data.timerSettings.workInterval,
+        breakInterval: res.data.timerSettings.breakInterval,
+        workCycles: res.data.timerSettings.workCycle
+      });
+    });
   }
 
   // start the timer after the start button is clicked
