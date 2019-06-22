@@ -85,7 +85,7 @@ class Center extends Component {
                     <Row>
                         <Col xs={12}>
                             <div className="centerWeather">
-                                <h5>{this.state.temp} - {this.state.description} - {this.state.city}</h5>
+                                <h5>{this.state.temp}<span>&#176;</span>F - {this.state.description} - {this.state.city}</h5>
                             </div>
                         </Col>
                     </Row>    
