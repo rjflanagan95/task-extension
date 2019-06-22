@@ -6,13 +6,15 @@
 This is a currently untitled app meant to be a one-stop-shop for everything you need to keep in mind as you go about your day. Features a clock, local weather, reminders, tasks with due dates, and customizable lists.
 
 ## Tech
-The back-end is written with Node, running on an Express server and Mongo database. The front-end is built with React.js and custom CSS. User authentication is through [Passport.js](http://www.passportjs.org/), and currently only supports Google OAuth 2.0. The weather information comes from the [Open Weather Map API](https://openweathermap.org/).
+The back-end is written with Node, running on an Express server and Mongo database. The front-end is built with React.js, React-Bootstrap, and custom CSS. User authentication is through [Passport.js](http://www.passportjs.org/), and currently only supports Google OAuth 2.0. The weather information comes from the [Open Weather Map API](https://openweathermap.org/).
 
 ### Major Changes (v2)
-- New component layout
-- New clock and weather panel
-- Turned three goals panels into two lists
+- New component layout with React-Bootstrap
+- New clock and weather panel using Open Weather Map API
+- Turned the three goal panels into two lists, which can be renamed
 - Created new Settings tab, where location and list names can be edited
+
+---
 
 ## Current Issues
 ### Settings Menu Not Refreshing
@@ -20,6 +22,11 @@ Settings menu doesn't immediately refresh after changing location or list names.
 
 ### (Not) Redirecting to /login
 When running the app in a local environment, the app successfully redirects the user to /login if they are not logged in. On the Heroku site, the app hangs without rendering anything until the user manually adds /login to the URL.
+
+### No Screen Size Consideration
+Displays poorly on anything smaller than a laptop.
+
+---
 
 ## Future Development
 ### Task Details, Collapsing Task Items
