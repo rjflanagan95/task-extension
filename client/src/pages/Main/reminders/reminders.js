@@ -6,11 +6,21 @@ class Reminders extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: ''
+      userInput: '',
+      reminders: ["Default Reminder 1", "Default Reminder 2"]
     }
 
     this.addReminder = this.addReminder.bind(this);
     this.removeReminder = this.removeReminder.bind(this);
+  }
+
+  componentDidMount() {
+    API.getUserData()
+    .then(res => {
+        this.setState({
+            reminders: res.data.reminders
+        })
+    })
   }
 
   changeUserInput(input) {
@@ -23,7 +33,7 @@ class Reminders extends Component {
     event.preventDefault();
 
     if (this.state.userInput !== "") {
-      let currentReminders = this.props.reminders;
+      let currentReminders = this.state.reminders;
       let newReminder = this.state.userInput;
 
       currentReminders.push(newReminder);
@@ -38,7 +48,7 @@ class Reminders extends Component {
   }
 
   removeReminder(index) {
-    let currentReminders = this.props.reminders;
+    let currentReminders = this.state.reminders;
     currentReminders.splice(index, 1);
 
     API.updateReminders(currentReminders)
@@ -58,7 +68,7 @@ class Reminders extends Component {
             <div>Reminders</div>
           </div>
           <div className="panelList">
-            {this.props.reminders.map((val, index) => 
+            {this.state.reminders.map((val, index) => 
             <div className="panelBoxItem" key={index}>
               <Row>
                 <Col xs={9}>

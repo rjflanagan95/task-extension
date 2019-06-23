@@ -12,11 +12,33 @@ class Tasks extends Component {
       inputTitle: '',
       inputDate: '',
       inputTime: '',
-      stepInput: ''
+      stepInput: '',
+      tasks: [
+        {
+        title: "Default Task 1",
+        dueDate: "6/15/2019",
+        dueTime: "12:30 PM",
+        steps: ["step 1", "step 2", "step 3"]
+        }, {
+        title: "Default Task 2",
+        dueDate: "6/25/2019",
+        dueTime: "07:30 PM",
+        steps: ["step 1", "step 2", "step 3"]
+        }
+      ]
     }
 
     this.addTask = this.addTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
+  }
+
+  componentDidMount() {
+    API.getUserData()
+    .then(res => {
+        this.setState({
+            tasks: res.data.tasks
+        })
+    })
   }
 
   changeUserInput(target) {
@@ -35,7 +57,7 @@ class Tasks extends Component {
         dueTime: this.state.inputTime,
       }
       
-      let currentTasks = this.props.tasks;
+      let currentTasks = this.state.tasks;
 
       currentTasks.push(newTask);
 
@@ -44,7 +66,8 @@ class Tasks extends Component {
         this.setState({
           inputTitle: '',
           inputDate: '',
-          inputTime: "--:-- --"
+          inputTime: "--:-- --",
+          tasks: currentTasks
         });
       });      
     }
@@ -53,7 +76,7 @@ class Tasks extends Component {
   removeTask(index, event) {
     event.preventDefault();
 
-    let currentTasks = this.props.tasks;
+    let currentTasks = this.state.tasks;
     currentTasks.splice(index, 1);
 
     API.updateTasks(currentTasks)
@@ -61,52 +84,53 @@ class Tasks extends Component {
       this.setState({
         inputTitle: '',
         inputDate: '',
-        inputTime: "--:-- --"
+        inputTime: "--:-- --",
+        tasks: currentTasks
       });
     });
   }
 
-  addStep(taskIndex, event) {
-    event.preventDefault();
+  // addStep(taskIndex, event) {
+  //   event.preventDefault();
     
-    let newStep = this.state.stepInput;
-    let currentTasks = this.props.tasks;
-    let currentSteps = currentTasks[taskIndex].steps;
+  //   let newStep = this.state.stepInput;
+  //   let currentTasks = this.state.tasks;
+  //   let currentSteps = currentTasks[taskIndex].steps;
 
-    currentSteps.push(newStep);
+  //   currentSteps.push(newStep);
 
-    currentTasks.steps = currentSteps;
+  //   currentTasks.steps = currentSteps;
 
-    API.updateTasks(currentTasks)
-    .then(res => {
-      this.setState({
-        inputTitle: '',
-        inputDate: '',
-        inputTime: "",
-        stepInput: ""
-      });
-    });
-  }
+  //   API.updateTasks(currentTasks)
+  //   .then(res => {
+  //     this.setState({
+  //       inputTitle: '',
+  //       inputDate: '',
+  //       inputTime: "",
+  //       stepInput: ""
+  //     });
+  //   });
+  // }
 
-  removeStep(taskIndex, stepIndex, event) {
-    event.preventDefault();
+  // removeStep(taskIndex, stepIndex, event) {
+  //   event.preventDefault();
 
-    let currentTasks = this.props.tasks;
-    let currentSteps = currentTasks[taskIndex].steps;
-    currentSteps.splice(stepIndex, 1);
+  //   let currentTasks = this.state.tasks;
+  //   let currentSteps = currentTasks[taskIndex].steps;
+  //   currentSteps.splice(stepIndex, 1);
 
-    currentTasks.steps = currentSteps;
+  //   currentTasks.steps = currentSteps;
 
-    API.updateTasks(currentTasks)
-    .then(res => {
-      this.setState({
-        inputTitle: '',
-        inputDate: '',
-        inputTime: "HH:MM",
-        stepInput: ""
-      });
-    });
-  }
+  //   API.updateTasks(currentTasks)
+  //   .then(res => {
+  //     this.setState({
+  //       inputTitle: '',
+  //       inputDate: '',
+  //       inputTime: "HH:MM",
+  //       stepInput: ""
+  //     });
+  //   });
+  // }
 
   render() {
     return (
@@ -114,7 +138,7 @@ class Tasks extends Component {
         <div className="panelBody">
           <div className="panelTitle"><div>Tasks</div></div>
           <div className="panelList taskList">
-            {this.props.tasks.map((val, taskIndex) =>
+            {this.state.tasks.map((val, taskIndex) =>
               <div className="taskItem" key={taskIndex}>
                 <Row>
                   {/* left side, for task title and due date information */}
