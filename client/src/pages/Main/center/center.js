@@ -26,6 +26,13 @@ class Center extends Component {
     }
 
     componentDidMount() {
+        API.getUserData()
+        .then(res => {
+            this.setState({
+                location: res.data.location
+            })
+        })
+
         this.getWeather();
         this.loadInterval = setInterval(this.getTime, 1000);
     }
