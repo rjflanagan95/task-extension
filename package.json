@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/rjflanagan95/task-extension#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.0.0",
